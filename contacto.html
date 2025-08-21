@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto | Freimel Jerez</title>
+  <meta name="description" content="Contácta a Freimel Jerez WebApp para tu proyecto web.">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="topbar">
+    <div class="container flex between center-v">
+      <a class="brand" href="index.html">💻 <span>Freimel Jerez WebApp</span></a>
+
+      <!-- Botón hamburguesa -->
+      <button class="hamburger" aria-label="Menú">&#9776;</button>
+
+      <!-- Navegación -->
+      <nav class="nav" aria-label="Principal">
+        <a href="index.html">Inicio</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="acerca.html">Acerca</a>
+        <a class="active btn" href="contacto.html" aria-current="page">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main class="container">
+    <h1>Hablemos de tu proyecto</h1>
+
+    <form id="contactForm" class="form" novalidate>
+      <!-- Honeypot anti-spam -->
+      <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+        <label>Tu empresa 
+          <input type="text" name="empresa" tabindex="-1" autocomplete="off">
+        </label>
+      </div>
+
+      <div class="grid-2">
+        <label for="nombre">Nombre
+          <input id="nombre" name="nombre" type="text" required placeholder="Tu nombre" autocomplete="name" />
+        </label>
+
+        <label for="correo">Correo
+          <input id="correo" name="correo" type="email" required placeholder="tu@email.com"
+                 autocomplete="email" inputmode="email" />
+        </label>
+
+        <label for="telefono">WhatsApp
+          <input id="telefono" name="telefono" type="tel" placeholder="+57 320 678 0200"
+                 inputmode="tel" autocomplete="tel" />
+          <small class="muted">Formato internacional recomendado (+57 …).</small>
+        </label>
+
+        <label for="servicio">Servicio de interés
+          <select id="servicio" name="servicio" required autocomplete="off">
+            <option value="">Selecciona…</option>
+            <option>Web Básica</option>
+            <option>Web Profesional</option>
+            <option>Proyecto Avanzado</option>
+          </select>
+        </label>
+      </div>
+
+      <label for="mensaje">Cuéntame tu idea
+        <textarea id="mensaje" name="mensaje" rows="6" required
+                  placeholder="Describe brevemente tu proyecto…"></textarea>
+      </label>
+
+      <label class="check">
+        <input id="acepto" type="checkbox" required />
+        Acepto la <a class="link" href="privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a>
+      </label>
+
+      <div class="flex gap" style="margin-top:6px">
+        <button class="btn" type="submit">Enviar</button>
+        <a class="btn ghost" id="whatsappLink" href="#" target="_blank" rel="noopener"
+           aria-disabled="true" title="Completa el formulario para enviar por WhatsApp">WhatsApp</a>
+      </div>
+
+      <noscript>
+        <p class="muted" style="margin-top:10px">
+          Si tienes JavaScript desactivado, escríbeme a
+          <a class="link" href="mailto:frei19jerez@gmail.com">frei19jerez@gmail.com</a>.
+        </p>
+      </noscript>
+    </form>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> Freimel Jerez</div>
+  </footer>
+
+  <!-- Banner de cookies -->
+  <div id="cookieBanner" class="cookie-banner" style="display:none">
+    <p>Este sitio usa cookies para mejorar la experiencia.
+      <a class="link" href="privacidad.html">Saber más</a>
+    </p>
+    <button id="acceptCookies" class="btn">Aceptar</button>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
