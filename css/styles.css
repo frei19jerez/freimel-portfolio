@@ -205,3 +205,18 @@ img { max-width: 100%; display: block; }
   height: 100%;
   border: 0;
 }
+
+.btn-secundario {
+  background: #111;
+  color: #0f0;
+  border: 1px solid #0f0;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-left: 8px;
+  transition: 0.3s ease;
+}
+
+.btn-secundario:hover {
+  background: #0f0;
+  color: #000;
+}
