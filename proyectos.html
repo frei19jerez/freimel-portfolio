@@ -3,10 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Proyectos | Freimel Jerez</title>
-  <meta name="description" content="Proyectos destacados de Freimel Jerez WebApp.">
+  <title>Proyectos | Freimel Jerez WebApp</title>
+  <meta name="description" content="Proyectos destacados desarrollados por Freimel Jerez: sitios profesionales, apps web y soluciones interactivas." />
+  <meta name="author" content="Freimel Jerez" />
+  <meta name="robots" content="index, follow" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
   <!-- ===== HEADER ===== -->
   <header class="topbar">
@@ -14,12 +17,12 @@
       <a class="brand" href="index.html">💻 <span>Freimel Jerez WebApp</span></a>
 
       <!-- Botón hamburguesa -->
-      <button class="hamburger" aria-label="Menú">&#9776;</button>
+      <button class="hamburger" aria-label="Abrir menú">&#9776;</button>
 
       <!-- Navegación -->
-      <nav class="nav">
+      <nav class="nav" aria-label="Principal">
         <a href="index.html">Inicio</a>
-        <a class="active" href="proyectos.html">Proyectos</a>
+        <a class="active" href="proyectos.html" aria-current="page">Proyectos</a>
         <a href="servicios.html">Servicios</a>
         <a href="acerca.html">Acerca</a>
         <a class="btn" href="contacto.html">Contacto</a>
@@ -30,35 +33,85 @@
   <!-- ===== MAIN ===== -->
   <main class="container">
     <h1>Proyectos</h1>
-    <div class="cards">
+    <p class="muted">Estos son algunos de mis desarrollos recientes desplegados en Netlify como demos en línea.</p>
+
+    <div class="cards grid-proyectos">
+      
       <article class="card">
-        <h3>Sitio para Perito Profesional</h3>
-        <p>Multipágina (inicio, servicios, casos, contacto, legales). SEO y WhatsApp.</p>
+        <img src="imagen/sitioweb.png" alt="Avalúos Pro - sitio profesional de avalúos">
+        <h3>Avalúos Pro</h3>
+        <p>Web profesional para servicios de avalúos y peritajes. SEO y contacto por WhatsApp.</p>
+        <a href="https://avaluos-pro.netlify.app" target="_blank" rel="noopener noreferrer" class="btn">Ver demo</a>
       </article>
 
       <article class="card">
-        <h3>Botfreimel</h3>
-        <p>Señales de criptomonedas. Frontend + Sails.js. Integraciones con APIs.</p>
+        <img src="imagen/sitioweb.png" alt="Jay Luna Oficial - sitio web artístico">
+        <h3>Jay Luna Oficial</h3>
+        <p>Sitio artístico para promoción musical y presencia digital. Responsive y optimizado.</p>
+        <a href="https://jayluna-site.netlify.app" target="_blank" rel="noopener noreferrer" class="btn">Ver demo</a>
       </article>
 
       <article class="card">
-        <h3>Freimel Jerez Game</h3>
-        <p>Proyecto de videojuego estilo battle arena. Assets, panel y estructura.</p>
+        <img src="imagen/sitioweb.png" alt="Freimel Jerez WebApp - portafolio personal">
+        <h3>Freimel Jerez WebApp</h3>
+        <p>Mi portafolio profesional como desarrollador web Frontend & Backend.</p>
+        <a href="https://freimeljerezwebapps.netlify.app" target="_blank" rel="noopener noreferrer" class="btn">Ver demo</a>
       </article>
 
       <article class="card">
-        <h3>FreimelJerez Social</h3>
-        <p>Red social con posts, comentarios y autenticación (Sails.js + DB).</p>
+        <img src="imagen/sitioweb.png" alt="Interneguando - landing page comercial">
+        <h3>Interneguando</h3>
+        <p>Landing page comercial para proveedor de internet local, con estructura de marketing clara.</p>
+        <a href="https://interneguando.netlify.app" target="_blank" rel="noopener noreferrer" class="btn">Ver demo</a>
       </article>
+
+      <article class="card">
+        <img src="imagen/sitioweb.png" alt="Tienda de Barrio - catálogo online de productos">
+        <h3>Tienda de Barrio</h3>
+        <p>Catálogo online de productos para pequeñas tiendas, con diseño adaptable y sencillo.</p>
+        <a href="https://tienda-de-barrio.netlify.app" target="_blank" rel="noopener noreferrer" class="btn">Ver demo</a>
+      </article>
+
+      <article class="card">
+        <img src="imagen/sitioweb.png" alt="freimeljerezcom.online - plataforma de análisis y señales">
+        <h3>freimeljerezcom.online</h3>
+        <p>Plataforma con señales de criptomonedas y análisis automatizado. Integraciones API + Sails.js.</p>
+        <a href="https://freimeljerezcom.online/" target="_blank" rel="noopener noreferrer" class="btn">Demo privada</a>
+      </article>
+
     </div>
   </main>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <div class="container">© <span id="year"></span> Freimel Jerez</div>
+    <div class="container grid-3">
+      <div>
+        <h3>Freimel Jerez WebApp</h3>
+        <p class="muted">Desarrollador Web – Frontend & Backend</p>
+      </div>
+
+      <nav class="foot-nav" aria-label="Navegación inferior">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="acerca.html">Acerca</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+
+      <div>
+        <p>📧 <a href="mailto:frei19jerez@gmail.com">frei19jerez@gmail.com</a></p>
+        <p>📱 <a href="tel:+573206780200">+57 320 678 0200</a></p>
+        <p>© <span id="year"></span> Freimel Jerez</p>
+      </div>
+    </div>
   </footer>
 
-  <!-- JS -->
+  <!-- ===== JS ===== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const year = document.getElementById("year");
+      if (year) year.textContent = new Date().getFullYear();
+    });
+  </script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

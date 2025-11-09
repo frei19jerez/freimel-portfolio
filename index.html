@@ -6,41 +6,43 @@
 
   <title>Freimel Jerez WebApp | Portafolio</title>
   <meta name="description" content="Desarrollador Web (Frontend & Backend). Sitios rápidos, SEO, hosting y apps para monetización en YouTube dentro de las políticas.">
+  <meta name="author" content="Freimel Jerez">
 
   <!-- SEO / OG -->
-  <meta name="robots" content="index,follow">
+  <meta name="robots" content="index, follow">
   <meta property="og:title" content="Freimel Jerez WebApp" />
   <meta property="og:description" content="Desarrollador Web – Frontend & Backend. SEO, hosting y apps para YouTube." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="imagen/sitioweb.png" />
-  <meta property="og:url" content="https://freimeljerezcom.online" />
+  <meta property="og:url" content="https://freimeljerezwebapps.netlify.app" />
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" 
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='100%25' height='100%25' fill='%230f0f0f'/%3E%3Ctext y='48' x='10' font-size='40' fill='%23ffffff' font-family='Arial, sans-serif'%3EFJ%3C/text%3E%3C/svg%3E">
 </head>
+
 <body>
   <!-- HEADER -->
   <header class="topbar">
     <div class="container flex between center-v">
       <a class="brand" href="index.html">💻 <span>Freimel Jerez WebApp</span></a>
-      
+
       <!-- Botón hamburguesa -->
       <button class="hamburger" aria-label="Abrir menú">&#9776;</button>
 
+      <!-- Navegación -->
       <nav class="nav" aria-label="Menú principal">
-  <a class="active" href="index.html">Inicio</a>
-  <a href="proyectos.html">Proyectos</a>
-  <a href="servicios.html">Servicios</a>
-  <a href="acerca.html">Acerca</a>
-  <a class="btn" href="contacto.html">Contacto</a>
-  <a href="https://freimeljerezcom.online" target="_blank" class="btn-secundario">App Bitcoin IA</a>
-</nav>
-
+        <a class="active" href="index.html">Inicio</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="acerca.html">Acerca</a>
+        <a class="btn" href="contacto.html">Contacto</a>
+        <a href="https://freimeljerezwebapps.netlify.app" target="_blank" class="btn-secundario">App Bitcoin IA</a>
+      </nav>
     </div>
   </header>
 
@@ -113,7 +115,9 @@
         </ul>
       </article>
     </div>
-    <p class="muted" style="margin-top:10px">* Las soluciones complementan tu canal y respetan las políticas de YouTube (no garantizan ingresos).</p>
+    <p class="muted" style="margin-top:10px">
+      * Las soluciones complementan tu canal y respetan las políticas de YouTube (no garantizan ingresos).
+    </p>
   </section>
 
   <!-- CTA -->
@@ -131,36 +135,40 @@
         <h3>Freimel Jerez WebApp</h3>
         <p class="muted">Desarrollador Web – Frontend & Backend</p>
       </div>
+
       <nav class="foot-nav" aria-label="Menú en footer">
         <a href="proyectos.html">Proyectos</a>
         <a href="servicios.html">Servicios</a>
         <a href="acerca.html">Acerca</a>
         <a href="contacto.html">Contacto</a>
       </nav>
+
       <div>
         <p>📧 <a href="mailto:frei19jerez@gmail.com">frei19jerez@gmail.com</a></p>
         <p>📱 <a href="tel:+573206780200">+57 320 678 0200</a></p>
-        <p><a href="https://freimeljerezcom.online" target="_blank">🌐 freimeljerezcom.online</a></p>
+        <p>🌐 <a href="https://freimeljerezwebapps.netlify.app" target="_blank">freimeljerezwebapps.netlify.app</a></p>
         <p>© <span id="year"></span> Freimel Jerez</p>
-        
       </div>
     </div>
   </footer>
 
-  <!-- Schema.org -->
+  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Freimel Jerez",
     "jobTitle": "Desarrollador Web",
-    "url": "https://freimeljerezcom.online",
+    "url": "https://freimeljerezwebapps.netlify.app",
     "email": "mailto:frei19jerez@gmail.com",
-    "telephone": "+573206780200",
-    "sameAs": []
+    "telephone": "+573206780200"
   }
   </script>
 
+  <!-- JS -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
   <script src="js/main.js" defer></script>
 </body>
 </html>
