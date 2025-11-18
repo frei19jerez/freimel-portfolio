@@ -1,0 +1,156 @@
+/* ============================================
+   BLOG CSS – Freimel Jerez WebApp
+   Optimizado para Bootstrap (modo oscuro)
+   ============================================ */
+
+/* Fondo general del blog */
+body {
+  background: #0d0d0d;
+  color: #eaeaea;
+}
+
+/* TITULOS */
+h1, h2, h3 {
+  color: #fff;
+}
+
+/* Texto suave */
+.muted {
+  color: #b9b9b9;
+}
+
+/* ------------ POST LIST (index.html) ------------ */
+
+.post-card {
+  background: #131313;
+  border: 1px solid #222;
+  border-radius: 14px;
+  transition: 0.25s ease;
+  overflow: hidden;
+}
+
+.post-card img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.post-card:hover {
+  transform: translateY(-6px);
+  border-color: #4ecbff;
+  box-shadow: 0 0 18px rgba(0, 204, 255, 0.25);
+}
+
+.post-card h3 {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-top: 12px;
+}
+
+.post-card p {
+  color: #cfcfcf;
+  margin-bottom: 12px;
+}
+
+/* ------------ POST (artículo individual) ------------ */
+
+.post-container {
+  max-width: 900px;
+  margin: auto;
+  background: #131313;
+  border: 1px solid #222;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
+}
+
+.post-img {
+  width: 100%;
+  border-radius: 14px;
+  margin: 20px 0;
+}
+
+.post-container p {
+  line-height: 1.7;
+  margin-bottom: 16px;
+  color: #dcdcdc;
+}
+
+.post-container ul,
+.post-container ol {
+  padding-left: 22px;
+  margin-bottom: 16px;
+}
+
+.post-container li {
+  margin-bottom: 8px;
+}
+
+/* Enlaces dentro del artículo */
+.post-container a {
+  color: #4ecbff;
+  font-weight: bold;
+}
+
+.post-container a:hover {
+  color: #87e8ff;
+}
+
+/* ------------ BOTONES ------------ */
+
+.btn-info {
+  background: #4ecbff !important;
+  border: none !important;
+  color: #000 !important;
+  font-weight: bold;
+  transition: 0.25s ease;
+}
+
+.btn-info:hover {
+  background: #81ddff !important;
+  transform: scale(1.05);
+}
+
+/* Link "Volver" */
+.back-btn {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #4ecbff;
+  font-weight: bold;
+}
+
+/* ------------ NAVEGACIÓN ENTRE ARTÍCULOS ------------ */
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.post-nav a {
+  color: #4ecbff;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.post-nav a:hover {
+  color: #9ceaff;
+  text-decoration: underline;
+}
+
+/* ------------ RESPONSIVE ------------ */
+
+@media (max-width: 768px) {
+  .post-container {
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .post-card h3 {
+    font-size: 1.1rem;
+  }
+}

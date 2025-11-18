@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML desde cero – Guía completa | Freimel Jerez WebApp</title>
+
+  <meta name="description" content="Aprende qué es HTML, cómo funciona y cómo crear tus primeras páginas web. Guía paso a paso hecha por Freimel Jerez.">
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="css/blog.css">
+  <link rel="icon" href="../imagen/favicon.svg">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container flex between center-v">
+    <a class="brand" href="../index.html">💻 Freimel Jerez WebApp</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <a href="index.html" class="back">← Volver al blog</a>
+
+  <article class="post">
+    <h1>HTML desde cero – Guía para comenzar</h1>
+    <p class="muted">Por Freimel Jerez — Desarrollador Web Full Stack</p>
+
+    <img src="../imagen/sitioweb.png" class="post-img" alt="HTML básico">
+
+    <p>
+      HTML (HyperText Markup Language) es el lenguaje con el que se estructura una página web.
+      TODO lo que ves en internet comenzó con HTML: textos, imágenes, botones, formularios y el contenido que se muestra en pantalla.
+    </p>
+
+    <h2>¿Qué es HTML?</h2>
+    <p>
+      HTML es un lenguaje basado en <strong>etiquetas</strong>. Cada etiqueta define un elemento. Por ejemplo:
+    </p>
+
+<pre><code>&lt;h1&gt;Hola Mundo&lt;/h1&gt;
+&lt;p&gt;Este es mi primer párrafo.&lt;/p&gt;
+</code></pre>
+
+    <h2>Estructura básica de una página HTML</h2>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Mi primera web&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hola Mundo&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    <h2>Etiquetas más importantes</h2>
+
+    <h3>1. Encabezados (H1–H6)</h3>
+<pre><code>&lt;h1&gt;Título principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;</code></pre>
+
+    <h3>2. Párrafos</h3>
+<pre><code>&lt;p&gt;Esto es un párrafo.&lt;/p&gt;</code></pre>
+
+    <h3>3. Imágenes</h3>
+<pre><code>&lt;img src="foto.png" alt="Descripción"&gt;</code></pre>
+
+    <h3>4. Enlaces</h3>
+<pre><code>&lt;a href="https://google.com"&gt;Ir a Google&lt;/a&gt;</code></pre>
+
+    <h2>Conclusión</h2>
+    <p>
+      HTML es la base de todo. Si lo dominas, puedes avanzar a CSS y JavaScript sin problema.  
+      En el siguiente artículo veremos cómo darle estilo profesional a tus páginas.
+    </p>
+
+  </article>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

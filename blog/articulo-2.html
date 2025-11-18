@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS profesional – Guía completa | Freimel Jerez WebApp</title>
+
+  <meta name="description" content="Aprende CSS moderno con ejemplos reales: estilos, responsive, flexbox, grid y tips profesionales.">
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="css/blog.css">
+  <link rel="icon" href="../imagen/favicon.svg">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container flex between">
+    <a class="brand" href="../index.html">💻 Freimel Jerez WebApp</a>
+  </div>
+</header>
+
+<main class="container">
+<a href="index.html" class="back">← Volver al blog</a>
+
+<article class="post">
+
+<h1>CSS profesional – Aprende a diseñar como un pro</h1>
+<p class="muted">Por Freimel Jerez</p>
+
+<img src="../imagen/sitioweb.png" class="post-img" alt="CSS profesional">
+
+<p>
+CSS (Cascading Style Sheets) es lo que da color, forma y vida a un sitio web.
+Con HTML defines la estructura, pero con CSS le das estilo y lo vuelves atractivo.
+</p>
+
+<h2>¿Por qué es importante aprender CSS?</h2>
+<p>
+Porque el diseño influye en:
+</p>
+<ul>
+  <li>La confianza del usuario</li>
+  <li>La velocidad de lectura</li>
+  <li>La conversión (ventas/contactos)</li>
+</ul>
+
+<h2>Ejemplo básico de CSS</h2>
+
+<pre><code>h1 {
+  color: #0d6efd;
+  text-align: center;
+}
+
+p {
+  font-size: 18px;
+}
+</code></pre>
+
+<h2>Flexbox – Alineación moderna</h2>
+
+<pre><code>.container {
+  display: flex;
+  gap: 20px;
+}</code></pre>
+
+<h2>CSS Grid – Diseño profesional</h2>
+
+<pre><code>.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}</code></pre>
+
+<h2>Responsive design</h2>
+
+<pre><code>@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+</code></pre>
+
+<h2>Conclusión</h2>
+<p>
+CSS es lo que separa una web amateur de una web profesional.  
+Domínalo y tus proyectos subirán de nivel.
+</p>
+
+</article>
+</main>
+
+<footer class="footer"><div class="container">© <span id="year"></span></div></footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

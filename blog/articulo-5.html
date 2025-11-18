@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bases de datos SQL y NoSQL | Freimel Jerez WebApp</title>
+
+  <meta name="description" content="Guía completa para entender MySQL, PostgreSQL y MongoDB. Aprende cuándo usar SQL y cuándo usar NoSQL.">
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="css/blog.css">
+</head>
+
+<body>
+
+<header class="topbar"><a class="brand" href="../index.html">💻 Freimel Jerez WebApp</a></header>
+
+<main class="container">
+<a href="index.html" class="back">← Volver al blog</a>
+
+<article class="post">
+
+<h1>Bases de datos SQL y NoSQL – ¿Cuál elegir?</h1>
+<p class="muted">Por Freimel Jerez</p>
+
+<img src="../imagen/sitioweb.png" class="post-img" alt="Bases de datos SQL y NoSQL">
+
+<p>
+Las bases de datos son fundamentales en cualquier aplicación.  
+En este artículo aprenderás las diferencias entre SQL (relacionales) y NoSQL (documentales).
+</p>
+
+<h2>SQL – MySQL / PostgreSQL</h2>
+
+<p>Son estructuradas, ordenadas y usan tablas.</p>
+
+<h3>Ejemplo de tabla SQL</h3>
+
+<pre><code>CREATE TABLE usuarios (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  nombre VARCHAR(100),
+  email VARCHAR(100)
+);</code></pre>
+
+<h2>NoSQL – MongoDB</h2>
+
+<p>Son flexibles y guardan documentos JSON.</p>
+
+<pre><code>{
+  "nombre": "Freimel",
+  "email": "frei19jerez@gmail.com"
+}</code></pre>
+
+<h2>¿Cuándo usar SQL?</h2>
+<ul>
+  <li>Sistemas bancarios</li>
+  <li>E-commerce</li>
+  <li>Empresas grandes</li>
+</ul>
+
+<h2>¿Cuándo usar NoSQL?</h2>
+<ul>
+  <li>Apps rápidas</li>
+  <li>Chat en tiempo real</li>
+  <li>Sistemas con estructura cambiante</li>
+</ul>
+
+<h2>Conclusión</h2>
+<p>
+SQL es ideal para información estructurada.  
+NoSQL para velocidad y flexibilidad.  
+Como desarrollador Full Stack debes dominar ambos.
+</p>
+
+</article>
+</main>
+
+<footer class="footer"><span id="year"></span></footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

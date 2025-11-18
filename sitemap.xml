@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://freimeljerezwebapps.com/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://freimeljerezwebapps.com/acerca.html</loc>
+  </url>
+
+  <url>
+    <loc>https://freimeljerezwebapps.com/servicios.html</loc>
+  </url>
+
+  <url>
+    <loc>https://freimeljerezwebapps.com/proyectos.html</loc>
+  </url>
+
+  <url>
+    <loc>https://freimeljerezwebapps.com/contacto.html</loc>
+  </url>
+
+  <url>
+    <loc>https://freimeljerezwebapps.com/privacidad.html</loc>
+  </url>
+
+  <url>
+    <loc>https://freimeljerezwebapps.com/terminos.html</loc>
+  </url>
+
+  <url>
+    <loc>https://freimeljerezwebapps.com/blog/index.html</loc>
+  </url>
+
+</urlset>

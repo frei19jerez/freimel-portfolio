@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Blog de Freimel Jerez WebApp</title>
+    <link>https://freimeljerezwebapps.com/blog/</link>
+    <description>Artículos sobre desarrollo web, backend, bases de datos y más.</description>
+
+    <item>
+      <title>HTML desde cero</title>
+      <link>https://freimeljerezwebapps.com/blog/articulo-1.html</link>
+    </item>
+
+    <item>
+      <title>CSS profesional</title>
+      <link>https://freimeljerezwebapps.com/blog/articulo-2.html</link>
+    </item>
+
+    <item>
+      <title>JavaScript moderno</title>
+      <link>https://freimeljerezwebapps.com/blog/articulo-3.html</link>
+    </item>
+
+    <item>
+      <title>Backend Node.js + Sails.js</title>
+      <link>https://freimeljerezwebapps.com/blog/articulo-4.html</link>
+    </item>
+
+    <item>
+      <title>Bases de datos SQL vs NoSQL</title>
+      <link>https://freimeljerezwebapps.com/blog/articulo-5.html</link>
+    </item>
+
+  </channel>
+</rss>

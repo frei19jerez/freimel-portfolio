@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JavaScript moderno – Guía completa | Freimel Jerez WebApp</title>
+
+  <meta name="description" content="Variables, funciones, arrays, DOM, eventos, fetch, JSON y más. Aprende JavaScript paso a paso.">
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="css/blog.css">
+  <link rel="icon" href="../imagen/favicon.svg">
+</head>
+<body>
+
+<header class="topbar"><a class="brand" href="../index.html">💻 Freimel Jerez WebApp</a></header>
+
+<main class="container">
+<a href="index.html" class="back">← Volver al blog</a>
+
+<article class="post">
+
+<h1>JavaScript moderno ES6+ – Aprende a programar la web</h1>
+<p class="muted">Por Freimel Jerez</p>
+
+<img src="../imagen/sitioweb.png" class="post-img" alt="JavaScript moderno">
+
+<p>
+JavaScript es el lenguaje que vuelve interactiva una página web.  
+Gracias a JS puedes crear animaciones, formularios, peticiones API, paneles, apps y mucho más.
+</p>
+
+<h2>Variables modernas</h2>
+
+<pre><code>let nombre = "Freimel";
+const edad = 26;</code></pre>
+
+<h2>Funciones</h2>
+
+<pre><code>function sumar(a, b) {
+  return a + b;
+}</code></pre>
+
+<h2>Funciones flecha ES6+</h2>
+
+<pre><code>const saludar = nombre => {
+  console.log("Hola " + nombre);
+};</code></pre>
+
+<h2>Manipulación del DOM</h2>
+
+<pre><code>document.getElementById("btn").addEventListener("click", () => {
+  alert("Clic detectado");
+});
+</code></pre>
+
+<h2>Peticiones a APIs</h2>
+
+<pre><code>fetch("https://api.example.com/data")
+  .then(res => res.json())
+  .then(data => console.log(data));</code></pre>
+
+<h2>Conclusión</h2>
+<p>
+JavaScript es el corazón de toda aplicación web moderna.  
+Dominarlo te permitirá crear desde un botón simple hasta sistemas complejos.
+</p>
+
+</article>
+</main>
+
+<footer class="footer"><span id="year"></span></footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

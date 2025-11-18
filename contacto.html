@@ -3,20 +3,40 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contacto | Freimel Jerez</title>
-  <meta name="description" content="Contácta a Freimel Jerez WebApp para tu proyecto web.">
+
+  <!-- Conexión con Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-4933331274738462">
+
+  <title>Contacto | Freimel Jerez WebApp</title>
+  <meta name="description" content="Contacta a Freimel Jerez WebApp para desarrollar tu sitio web profesional, optimización SEO o proyecto digital. Respuesta rápida.">
+
+  <!-- SEO -->
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://freimeljerezwebapps.com/contacto.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contacto | Freimel Jerez WebApp">
+  <meta property="og:description" content="Comunícate con Freimel Jerez para tu proyecto web profesional.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://freimeljerezwebapps.com/contacto.html">
+  <meta property="og:image" content="imagen/sitioweb.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="imagen/favicon.svg" type="image/svg+xml">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
+
   <!-- ===== HEADER ===== -->
   <header class="topbar">
     <div class="container flex between center-v">
       <a class="brand" href="index.html">💻 <span>Freimel Jerez WebApp</span></a>
 
-      <!-- Botón hamburguesa -->
       <button class="hamburger" aria-label="Menú">&#9776;</button>
 
-      <!-- Navegación -->
       <nav class="nav" aria-label="Principal">
         <a href="index.html">Inicio</a>
         <a href="proyectos.html">Proyectos</a>
@@ -32,9 +52,10 @@
     <h1>Hablemos de tu proyecto</h1>
 
     <form id="contactForm" class="form" novalidate>
+
       <!-- Honeypot anti-spam -->
       <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
-        <label>Tu empresa 
+        <label>Tu empresa
           <input type="text" name="empresa" tabindex="-1" autocomplete="off">
         </label>
       </div>
@@ -45,18 +66,16 @@
         </label>
 
         <label for="correo">Correo
-          <input id="correo" name="correo" type="email" required placeholder="tu@email.com"
-                 autocomplete="email" inputmode="email" />
+          <input id="correo" name="correo" type="email" required placeholder="tu@email.com" autocomplete="email" />
         </label>
 
         <label for="telefono">WhatsApp
-          <input id="telefono" name="telefono" type="tel" placeholder="+57 320 678 0200"
-                 inputmode="tel" autocomplete="tel" />
+          <input id="telefono" name="telefono" type="tel" placeholder="+57 320 678 0200" autocomplete="tel" />
           <small class="muted">Formato internacional recomendado (+57 …).</small>
         </label>
 
         <label for="servicio">Servicio de interés
-          <select id="servicio" name="servicio" required autocomplete="off">
+          <select id="servicio" name="servicio" required>
             <option value="">Selecciona…</option>
             <option>Web Básica</option>
             <option>Web Profesional</option>
@@ -66,42 +85,81 @@
       </div>
 
       <label for="mensaje">Cuéntame tu idea
-        <textarea id="mensaje" name="mensaje" rows="6" required
-                  placeholder="Describe brevemente tu proyecto…"></textarea>
+        <textarea id="mensaje" name="mensaje" rows="6" required placeholder="Describe brevemente tu proyecto…"></textarea>
       </label>
 
       <label class="check">
         <input id="acepto" type="checkbox" required />
-        Acepto la <a class="link" href="privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a>
+        Acepto la <a class="link" href="privacidad.html" target="_blank">Política de Privacidad</a>
       </label>
 
-      <div class="flex gap" style="margin-top:6px">
+      <div class="flex gap" style="margin-top:6px;">
         <button class="btn" type="submit">Enviar</button>
-        <a class="btn ghost" id="whatsappLink" href="#" target="_blank" rel="noopener"
-           aria-disabled="true" title="Completa el formulario para enviar por WhatsApp">WhatsApp</a>
+        <a class="btn ghost" id="whatsappLink" href="#" target="_blank" rel="noopener">WhatsApp</a>
       </div>
 
       <noscript>
         <p class="muted" style="margin-top:10px">
           Si tienes JavaScript desactivado, escríbeme a
-          <a class="link" href="mailto:frei19jerez@gmail.com">frei19jerez@gmail.com</a>.
+          <a href="mailto:frei19jerez@gmail.com">frei19jerez@gmail.com</a>.
         </p>
       </noscript>
     </form>
   </main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container">© <span id="year"></span> Freimel Jerez</div>
-  </footer>
-
-  <!-- Banner de cookies -->
+  <!-- COOKIES -->
   <div id="cookieBanner" class="cookie-banner" style="display:none">
     <p>Este sitio usa cookies para mejorar la experiencia.
       <a class="link" href="privacidad.html">Saber más</a>
     </p>
     <button id="acceptCookies" class="btn">Aceptar</button>
   </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container grid-3">
+      <div>
+        <h3>💼 Freimel Jerez WebApp</h3>
+        <p class="muted">Desarrollador Web — Frontend & Backend</p>
+        <p class="secure">🔒 Sitio seguro con SSL — <span>https</span></p>
+      </div>
+
+      <nav class="foot-nav">
+        <a href="proyectos.html">Proyectos</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="acerca.html">Acerca</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+
+      <div class="foot-contact">
+        <p>📧 <a href="mailto:frei19jerez@gmail.com">frei19jerez@gmail.com</a></p>
+        <p>📱 <a href="tel:+573206780200">+57 320 678 0200</a></p>
+        <p>🌐 <a href="https://freimeljerezwebapps.com" target="_blank">freimeljerezwebapps.com</a></p>
+        <p>© <span id="year"></span> <strong>Freimel Jerez WebApp</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JSON-LD SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contacto Freimel Jerez",
+    "url": "https://freimeljerezwebapps.com/contacto.html",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+573206780200",
+      "contactType": "customer service",
+      "email": "frei19jerez@gmail.com"
+    }
+  }
+  </script>
+
+  <!-- JS -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
   <script src="js/main.js" defer></script>
 </body>

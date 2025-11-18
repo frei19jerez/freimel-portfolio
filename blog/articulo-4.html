@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Backend con Node.js y Sails.js | Freimel Jerez WebApp</title>
+
+  <meta name="description" content="Aprende backend moderno con Node.js y Sails.js: rutas, controladores, modelos, APIs y base de datos.">
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="css/blog.css">
+</head>
+
+<body>
+
+<header class="topbar"><a class="brand" href="../index.html">💻 Freimel Jerez WebApp</a></header>
+
+<main class="container">
+<a href="index.html" class="back">← Volver al blog</a>
+
+<article class="post">
+
+<h1>Backend con Node.js y Sails.js – APIs reales</h1>
+<p class="muted">Por Freimel Jerez</p>
+
+<img src="../imagen/sitioweb.png" class="post-img" alt="Backend Sails.js">
+
+<p>
+Node.js permite ejecutar JavaScript en el servidor.  
+Sails.js es un framework MVC poderoso para crear APIs reales, sockets, autenticación y paneles administrativos.
+</p>
+
+<h2>Proyecto Sails.js</h2>
+
+<h3>Crear proyecto</h3>
+
+<pre><code>npm install -g sails
+sails new api-freimel</code></pre>
+
+<h3>Levantar el servidor</h3>
+
+<pre><code>cd api-freimel
+sails lift</code></pre>
+
+<h2>Rutas + Controladores</h2>
+
+<pre><code>// api/controllers/UsuarioController.js
+module.exports = {
+  saludar: function (req, res) {
+    return res.json({ mensaje: "Hola desde Sails.js" });
+  }
+};</code></pre>
+
+Ruta:
+
+<pre><code>"GET /saludar": "UsuarioController.saludar"</code></pre>
+
+<h2>Modelos con base de datos</h2>
+
+<pre><code>// api/models/Usuario.js
+module.exports = {
+  attributes: {
+    nombre: { type: "string", required: true },
+    correo: { type: "string", unique: true }
+  }
+};
+</code></pre>
+
+<h2>Conclusión</h2>
+<p>
+Con Sails.js puedes crear APIs completas, sockets en tiempo real, login, dashboards y sistemas profesionales.
+</p>
+
+</article>
+</main>
+
+<footer class="footer"><span id="year"></span></footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
