@@ -1,13 +1,11 @@
 {
-  "name": "Freimel Jerez WebApps",
-  "short_name": "FJ WebApps",
-  "description": "Portafolio profesional, blog, servicios y herramientas desarrolladas por Freimel Jerez.",
-  "start_url": "index.html",
-  "scope": "/",
+  "name": "Freimel Jerez WebApp",
+  "short_name": "FJ WebApp",
+  "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#0d0d0d",
-  "theme_color": "#0d0d0d",
-  "orientation": "portrait-primary",
+  "background_color": "#0f0f0f",
+  "theme_color": "#0f0f0f",
+
   "icons": [
     {
       "src": "imagen/icons/icon-192.png",
@@ -17,11 +15,6 @@
     {
       "src": "imagen/icons/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "imagen/icons/icon-1024.png",
-      "sizes": "1024x1024",
       "type": "image/png"
     }
   ]
