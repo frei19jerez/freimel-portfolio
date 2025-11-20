@@ -1,161 +1,129 @@
 // ======================================================
 // Freimel Jerez WebApp — JavaScript Global
-// Archivo: /js/main.js
-// Funciones: menú responsive, WhatsApp, año dinámico,
-// toggle COP/USD, instalación PWA, banner cookies
 // ======================================================
 
-// ===== Espera a que el DOM esté listo =====
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ===============================
-  // 1️⃣ MENÚ HAMBURGUESA RESPONSIVE
-  // ===============================
+  // =========================
+  // 1️⃣ MENÚ RESPONSIVE
+  // =========================
   const hamburger = document.querySelector(".hamburger");
   const nav = document.querySelector(".nav");
 
   if (hamburger && nav) {
     hamburger.addEventListener("click", () => {
-      const isActive = nav.classList.toggle("active");
-      hamburger.setAttribute("aria-expanded", isActive ? "true" : "false");
+      const open = nav.classList.toggle("active");
+      hamburger.setAttribute("aria-expanded", open);
     });
 
     nav.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         nav.classList.remove("active");
-        hamburger.setAttribute("aria-expanded", "false");
+        hamburger.setAttribute("aria-expanded", false);
       });
     });
   }
 
-  // ===============================
-  // 2️⃣ AÑO DINÁMICO EN EL FOOTER
-  // ===============================
+  // =========================
+  // 2️⃣ AÑO DINÁMICO
+  // =========================
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
-  // ===============================
-  // 3️⃣ FORMULARIO → WHATSAPP
-  // ===============================
+  // =========================
+  // 3️⃣ FORM → WHATSAPP
+  // =========================
   const form = document.getElementById("contactForm");
   if (form) {
     const waBtn = document.getElementById("whatsappLink");
     const RAW_NUMBER = "573206780200";
 
-    const isEmail = (s) => /^\S+@\S+\.\S+$/.test(String(s || "").trim());
+    const isEmail = (s) => /^\S+@\S+\.\S+$/.test(s);
     const normalizePhone = (s) => {
-      const d = String(s || "").replace(/\D+/g, "");
+      const d = String(s).replace(/\D+/g, "");
       return d ? (d.startsWith("57") ? d : `57${d}`) : "";
     };
 
-    const buildWAHref = () => {
+    const buildHref = () => {
       const fd = new FormData(form);
-      const nombre   = (fd.get("nombre")   || "").trim();
-      const correo   = (fd.get("correo")   || "").trim();
+      const nombre   = fd.get("nombre")?.trim();
+      const correo   = fd.get("correo")?.trim();
       const telefono = normalizePhone(fd.get("telefono"));
-      const servicio = (fd.get("servicio") || "General").trim();
-      const mensaje  = (fd.get("mensaje")  || "").trim();
+      const servicio = fd.get("servicio")?.trim() || "General";
+      const mensaje  = fd.get("mensaje")?.trim();
 
-      const texto = encodeURIComponent(
-        `Hola, soy ${nombre}. Correo: ${correo}. Tel: ${telefono || "N/A"}. ` +
-        `Servicio: ${servicio}. Mensaje: ${mensaje}`
+      return `https://wa.me/${RAW_NUMBER}?text=` +
+        encodeURIComponent(
+          `Hola, soy ${nombre}. Correo: ${correo}. Tel: ${telefono}. ` +
+          `Servicio: ${servicio}. Mensaje: ${mensaje}`
+        );
+    };
+
+    const requiredOk = () => {
+      return (
+        form.nombre.value.trim() &&
+        isEmail(form.correo.value.trim()) &&
+        form.mensaje.value.trim()
       );
-
-      return `https://wa.me/${RAW_NUMBER}?text=${texto}`;
     };
 
-    const isReady = () => {
-      const nombre  = (form.nombre?.value || "").trim();
-      const correo  = (form.correo?.value || "").trim();
-      const mensaje = (form.mensaje?.value || "").trim();
-      return !!(nombre && isEmail(correo) && mensaje);
-    };
+    const update = () => {
+      if (!waBtn) return;
+      waBtn.href = buildHref();
 
-    let t;
-    const updateWA = () => {
-      clearTimeout(t);
-      t = setTimeout(() => {
-        if (!waBtn) return;
-        waBtn.href = buildWAHref();
-
-        const ready = isReady();
-        waBtn.setAttribute("aria-disabled", String(!ready));
-        waBtn.style.opacity = ready ? "1" : "0.6";
-        waBtn.style.pointerEvents = ready ? "auto" : "none";
-        waBtn.title = ready
-          ? "Abrir WhatsApp"
-          : "Completa nombre, correo y mensaje";
-      }, 150);
-    };
-
-    form.addEventListener("input", updateWA);
-    form.addEventListener("change", updateWA);
-    updateWA();
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (!isReady()) return alert("Por favor completa nombre, correo válido y mensaje.");
-
-      const submitBtn = form.querySelector('button[type="submit"]');
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Abriendo WhatsApp…";
+      if (requiredOk()) {
+        waBtn.style.opacity = "1";
+        waBtn.style.pointerEvents = "auto";
+        waBtn.removeAttribute("aria-disabled");
+      } else {
+        waBtn.style.opacity = "0.6";
+        waBtn.style.pointerEvents = "none";
+        waBtn.setAttribute("aria-disabled", "true");
       }
+    };
 
-      const win = window.open(waBtn.href, "_blank");
-      if (!win) window.location.href = waBtn.href;
+    form.addEventListener("input", update);
+    update();
 
-      setTimeout(() => {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Enviar";
-        }
-      }, 1500);
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      if (!requiredOk()) return alert("Completa los datos obligatorios.");
+
+      window.open(waBtn.href, "_blank");
     });
   }
 
-  // ===============================
-  // 4️⃣ TOGGLE DE MONEDA (COP / USD)
-  // ===============================
+  // =========================
+  // 4️⃣ TOGGLE MONEDA
+  // =========================
   (() => {
     const buttons = document.querySelectorAll(".price-toggle .toggle-btn");
     if (!buttons.length) return;
 
-    const amountsCOP = document.querySelectorAll(".amount[data-cop]");
-    const amountsUSD = document.querySelectorAll(".amount[data-usd]");
+    const cop = document.querySelectorAll("[data-cop]");
+    const usd = document.querySelectorAll("[data-usd]");
 
-    const setCurrency = (curr) => {
-      try {
-        localStorage.setItem("currencyPref", curr);
-      } catch (e) {}
-
-      buttons.forEach(b =>
-        b.classList.toggle("active", b.dataset.currency === curr)
-      );
-
-      const showCOP = curr === "COP";
-      amountsCOP.forEach(el => el.classList.toggle("hidden", !showCOP));
-      amountsUSD.forEach(el => el.classList.toggle("hidden", showCOP));
+    const setCurr = (c) => {
+      localStorage.setItem("currencyPref", c);
+      buttons.forEach(b => b.classList.toggle("active", b.dataset.currency === c));
+      cop.forEach(e => e.classList.toggle("hidden", c !== "COP"));
+      usd.forEach(e => e.classList.toggle("hidden", c !== "USD"));
     };
 
-    let pref = "COP";
-    try {
-      pref = localStorage.getItem("currencyPref") || "COP";
-    } catch (e) {}
+    const pref = localStorage.getItem("currencyPref") || "COP";
+    setCurr(pref);
 
-    setCurrency(pref);
-
-    buttons.forEach(btn =>
-      btn.addEventListener("click", () => setCurrency(btn.dataset.currency))
-    );
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => setCurr(btn.dataset.currency));
+    });
   })();
 
-}); // FIN DOMContentLoaded
+}); // DOMContentLoaded END
 
 
 
 // ======================================================
-// 5️⃣ INSTALACIÓN DE LA PWA (BOTÓN "INSTALAR APP")
+// 5️⃣ INSTALACIÓN DE LA PWA (Botón "Instalar")
 // ======================================================
 
 let deferredPrompt;
@@ -165,45 +133,49 @@ window.addEventListener("beforeinstallprompt", (e) => {
   e.preventDefault();
   deferredPrompt = e;
 
-  if (btnInstalar) btnInstalar.style.display = "inline-block";
+  if (btnInstalar) {
+    btnInstalar.style.display = "inline-block";
+  }
+});
 
-  btnInstalar.onclick = async () => {
+if (btnInstalar) {
+  btnInstalar.addEventListener("click", async () => {
     btnInstalar.style.display = "none";
 
     deferredPrompt.prompt();
-    const resultado = await deferredPrompt.userChoice;
-    console.log("Instalación:", resultado.outcome);
+    const result = await deferredPrompt.userChoice;
+    console.log("Resultado instalación:", result.outcome);
 
     deferredPrompt = null;
-  };
-});
+  });
+}
 
 window.addEventListener("appinstalled", () => {
-  console.log("🔥 La app Freimel Jerez WebApp fue instalada");
+  console.log("🔥 PWA instalada correctamente");
   if (btnInstalar) btnInstalar.style.display = "none";
 });
 
 
 // ======================================================
-// 6️⃣ BANNER DE COOKIES (Aceptar / Rechazar)
+// 6️⃣ COOKIES BANNER
 // ======================================================
 (() => {
-  const banner  = document.getElementById("cookies-banner");
-  const btnAccept = document.getElementById("accept-cookies");
-  const btnReject = document.getElementById("reject-cookies");
+  const banner = document.getElementById("cookies-banner");
+  const accept = document.getElementById("accept-cookies");
+  const reject = document.getElementById("reject-cookies");
 
-  if (!banner || !btnAccept || !btnReject) return;
+  if (!banner || !accept || !reject) return;
 
   if (!localStorage.getItem("cookies-choice")) {
     banner.style.display = "flex";
   }
 
-  btnAccept.addEventListener("click", () => {
+  accept.addEventListener("click", () => {
     localStorage.setItem("cookies-choice", "accepted");
     banner.style.display = "none";
   });
 
-  btnReject.addEventListener("click", () => {
+  reject.addEventListener("click", () => {
     localStorage.setItem("cookies-choice", "rejected");
     banner.style.display = "none";
   });
