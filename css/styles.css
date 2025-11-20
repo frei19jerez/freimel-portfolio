@@ -309,3 +309,50 @@ img { max-width: 100%; display: block; border-radius: 8px; }
   background: #72dcff;
   transform: scale(1.05);
 }
+
+/* === BANNER DE COOKIES === */
+.cookies-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #0f0f0f;
+  color: #fff;
+  padding: 1.3rem;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-top: 2px solid #00c853;
+  z-index: 99999;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+.cookies-banner a {
+  color: #00e676;
+  text-decoration: underline;
+}
+
+.cookies-buttons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.cookies-banner .btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cookies-banner .accept {
+  background: #00c853;
+  color: #fff;
+}
+
+.cookies-banner .reject {
+  background: #333;
+  color: #fff;
+}

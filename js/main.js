@@ -1,7 +1,8 @@
 // ======================================================
 // Freimel Jerez WebApp — JavaScript Global
 // Archivo: /js/main.js
-// Funciones: menú responsive, WhatsApp, año dinámico, moneda COP/USD, instalación PWA
+// Funciones: menú responsive, WhatsApp, año dinámico,
+// toggle COP/USD, instalación PWA, banner cookies
 // ======================================================
 
 // ===== Espera a que el DOM esté listo =====
@@ -19,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
       hamburger.setAttribute("aria-expanded", isActive ? "true" : "false");
     });
 
-    // Cierra el menú al hacer clic en un enlace (mejora UX móvil)
     nav.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         nav.classList.remove("active");
@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const RAW_NUMBER = "573206780200";
 
     const isEmail = (s) => /^\S+@\S+\.\S+$/.test(String(s || "").trim());
-
     const normalizePhone = (s) => {
       const d = String(s || "").replace(/\D+/g, "");
       return d ? (d.startsWith("57") ? d : `57${d}`) : "";
@@ -78,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
       t = setTimeout(() => {
         if (!waBtn) return;
         waBtn.href = buildWAHref();
+
         const ready = isReady();
         waBtn.setAttribute("aria-disabled", String(!ready));
         waBtn.style.opacity = ready ? "1" : "0.6";
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         waBtn.title = ready
           ? "Abrir WhatsApp"
           : "Completa nombre, correo y mensaje";
-      }, 120);
+      }, 150);
     };
 
     form.addEventListener("input", updateWA);
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   })();
 
-}); // FIN DEL DOMContentLoaded
+}); // FIN DOMContentLoaded
 
 
 
@@ -161,7 +161,6 @@ document.addEventListener("DOMContentLoaded", () => {
 let deferredPrompt;
 const btnInstalar = document.getElementById("btnInstalar");
 
-// Detecta si la app puede instalarse
 window.addEventListener("beforeinstallprompt", (e) => {
   e.preventDefault();
   deferredPrompt = e;
@@ -172,7 +171,6 @@ window.addEventListener("beforeinstallprompt", (e) => {
     btnInstalar.style.display = "none";
 
     deferredPrompt.prompt();
-
     const resultado = await deferredPrompt.userChoice;
     console.log("Instalación:", resultado.outcome);
 
@@ -180,8 +178,33 @@ window.addEventListener("beforeinstallprompt", (e) => {
   };
 });
 
-// Se ejecuta cuando la app fue instalada
 window.addEventListener("appinstalled", () => {
-  console.log("🔥 La app Freimel Jerez WebApp fue instalada correctamente");
+  console.log("🔥 La app Freimel Jerez WebApp fue instalada");
   if (btnInstalar) btnInstalar.style.display = "none";
 });
+
+
+// ======================================================
+// 6️⃣ BANNER DE COOKIES (Aceptar / Rechazar)
+// ======================================================
+(() => {
+  const banner  = document.getElementById("cookies-banner");
+  const btnAccept = document.getElementById("accept-cookies");
+  const btnReject = document.getElementById("reject-cookies");
+
+  if (!banner || !btnAccept || !btnReject) return;
+
+  if (!localStorage.getItem("cookies-choice")) {
+    banner.style.display = "flex";
+  }
+
+  btnAccept.addEventListener("click", () => {
+    localStorage.setItem("cookies-choice", "accepted");
+    banner.style.display = "none";
+  });
+
+  btnReject.addEventListener("click", () => {
+    localStorage.setItem("cookies-choice", "rejected");
+    banner.style.display = "none";
+  });
+})();

@@ -4,119 +4,214 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Conexión necesaria para AdSense -->
-  <meta name="google-adsense-account" content="ca-pub-4933331274738462">
+  <!-- AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-4933331274738462" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+    crossorigin="anonymous"></script>
 
   <title>Acerca de | Freimel Jerez WebApp</title>
-  <meta name="description" content="Conoce a Freimel Jerez: desarrollador web colombiano especializado en Frontend, Backend, SEO, rendimiento y soluciones digitales.">
+  <meta name="description"
+    content="Conoce la historia real de Freimel Jerez, desarrollador web colombiano. Su camino, formación, experiencias, valores, estudio autodidacta y crecimiento paso a paso en el mundo del desarrollo web.">
   <meta name="author" content="Freimel Jerez">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#0d0d0d">
   <link rel="canonical" href="https://freimeljerezwebapps.com/acerca.html">
+  <meta name="theme-color" content="#0d0d0d">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Acerca de Freimel Jerez | Desarrollador Web Full Stack">
-  <meta property="og:description" content="Desarrollador web Frontend y Backend con experiencia en Node.js, Sails.js, MySQL, PostgreSQL y optimización web profesional.">
-  <meta property="og:type" content="website">
+  <!-- OG -->
+  <meta property="og:title" content="Acerca de Freimel Jerez">
+  <meta property="og:description"
+    content="Historia, trayectoria y formación de Freimel Jerez: desarrollador web Full Stack colombiano.">
   <meta property="og:url" content="https://freimeljerezwebapps.com/acerca.html">
   <meta property="og:image" content="imagen/sitioweb.png">
+  <meta property="og:type" content="profile">
 
-  <!-- Favicon -->
-  <link rel="icon" href="imagen/favicon.svg" type="image/svg+xml">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
+
+  <link rel="icon" href="imagen/favicon.svg" type="image/svg+xml" />
 </head>
 
 <body>
 
   <!-- HEADER -->
   <header class="topbar">
-    <div class="container flex between center-v">
+    <div class="container d-flex justify-content-between align-items-center">
       <a class="brand" href="index.html">💻 <span>Freimel Jerez WebApp</span></a>
 
       <button class="hamburger" aria-label="Menú">&#9776;</button>
 
-      <nav class="nav" aria-label="Menú principal">
+      <nav class="nav">
         <a href="index.html">Inicio</a>
         <a href="proyectos.html">Proyectos</a>
         <a href="servicios.html">Servicios</a>
-        <a class="active" href="acerca.html" aria-current="page">Acerca</a>
+        <a class="active" href="acerca.html">Acerca</a>
         <a class="btn" href="contacto.html">Contacto</a>
       </nav>
     </div>
   </header>
 
+  <!-- BREADCRUMB -->
+  <nav class="container mt-3" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Acerca de mí</li>
+    </ol>
+  </nav>
+
   <!-- MAIN -->
-  <main class="container">
-    <h1>Hola, soy Freimel 👋</h1>
+  <main class="container my-5">
+
+    <h1 class="mb-4">Acerca de mí</h1>
+
     <p>
-      Soy <strong>Freimel Jerez</strong>, desarrollador web colombiano especializado en 
-      <b>Frontend</b>, <b>Backend</b> y <b>bases de datos</b>.  
-      Me dedico a crear soluciones digitales completas: páginas web rápidas y profesionales,
-      aplicaciones web personalizadas, paneles administrativos y sistemas modernos de gestión.
+      Mi nombre es <strong>Freimel Jerez</strong>, colombiano y apasionado por el desarrollo web.  
+      Esta página no está hecha para venderte algo ni para presumir logros, sino para contarte mi historia
+      de manera honesta: cómo empecé, por qué elegí este camino y qué significa para mí trabajar con tecnología.
     </p>
 
-    <div class="cards">
+    <p>
+      Siempre he creído que la vida es un aprendizaje constante.  
+      No nací sabiendo programar, ni tuve un camino perfecto o lleno de facilidades.  
+      Lo que sí tuve fue curiosidad, ganas de aprender y la mentalidad de mejorar cada día un poco más.
+    </p>
 
-      <article class="card">
-        <h3>🚀 Stack Tecnológico</h3>
-        <p>
-          HTML5, CSS3, JavaScript (ES6+), Node.js, Sails.js, MySQL, PostgreSQL y MongoDB.  
-          Trabajo con <b>APIs</b>, <b>Chart.js</b>, integraciones externas y desarrollo de <b>PWA</b>
-          (aplicaciones web instalables).
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>💡 Filosofía de trabajo</h3>
-        <p>
-          Mi enfoque se basa en tres pilares: <b>claridad</b>, <b>rendimiento</b> y 
-          <b>funcionalidad real</b>.  
-          Cada sitio o aplicación que desarrollo está pensado para ser rápido, útil y escalable.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>🎯 Objetivo</h3>
-        <p>
-          Ayudo a <strong>negocios, marcas y empresas</strong> a fortalecer su presencia digital mediante
-          herramientas modernas, optimización SEO y soluciones web personalizadas.
-        </p>
-      </article>
-
-      <article class="card">
-        <h3>💻 Proyectos destacados</h3>
-        <ul>
-          <li>🌐 <a href="https://freimeljerezwebapps.com" target="_blank">Portafolio Profesional</a> — Sitios web, optimización y desarrollo a medida.</li>
-          <li>📘 Paneles administrativos y sistemas internos para empresas.</li>
-          <li>⚙ Herramientas web personalizadas para procesos digitales.</li>
-          <li>📊 Aplicaciones con visualización de datos en tiempo real.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>📞 Contacto Directo</h3>
-        <p>
-          Si deseas contratarme o colaborar, puedes escribirme directamente:  
-          <br><strong>Email:</strong> <a href="mailto:frei19jerez@gmail.com">frei19jerez@gmail.com</a>  
-          <br><strong>WhatsApp:</strong> <a href="https://wa.me/573206780200" target="_blank" rel="noopener">+57 320 678 0200</a>
-        </p>
-      </article>
-
+    <!-- ADS -->
+    <div class="my-4 text-center">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4933331274738462"
+        data-ad-slot="4606183476" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </div>
+
+    <h2 class="mt-5">Cómo empezó todo</h2>
+
+    <p>
+      Mi inicio en la tecnología no fue en una gran universidad ni en una empresa reconocida.
+      Empezó de manera sencilla: mirando páginas web, preguntándome cómo funcionaban y queriendo entender
+      cómo una idea podía convertirse en algo que miles de personas usan a diario.
+    </p>
+
+    <p>
+      Mis primeras líneas de código fueron tan básicas como cambiar el color de un texto o mover un botón.
+      Recuerdo que pasaba horas probando, rompiendo cosas, arreglando otras, buscando tutoriales, leyendo documentación
+      y, sobre todo, practicando.  
+      Ahí descubrí algo importante: <strong>si puedes imaginarlo, puedes construirlo</strong>.
+    </p>
+
+    <h2 class="mt-5">Mi formación y estudios</h2>
+
+    <p>
+      Decidí estudiar programación de manera seria y formal.  
+      Empecé mi proceso como estudiante virtual en <strong>Next_U</strong>, donde completé cursos estructurados que
+      me permitieron entender el desarrollo web desde la base hasta niveles avanzados.
+    </p>
+
+    <p>Entre mis certificaciones, completé:</p>
+
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3 avanzado (Flexbox, Grid, responsive)</li>
+      <li>Fundamentos de JavaScript</li>
+      <li>JavaScript ES6+ profesional</li>
+      <li>Bootstrap 5</li>
+      <li>Bases de datos relacionales: MySQL y PostgreSQL</li>
+      <li>Bases de datos no relacionales: MongoDB</li>
+      <li>Web con base de datos (conexión backend – frontend)</li>
+      <li>Curso intensivo de Frontend</li>
+      <li>Guía de carrera para desarrolladores web</li>
+    </ul>
+
+    <p>
+      No fueron diplomas de adorno.  
+      Cada curso lo estudié con disciplina, tomando notas, haciendo proyectos y fallando muchas veces hasta entender de verdad.
+    </p>
+
+    <h2 class="mt-5">Aprendiendo haciendo</h2>
+
+    <p>
+      El conocimiento técnico solo se vuelve real cuando lo usas.  
+      Por eso comencé a crear mis propios proyectos: páginas para negocios, herramientas internas, módulos web,
+      pequeños sistemas, paneles y proyectos más avanzados.
+    </p>
+
+    <p>
+      He cometido errores… muchos.  
+      Pero cada error me ha enseñado algo.  
+      Cada error me ha hecho mejor desarrollador.
+    </p>
+
+    <h2 class="mt-5">Mi stack tecnológico</h2>
+
+    <h3>Frontend</h3>
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>Bootstrap 5</li>
+      <li>JavaScript ES6+</li>
+    </ul>
+
+    <h3>Backend</h3>
+    <ul>
+      <li>Node.js</li>
+      <li>Sails.js</li>
+    </ul>
+
+    <h3>Bases de Datos</h3>
+    <ul>
+      <li>MySQL</li>
+      <li>PostgreSQL</li>
+      <li>MongoDB</li>
+      <li>SQL</li>
+    </ul>
+
+    <h2 class="mt-5">Mi forma de trabajar</h2>
+
+    <p>
+      Procuro que todo lo que hago tenga tres cosas:  
+      <strong>claridad, estructura y honestidad.</strong>
+    </p>
+
+    <p>
+      Me gusta escribir código entendible, pensar antes de programar,
+      y construir cosas que realmente funcionen y puedan mantenerse en el tiempo.
+    </p>
+
+    <h2 class="mt-5">Quién soy fuera del código</h2>
+
+    <p>
+      Además de la tecnología, soy una persona tranquila, curiosa y disciplinada.  
+      Me gusta aprender, mejorar y avanzar poco a poco.  
+      La programación ha sido un camino que me ha enseñado paciencia, lógica, creatividad y constancia.
+    </p>
+
+    <p>
+      También me gusta ayudar a otros cuando aprenden programación, y compartir lo que sé.
+    </p>
+
+    <h2 class="mt-5">Contacto</h2>
+
+    <p>Si deseas hablar conmigo, aquí estoy siempre disponible:</p>
+
+    <p><strong>Email:</strong> <a href="mailto:frei19jerez@gmail.com">frei19jerez@gmail.com</a></p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/573206780200" target="_blank">+57 320 678 0200</a></p>
+
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container grid-3">
+  <footer class="footer mt-5 py-4">
+    <div class="container d-grid gap-4" style="grid-template-columns: repeat(auto-fit, minmax(200px,1fr));">
+
       <div>
         <h3>💼 Freimel Jerez WebApp</h3>
         <p class="muted">Desarrollador Web — Frontend & Backend</p>
-        <p class="secure">🔒 Sitio seguro con SSL — <span>https</span></p>
+        <p class="secure">🔒 Sitio seguro con SSL — https</p>
       </div>
 
-      <nav class="foot-nav">
+      <nav class="foot-nav d-flex flex-column">
         <a href="/privacidad.html">Privacidad</a>
         <a href="/terminos.html">Términos</a>
         <a href="/acerca.html">Acerca</a>
@@ -129,6 +224,7 @@
         <p>🌐 <a href="https://freimeljerezwebapps.com" target="_blank">freimeljerezwebapps.com</a></p>
         <p>© <span id="year"></span> <strong>Freimel Jerez WebApp</strong></p>
       </div>
+
     </div>
   </footer>
 
@@ -138,18 +234,12 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Freimel Jerez",
-    "jobTitle": "Desarrollador Web Full Stack",
+    "jobTitle": "Desarrollador Web",
     "url": "https://freimeljerezwebapps.com",
     "email": "mailto:frei19jerez@gmail.com",
     "telephone": "+573206780200",
-    "knowsAbout": [
-      "Desarrollo Web",
-      "Frontend",
-      "Backend",
-      "Bases de datos",
-      "SEO",
-      "Aplicaciones Web"
-    ]
+    "sameAs": [],
+    "knowsAbout": ["Frontend","Backend","JavaScript","Sails.js","Bases de Datos"]
   }
   </script>
 
@@ -157,6 +247,8 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js" defer></script>
+
 </body>
 </html>
