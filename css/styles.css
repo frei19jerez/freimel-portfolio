@@ -293,3 +293,19 @@ img { max-width: 100%; display: block; border-radius: 8px; }
   .nav.active { display: flex; }
   .nav a { text-align: right; }
 }
+
+
+.install-btn {
+  background: #4ecbff;
+  color: #000;
+  font-weight: bold;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.install-btn:hover {
+  background: #72dcff;
+  transform: scale(1.05);
+}

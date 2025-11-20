@@ -1,7 +1,7 @@
 // ======================================================
 // Freimel Jerez WebApp — JavaScript Global
 // Archivo: /js/main.js
-// Funciones: menú responsive, WhatsApp, año dinámico, moneda COP/USD
+// Funciones: menú responsive, WhatsApp, año dinámico, moneda COP/USD, instalación PWA
 // ======================================================
 
 // ===== Espera a que el DOM esté listo =====
@@ -40,18 +40,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
   if (form) {
     const waBtn = document.getElementById("whatsappLink");
-    const RAW_NUMBER = "573206780200"; // Tu número en formato internacional (sin +)
+    const RAW_NUMBER = "573206780200";
 
-    // Validación simple de email
     const isEmail = (s) => /^\S+@\S+\.\S+$/.test(String(s || "").trim());
 
-    // Normaliza el teléfono (solo dígitos, añade 57 si falta)
     const normalizePhone = (s) => {
       const d = String(s || "").replace(/\D+/g, "");
       return d ? (d.startsWith("57") ? d : `57${d}`) : "";
     };
 
-    // Construye el enlace de WhatsApp
     const buildWAHref = () => {
       const fd = new FormData(form);
       const nombre   = (fd.get("nombre")   || "").trim();
@@ -68,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return `https://wa.me/${RAW_NUMBER}?text=${texto}`;
     };
 
-    // Comprueba si el formulario está listo para enviar
     const isReady = () => {
       const nombre  = (form.nombre?.value || "").trim();
       const correo  = (form.correo?.value || "").trim();
@@ -76,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return !!(nombre && isEmail(correo) && mensaje);
     };
 
-    // Actualiza dinámicamente el botón de WhatsApp
     let t;
     const updateWA = () => {
       clearTimeout(t);
@@ -93,23 +88,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 120);
     };
 
-    // Detecta cambios en el formulario
     form.addEventListener("input", updateWA);
     form.addEventListener("change", updateWA);
     updateWA();
 
-    // Manejo de envío
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      if (typeof form.reportValidity === "function" && !form.reportValidity()) return;
-      if (!isReady()) {
-        alert("Por favor completa nombre, correo válido y mensaje.");
-        return;
-      }
-      if (!waBtn || !waBtn.href) {
-        alert("No se pudo generar el mensaje de WhatsApp.");
-        return;
-      }
+      if (!isReady()) return alert("Por favor completa nombre, correo válido y mensaje.");
 
       const submitBtn = form.querySelector('button[type="submit"]');
       if (submitBtn) {
@@ -117,7 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
         submitBtn.textContent = "Abriendo WhatsApp…";
       }
 
-      // Abre WhatsApp
       const win = window.open(waBtn.href, "_blank");
       if (!win) window.location.href = waBtn.href;
 
@@ -141,37 +125,63 @@ document.addEventListener("DOMContentLoaded", () => {
     const amountsUSD = document.querySelectorAll(".amount[data-usd]");
 
     const setCurrency = (curr) => {
-      // Guarda preferencia en localStorage
       try {
         localStorage.setItem("currencyPref", curr);
-      } catch (e) {
-        console.warn("No se pudo guardar preferencia en localStorage");
-      }
+      } catch (e) {}
 
-      // Actualiza el botón activo
       buttons.forEach(b =>
         b.classList.toggle("active", b.dataset.currency === curr)
       );
 
-      // Muestra precios según moneda
       const showCOP = curr === "COP";
       amountsCOP.forEach(el => el.classList.toggle("hidden", !showCOP));
       amountsUSD.forEach(el => el.classList.toggle("hidden", showCOP));
     };
 
-    // Recupera preferencia guardada
     let pref = "COP";
     try {
       pref = localStorage.getItem("currencyPref") || "COP";
     } catch (e) {}
 
-    // Aplica la moneda inicial
     setCurrency(pref);
 
-    // Detecta clics en los botones
     buttons.forEach(btn =>
       btn.addEventListener("click", () => setCurrency(btn.dataset.currency))
     );
   })();
 
 }); // FIN DEL DOMContentLoaded
+
+
+
+// ======================================================
+// 5️⃣ INSTALACIÓN DE LA PWA (BOTÓN "INSTALAR APP")
+// ======================================================
+
+let deferredPrompt;
+const btnInstalar = document.getElementById("btnInstalar");
+
+// Detecta si la app puede instalarse
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  if (btnInstalar) btnInstalar.style.display = "inline-block";
+
+  btnInstalar.onclick = async () => {
+    btnInstalar.style.display = "none";
+
+    deferredPrompt.prompt();
+
+    const resultado = await deferredPrompt.userChoice;
+    console.log("Instalación:", resultado.outcome);
+
+    deferredPrompt = null;
+  };
+});
+
+// Se ejecuta cuando la app fue instalada
+window.addEventListener("appinstalled", () => {
+  console.log("🔥 La app Freimel Jerez WebApp fue instalada correctamente");
+  if (btnInstalar) btnInstalar.style.display = "none";
+});

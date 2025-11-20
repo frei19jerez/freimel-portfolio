@@ -7,6 +7,10 @@
   <!-- Conexión necesaria para AdSense -->
   <meta name="google-adsense-account" content="ca-pub-4933331274738462">
 
+  <!-- Código de verificación de Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+      crossorigin="anonymous"></script>
+
   <title>Freimel Jerez WebApp | Portafolio</title>
   <meta name="description" content="Desarrollador Web (Frontend & Backend). Sitios rápidos, SEO, hosting y soluciones web profesionales.">
   <meta name="author" content="Freimel Jerez">
@@ -20,7 +24,11 @@
   <meta property="og:url" content="https://freimeljerezwebapps.com">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Styles -->
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0d0d0d">
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="css/styles.css">
 
   <!-- Favicon SVG -->
@@ -33,6 +41,7 @@
   <!-- HEADER -->
   <header class="topbar">
     <div class="container flex between center-v">
+
       <a class="brand" href="index.html">💻 <span>Freimel Jerez WebApp</span></a>
 
       <button class="hamburger" aria-label="Abrir menú">&#9776;</button>
@@ -43,7 +52,14 @@
         <a href="servicios.html">Servicios</a>
         <a href="acerca.html">Acerca</a>
         <a class="btn" href="contacto.html">Contacto</a>
+        <a class="btn" href="/blog/">Blog</a>
       </nav>
+
+      <!-- BOTÓN DE INSTALACIÓN -->
+      <button id="btnInstalar" class="btn install-btn" style="display:none;">
+        📲 Instalar App
+      </button>
+
     </div>
   </header>
 
@@ -51,9 +67,12 @@
   <section class="hero">
     <div class="container grid-2">
       <div>
-        <h1>Construyo webs <span class="accent">rápidas</span>, <span class="accent">claras</span> y listas para internet</h1>
+        <h1>Construyo webs <span class="accent">rápidas</span>, 
+            <span class="accent">claras</span> y listas para internet</h1>
 
-        <p>Desarrollador Web — Frontend & Backend. SEO, rendimiento, hosting y dominios. También desarrollo <strong>soluciones web personalizadas</strong> para negocios, proyectos y marcas digitales.</p>
+        <p>Desarrollador Web — Frontend & Backend. SEO, rendimiento, hosting y dominios. 
+        También desarrollo <strong>soluciones web personalizadas</strong> para negocios, 
+        proyectos y marcas digitales.</p>
 
         <div class="cta">
           <a class="btn" href="proyectos.html">Ver proyectos</a>
@@ -65,7 +84,8 @@
         <iframe src="https://www.youtube.com/embed/6XcbHJ2kclg"
                 title="Video de Freimel Jerez"
                 frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                       gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
       </div>
     </div>
@@ -130,7 +150,8 @@
   <!-- CTA -->
   <section class="cta-bar">
     <div class="container flex between center-v">
-      <p><strong>¿Listo para tu sitio o tu aplicación web?</strong> Lo dejo funcionando y optimizado.</p>
+      <p><strong>¿Listo para tu sitio o tu aplicación web?</strong> 
+      Lo dejo funcionando y optimizado.</p>
       <a class="btn" href="contacto.html">Hablemos</a>
     </div>
   </section>
@@ -146,23 +167,24 @@
       </div>
 
       <nav class="foot-nav">
-        <a href="proyectos.html">Proyectos</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="acerca.html">Acerca</a>
-        <a href="contacto.html">Contacto</a>
+        <a href="/privacidad.html">Privacidad</a>
+        <a href="/terminos.html">Términos</a>
+        <a href="/acerca.html">Acerca</a>
+        <a href="/contacto.html">Contacto</a>
       </nav>
 
       <div class="foot-contact">
         <p>📧 <a href="mailto:frei19jerez@gmail.com">frei19jerez@gmail.com</a></p>
         <p>📱 <a href="tel:+573206780200">+57 320 678 0200</a></p>
-        <p>🌐 <a href="https://freimeljerezwebapps.com" target="_blank">freimeljerezwebapps.com</a></p>
+        <p>🌐 <a href="https://freimeljerezwebapps.com" target="_blank">
+          freimeljerezwebapps.com</a></p>
         <p>© <span id="year"></span> <strong>Freimel Jerez WebApp</strong></p>
       </div>
 
     </div>
   </footer>
 
-  <!-- JSON-LD -->
+  <!-- JSON-LD Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -175,10 +197,17 @@
   }
   </script>
 
+  <!-- JS principal -->
+  <script src="js/main.js" defer></script>
+
+  <!-- Registrar Service Worker para instalación -->
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("service-worker.js")
+        .catch(err => console.log("SW error:", err));
+    }
   </script>
 
-  <script src="js/main.js" defer></script>
 </body>
 </html>
