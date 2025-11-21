@@ -1,5 +1,5 @@
 // ======================================================
-// Freimel Jerez WebApp — JavaScript Global
+// Freimel Jerez WebApp — JavaScript Global (Versión PRO)
 // ======================================================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (hamburger && nav) {
     hamburger.addEventListener("click", () => {
-      const open = nav.classList.toggle("active");
-      hamburger.setAttribute("aria-expanded", open);
+      const isOpen = nav.classList.toggle("active");
+      hamburger.setAttribute("aria-expanded", isOpen);
     });
 
     nav.querySelectorAll("a").forEach(link => {
@@ -34,11 +34,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // 3️⃣ FORM → WHATSAPP
   // =========================
   const form = document.getElementById("contactForm");
+
   if (form) {
     const waBtn = document.getElementById("whatsappLink");
     const RAW_NUMBER = "573206780200";
 
     const isEmail = (s) => /^\S+@\S+\.\S+$/.test(s);
+
     const normalizePhone = (s) => {
       const d = String(s).replace(/\D+/g, "");
       return d ? (d.startsWith("57") ? d : `57${d}`) : "";
@@ -46,29 +48,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const buildHref = () => {
       const fd = new FormData(form);
-      const nombre   = fd.get("nombre")?.trim();
-      const correo   = fd.get("correo")?.trim();
-      const telefono = normalizePhone(fd.get("telefono"));
-      const servicio = fd.get("servicio")?.trim() || "General";
-      const mensaje  = fd.get("mensaje")?.trim();
 
-      return `https://wa.me/${RAW_NUMBER}?text=` +
-        encodeURIComponent(
-          `Hola, soy ${nombre}. Correo: ${correo}. Tel: ${telefono}. ` +
-          `Servicio: ${servicio}. Mensaje: ${mensaje}`
-        );
-    };
-
-    const requiredOk = () => {
-      return (
-        form.nombre.value.trim() &&
-        isEmail(form.correo.value.trim()) &&
-        form.mensaje.value.trim()
+      return `https://wa.me/${RAW_NUMBER}?text=` + encodeURIComponent(
+        `Hola, soy ${fd.get("nombre")}. ` +
+        `Correo: ${fd.get("correo")}. ` +
+        `Teléfono: ${normalizePhone(fd.get("telefono"))}. ` +
+        `Servicio: ${fd.get("servicio") || "General"}. ` +
+        `Mensaje: ${fd.get("mensaje")}`
       );
     };
 
+    const requiredOk = () =>
+      form.nombre.value.trim() &&
+      isEmail(form.correo.value.trim()) &&
+      form.mensaje.value.trim();
+
     const update = () => {
       if (!waBtn) return;
+
       waBtn.href = buildHref();
 
       if (requiredOk()) {
@@ -88,7 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", e => {
       e.preventDefault();
       if (!requiredOk()) return alert("Completa los datos obligatorios.");
-
       window.open(waBtn.href, "_blank");
     });
   }
@@ -126,9 +122,13 @@ document.addEventListener("DOMContentLoaded", () => {
 // 5️⃣ INSTALACIÓN DE LA PWA (Botón "Instalar")
 // ======================================================
 
-let deferredPrompt;
+let deferredPrompt = null;
 const btnInstalar = document.getElementById("btnInstalar");
 
+// 1️⃣ Ocultar botón al inicio
+if (btnInstalar) btnInstalar.style.display = "none";
+
+// 2️⃣ Detectar si el navegador permite instalar PWA
 window.addEventListener("beforeinstallprompt", (e) => {
   e.preventDefault();
   deferredPrompt = e;
@@ -138,18 +138,28 @@ window.addEventListener("beforeinstallprompt", (e) => {
   }
 });
 
+// 3️⃣ Click en instalar la app
 if (btnInstalar) {
   btnInstalar.addEventListener("click", async () => {
-    btnInstalar.style.display = "none";
+    try {
+      btnInstalar.style.display = "none";
 
-    deferredPrompt.prompt();
-    const result = await deferredPrompt.userChoice;
-    console.log("Resultado instalación:", result.outcome);
+      if (!deferredPrompt) return;
 
-    deferredPrompt = null;
+      deferredPrompt.prompt();
+      const result = await deferredPrompt.userChoice;
+
+      console.log("Resultado instalación:", result.outcome);
+
+      deferredPrompt = null;
+
+    } catch (err) {
+      console.warn("Error instalando la PWA", err);
+    }
   });
 }
 
+// 4️⃣ Ocultar botón cuando ya está instalada
 window.addEventListener("appinstalled", () => {
   console.log("🔥 PWA instalada correctamente");
   if (btnInstalar) btnInstalar.style.display = "none";
