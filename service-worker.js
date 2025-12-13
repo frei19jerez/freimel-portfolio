@@ -3,7 +3,7 @@
 // Cache estático + App Offline + Protección AdSense
 // ======================================================
 
-const CACHE_NAME = "freimel-cache-v4";
+const CACHE_NAME = "freimel-cache-v5";
 
 const ASSETS = [
   "/",                     
