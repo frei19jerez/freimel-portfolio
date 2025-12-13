@@ -1,25 +1,33 @@
 // ======================================================
-// Freimel Jerez WebApp — JavaScript Global (Versión PRO)
+// Freimel Jerez WebApp — JavaScript Global (OPTIMIZADO)
+// Rendimiento + UX + SEO + AdSense
 // ======================================================
 
 document.addEventListener("DOMContentLoaded", () => {
 
   // =========================
-  // 1️⃣ MENÚ RESPONSIVE
+  // 1️⃣ MENÚ RESPONSIVE (RÁPIDO)
   // =========================
   const hamburger = document.querySelector(".hamburger");
   const nav = document.querySelector(".nav");
 
   if (hamburger && nav) {
     hamburger.addEventListener("click", () => {
-      const isOpen = nav.classList.toggle("active");
-      hamburger.setAttribute("aria-expanded", isOpen);
+      const open = nav.classList.contains("active");
+
+      if (open) {
+        nav.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+      } else {
+        nav.classList.add("active");
+        hamburger.setAttribute("aria-expanded", "true");
+      }
     });
 
     nav.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         nav.classList.remove("active");
-        hamburger.setAttribute("aria-expanded", false);
+        hamburger.setAttribute("aria-expanded", "false");
       });
     });
   }
@@ -31,13 +39,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (year) year.textContent = new Date().getFullYear();
 
   // =========================
-  // 3️⃣ FORM → WHATSAPP
+  // 3️⃣ FORMULARIO → WHATSAPP (FLASH ⚡)
   // =========================
   const form = document.getElementById("contactForm");
+  const waBtn = document.getElementById("whatsappLink");
+  const RAW_NUMBER = "573206780200";
 
-  if (form) {
-    const waBtn = document.getElementById("whatsappLink");
-    const RAW_NUMBER = "573206780200";
+  if (form && waBtn) {
+    let isValid = false;
 
     const isEmail = (s) => /^\S+@\S+\.\S+$/.test(s);
 
@@ -49,48 +58,49 @@ document.addEventListener("DOMContentLoaded", () => {
     const buildHref = () => {
       const fd = new FormData(form);
 
-      return `https://wa.me/${RAW_NUMBER}?text=` + encodeURIComponent(
-        `Hola, soy ${fd.get("nombre")}. ` +
-        `Correo: ${fd.get("correo")}. ` +
-        `Teléfono: ${normalizePhone(fd.get("telefono"))}. ` +
-        `Servicio: ${fd.get("servicio") || "General"}. ` +
-        `Mensaje: ${fd.get("mensaje")}`
+      return (
+        `https://wa.me/${RAW_NUMBER}?text=` +
+        encodeURIComponent(
+          `Hola, soy ${fd.get("nombre")}. ` +
+          `Correo: ${fd.get("correo")}. ` +
+          `Teléfono: ${normalizePhone(fd.get("telefono"))}. ` +
+          `Servicio: ${fd.get("servicio") || "General"}. ` +
+          `Mensaje: ${fd.get("mensaje")}`
+        )
       );
     };
 
-    const requiredOk = () =>
-      form.nombre.value.trim() &&
-      isEmail(form.correo.value.trim()) &&
-      form.mensaje.value.trim();
+    const validate = () => {
+      isValid =
+        form.nombre.value.trim() &&
+        isEmail(form.correo.value.trim()) &&
+        form.mensaje.value.trim();
 
-    const update = () => {
-      if (!waBtn) return;
-
-      waBtn.href = buildHref();
-
-      if (requiredOk()) {
-        waBtn.style.opacity = "1";
-        waBtn.style.pointerEvents = "auto";
-        waBtn.removeAttribute("aria-disabled");
-      } else {
-        waBtn.style.opacity = "0.6";
-        waBtn.style.pointerEvents = "none";
-        waBtn.setAttribute("aria-disabled", "true");
-      }
+      waBtn.style.opacity = isValid ? "1" : "0.6";
+      waBtn.style.pointerEvents = isValid ? "auto" : "none";
+      waBtn.setAttribute("aria-disabled", String(!isValid));
     };
 
-    form.addEventListener("input", update);
-    update();
+    form.addEventListener("input", () => {
+      requestAnimationFrame(validate);
+    });
 
-    form.addEventListener("submit", e => {
+    validate();
+
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
-      if (!requiredOk()) return alert("Completa los datos obligatorios.");
-      window.open(waBtn.href, "_blank");
+
+      if (!isValid) {
+        alert("Completa los datos obligatorios.");
+        return;
+      }
+
+      window.open(buildHref(), "_blank");
     });
   }
 
   // =========================
-  // 4️⃣ TOGGLE MONEDA
+  // 4️⃣ TOGGLE MONEDA (SIN LAG)
   // =========================
   (() => {
     const buttons = document.querySelectorAll(".price-toggle .toggle-btn");
@@ -99,18 +109,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const cop = document.querySelectorAll("[data-cop]");
     const usd = document.querySelectorAll("[data-usd]");
 
-    const setCurr = (c) => {
-      localStorage.setItem("currencyPref", c);
-      buttons.forEach(b => b.classList.toggle("active", b.dataset.currency === c));
-      cop.forEach(e => e.classList.toggle("hidden", c !== "COP"));
-      usd.forEach(e => e.classList.toggle("hidden", c !== "USD"));
+    const setCurrency = (currency) => {
+      localStorage.setItem("currencyPref", currency);
+
+      buttons.forEach(btn =>
+        btn.classList.toggle("active", btn.dataset.currency === currency)
+      );
+
+      cop.forEach(el => el.classList.toggle("hidden", currency !== "COP"));
+      usd.forEach(el => el.classList.toggle("hidden", currency !== "USD"));
     };
 
     const pref = localStorage.getItem("currencyPref") || "COP";
-    setCurr(pref);
+
+    document.documentElement.style.visibility = "hidden";
+    requestAnimationFrame(() => {
+      setCurrency(pref);
+      document.documentElement.style.visibility = "visible";
+    });
 
     buttons.forEach(btn => {
-      btn.addEventListener("click", () => setCurr(btn.dataset.currency));
+      btn.addEventListener("click", () => {
+        if (!btn.classList.contains("active")) {
+          setCurrency(btn.dataset.currency);
+        }
+      });
     });
   })();
 
@@ -119,55 +142,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ======================================================
-// 5️⃣ INSTALACIÓN DE LA PWA (Botón "Instalar")
+// 5️⃣ INSTALACIÓN PWA (BOTÓN INSTANTÁNEO)
 // ======================================================
-
 let deferredPrompt = null;
 const btnInstalar = document.getElementById("btnInstalar");
 
-// 1️⃣ Ocultar botón al inicio
 if (btnInstalar) btnInstalar.style.display = "none";
 
-// 2️⃣ Detectar si el navegador permite instalar PWA
 window.addEventListener("beforeinstallprompt", (e) => {
   e.preventDefault();
   deferredPrompt = e;
-
-  if (btnInstalar) {
-    btnInstalar.style.display = "inline-block";
-  }
+  if (btnInstalar) btnInstalar.style.display = "inline-block";
 });
 
-// 3️⃣ Click en instalar la app
 if (btnInstalar) {
   btnInstalar.addEventListener("click", async () => {
-    try {
-      btnInstalar.style.display = "none";
+    if (!deferredPrompt) return;
 
-      if (!deferredPrompt) return;
-
-      deferredPrompt.prompt();
-      const result = await deferredPrompt.userChoice;
-
-      console.log("Resultado instalación:", result.outcome);
-
-      deferredPrompt = null;
-
-    } catch (err) {
-      console.warn("Error instalando la PWA", err);
-    }
+    btnInstalar.style.display = "none";
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    deferredPrompt = null;
   });
 }
 
-// 4️⃣ Ocultar botón cuando ya está instalada
 window.addEventListener("appinstalled", () => {
-  console.log("🔥 PWA instalada correctamente");
   if (btnInstalar) btnInstalar.style.display = "none";
 });
 
 
 // ======================================================
-// 6️⃣ COOKIES BANNER
+// 6️⃣ COOKIES BANNER (LIVIANO)
 // ======================================================
 (() => {
   const banner = document.getElementById("cookies-banner");
@@ -180,13 +185,15 @@ window.addEventListener("appinstalled", () => {
     banner.style.display = "flex";
   }
 
+  const hide = () => (banner.style.display = "none");
+
   accept.addEventListener("click", () => {
     localStorage.setItem("cookies-choice", "accepted");
-    banner.style.display = "none";
+    hide();
   });
 
   reject.addEventListener("click", () => {
     localStorage.setItem("cookies-choice", "rejected");
-    banner.style.display = "none";
+    hide();
   });
 })();

@@ -4,232 +4,251 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- AdSense -->
   <meta name="google-adsense-account" content="ca-pub-4933331274738462">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462" crossorigin="anonymous"></script>
 
   <title>Freimel Jerez WebApp | Portafolio</title>
-  <meta name="description" content="Desarrollador Web (Frontend & Backend). Sitios rápidos, SEO, hosting y soluciones web profesionales.">
+  <meta name="description" content="Desarrollador Web Frontend & Backend. Sitios rápidos, SEO, hosting y soluciones web profesionales.">
   <meta name="author" content="Freimel Jerez">
 
+  <!-- Open Graph -->
   <meta property="og:title" content="Freimel Jerez WebApp">
-  <meta property="og:description" content="Desarrollador Web – Frontend & Backend. SEO, hosting y soluciones web profesionales.">
+  <meta property="og:description" content="Desarrollador Web Frontend & Backend. SEO, hosting y soluciones web profesionales.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="imagen/rey-freimel.jpg">
   <meta property="og:url" content="https://freimeljerezwebapps.com">
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Favicon CORRECTO -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/imagen/rey-freimel.png">
 
   <!-- PWA -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#0d0d0d">
 
+  <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
-
 <body>
 
-  <!-- HEADER -->
-  <header class="topbar">
-    <div class="container flex between center-v">
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="container flex between center-v">
 
-      <a class="brand" href="index.html">💻 <span>Freimel Jerez WebApp</span></a>
+    <a class="brand" href="index.html">💻 <span>Freimel Jerez WebApp</span></a>
 
-      <button class="hamburger" aria-label="Abrir menú">&#9776;</button>
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      &#9776;
+    </button>
 
-      <nav class="nav" aria-label="Menú principal">
-        <a class="active" href="index.html">Inicio</a>
-        <a href="proyectos.html">Proyectos</a>
-        <a href="servicios.html">Servicios</a>
-        <a class="btn" href="contacto.html">Contacto</a>
-        <a class="btn" href="/blog/">Blog</a>
-      </nav>
-    </div>
-  </header>
+    <nav class="nav" aria-label="Menú principal">
+      <a class="active" href="index.html">Inicio</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="servicios.html">Servicios</a>
+      <a class="btn" href="contacto.html">Contacto</a>
+      <a class="btn" href="/blog/">Blog</a>
+    </nav>
 
-  <button id="btnInstalar" class="btn install-btn d-none">
+  </div>
+</header>
+
+<!-- Botón instalar PWA (controlado solo por JS) -->
+<button id="btnInstalar" class="btn install-btn">
   📲 Instalar App
-  </button>
+</button>
 
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="container grid-2">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container grid-2">
-      <div>
-        <h1>Construyo webs <span class="accent">rápidas</span>, 
-            <span class="accent">claras</span> y listas para internet</h1>
+    <div>
+      <h1>
+        Construyo webs
+        <span class="accent">rápidas</span>,
+        <span class="accent">claras</span>
+        y listas para internet
+      </h1>
 
-        <p>Desarrollador Web — Frontend & Backend. SEO, rendimiento, hosting y dominios. 
-        También desarrollo <strong>soluciones web personalizadas</strong> para negocios, 
-        proyectos y marcas digitales.</p>
+      <p>
+        Desarrollador Web — Frontend & Backend.
+        SEO, rendimiento, hosting y dominios.
+        Desarrollo <strong>soluciones web personalizadas</strong>
+        para negocios y marcas digitales.
+      </p>
 
-        <div class="cta">
-          <a class="btn" href="proyectos.html">Ver proyectos</a>
-          <a class="link" href="servicios.html">Mis servicios</a>
-        </div>
-      </div>
-
-      <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/6XcbHJ2kclg"
-                title="Video de Freimel Jerez"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-                       gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
+      <div class="cta">
+        <a class="btn" href="proyectos.html">Ver proyectos</a>
+        <a class="link" href="servicios.html">Mis servicios</a>
       </div>
     </div>
-  </section>
 
-  <!-- BLOQUE DE ANUNCIO 1: después del HERO -->
-  <section class="container" style="margin-top: 2rem; margin-bottom: 2rem;">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-4933331274738462"
-         data-ad-slot="4606183476"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </section>
-
-  <!-- LO QUE HAGO -->
-  <section class="container">
-    <h2>Lo que hago</h2>
-
-    <div class="cards">
-      <article class="card">
-        <h3>Webs profesionales</h3>
-        <p>HTML, CSS y JS optimizados. Estructura clara, diseño moderno y alto rendimiento.</p>
-      </article>
-
-      <article class="card">
-        <h3>Backend & Bases de Datos</h3>
-        <p>Node.js, Sails.js, MySQL/PostgreSQL, APIs y sistemas funcionales.</p>
-      </article>
-
-      <article class="card">
-        <h3>SEO + Optimización</h3>
-        <p>Mejoro Core Web Vitals, posicionamiento, velocidad y experiencia del usuario.</p>
-      </article>
+    <!-- Video optimizado -->
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/6XcbHJ2kclg"
+        title="Freimel Jerez WebApp"
+        loading="lazy"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
     </div>
-  </section>
 
-  <!-- SOLUCIONES DIGITALES -->
-  <section class="container">
-    <h2>Soluciones web personalizadas</h2>
+  </div>
+</section>
 
-    <div class="cards">
-      <article class="card">
-        <h3>Herramientas digitales</h3>
-        <ul>
-          <li>Landing pages profesionales.</li>
-          <li>Páginas de enlaces personalizadas.</li>
-          <li>Módulos y componentes web ligeros.</li>
-        </ul>
-      </article>
+<!-- ================= ANUNCIO 1 ================= -->
+<section class="container" style="margin:2rem auto;">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4933331274738462"
+       data-ad-slot="4606183476"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+    window.adsbygoogle = window.adsbygoogle || [];
+    adsbygoogle.push({});
+  </script>
+</section>
 
-      <article class="card">
-        <h3>Integraciones</h3>
-        <ul>
-          <li>APIs externas para datos dinámicos.</li>
-          <li>Formularios conectados al correo o WhatsApp.</li>
-          <li>Paneles y vistas administrables básicas.</li>
-        </ul>
-      </article>
+<!-- ================= LO QUE HAGO ================= -->
+<section class="container">
+  <h2>Lo que hago</h2>
 
-      <article class="card">
-        <h3>Rendimiento y calidad</h3>
-        <ul>
-          <li>Código limpio y mantenible.</li>
-          <li>Buenas prácticas y estándares.</li>
-          <li>Mejora de velocidad y usabilidad.</li>
-        </ul>
-      </article>
+  <div class="cards">
+    <article class="card">
+      <h3>Webs profesionales</h3>
+      <p>HTML, CSS y JavaScript optimizados. Diseño moderno y alto rendimiento.</p>
+    </article>
+
+    <article class="card">
+      <h3>Backend & Bases de Datos</h3>
+      <p>Node.js, Sails.js, MySQL, PostgreSQL y APIs funcionales.</p>
+    </article>
+
+    <article class="card">
+      <h3>SEO + Optimización</h3>
+      <p>Core Web Vitals, posicionamiento y experiencia de usuario.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ================= SOLUCIONES ================= -->
+<section class="container">
+  <h2>Soluciones web personalizadas</h2>
+
+  <div class="cards">
+    <article class="card">
+      <h3>Herramientas digitales</h3>
+      <ul>
+        <li>Landing pages profesionales</li>
+        <li>Páginas de enlaces</li>
+        <li>Módulos web ligeros</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>Integraciones</h3>
+      <ul>
+        <li>APIs externas</li>
+        <li>Formularios a WhatsApp</li>
+        <li>Vistas administrables</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>Rendimiento y calidad</h3>
+      <ul>
+        <li>Código limpio</li>
+        <li>Buenas prácticas</li>
+        <li>Velocidad y usabilidad</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ================= ANUNCIO 2 ================= -->
+<section class="container" style="margin:2rem auto;">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4933331274738462"
+       data-ad-slot="4606183476"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+    window.adsbygoogle = window.adsbygoogle || [];
+    adsbygoogle.push({});
+  </script>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta-bar">
+  <div class="container flex between center-v">
+    <p><strong>¿Listo para tu sitio o tu aplicación web?</strong> Lo dejo funcionando y optimizado.</p>
+    <a class="btn" href="contacto.html">Hablemos</a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container grid-3">
+
+    <div>
+      <h3>💼 Freimel Jerez WebApp</h3>
+      <p class="muted">Desarrollador Web — Frontend & Backend</p>
+      <p class="secure">🔒 Sitio seguro con SSL — https</p>
     </div>
-  </section>
 
-  <!-- BLOQUE DE ANUNCIO 2: antes del CTA -->
-  <section class="container" style="margin-top: 2rem; margin-bottom: 2rem;">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-4933331274738462"
-         data-ad-slot="4606183476"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </section>
+    <nav class="foot-nav">
+      <a href="/privacidad.html">Privacidad</a>
+      <a href="/terminos.html">Términos</a>
+      <a href="/acerca.html">Acerca</a>
+      <a href="/contacto.html">Contacto</a>
+    </nav>
 
-  <!-- CTA -->
-  <section class="cta-bar">
-    <div class="container flex between center-v">
-      <p><strong>¿Listo para tu sitio o tu aplicación web?</strong> 
-      Lo dejo funcionando y optimizado.</p>
-      <a class="btn" href="contacto.html">Hablemos</a>
+    <div class="foot-contact">
+      <p>📧 <a href="mailto:frei19jerez@gmail.com">frei19jerez@gmail.com</a></p>
+      <p>📱 <a href="tel:+573206780200">+57 320 678 0200</a></p>
+      <p>🌐 <a href="https://freimeljerezwebapps.com">freimeljerezwebapps.com</a></p>
+      <p>© <span id="year"></span> <strong>Freimel Jerez WebApp</strong></p>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container grid-3">
+  </div>
+</footer>
 
-      <div>
-        <h3>💼 Freimel Jerez WebApp</h3>
-        <p class="muted">Desarrollador Web — Frontend & Backend</p>
-        <p class="secure">🔒 Sitio seguro con SSL — <span>https</span></p>
-      </div>
-
-      <nav class="foot-nav">
-        <a href="/privacidad.html">Privacidad</a>
-        <a href="/terminos.html">Términos</a>
-        <a href="/acerca.html">Acerca</a>
-        <a href="/contacto.html">Contacto</a>
-      </nav>
-
-      <div class="foot-contact">
-        <p>📧 <a href="mailto:frei19jerez@gmail.com">frei19jerez@gmail.com</a></p>
-        <p>📱 <a href="tel:+573206780200">+57 320 678 0200</a></p>
-        <p>🌐 <a href="https://freimeljerezwebapps.com" target="_blank">
-          freimeljerezwebapps.com</a></p>
-        <p>© <span id="year"></span> <strong>Freimel Jerez WebApp</strong></p>
-      </div>
-
-    </div>
-  </footer>
-
-  <!-- COOKIES BANNER -->
+<!-- ================= COOKIES ================= -->
 <div id="cookies-banner" class="cookies-banner">
   <p>
-    Este sitio utiliza cookies propias y de terceros para mejorar la experiencia,
-    analizar el uso y mostrar anuncios personalizados.  
+    Este sitio utiliza cookies propias y de terceros para mejorar la experiencia y mostrar anuncios.
     <a href="/privacidad.html" target="_blank">Leer más</a>.
   </p>
-
   <div class="cookies-buttons">
     <button id="accept-cookies" class="btn accept">Aceptar</button>
     <button id="reject-cookies" class="btn reject">Rechazar</button>
   </div>
 </div>
 
+<!-- ================= SCHEMA ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Freimel Jerez",
+  "jobTitle": "Desarrollador Web",
+  "url": "https://freimeljerezwebapps.com",
+  "email": "mailto:frei19jerez@gmail.com",
+  "telephone": "+573206780200"
+}
+</script>
 
-  <!-- JSON-LD Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Freimel Jerez",
-    "jobTitle": "Desarrollador Web",
-    "url": "https://freimeljerezwebapps.com",
-    "email": "mailto:frei19jerez@gmail.com",
-    "telephone": "+573206780200"
-  }
-  </script>
-
- <!-- JS principal (solo UNA VEZ) -->
+<!-- JS principal -->
 <script src="js/main.js" defer></script>
 
-<!-- Registrar Service Worker -->
+<!-- Service Worker -->
 <script>
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/service-worker.js")
@@ -237,12 +256,5 @@
   }
 </script>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
