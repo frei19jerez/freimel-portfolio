@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>03 – ¿Qué es HTML? | Curso HTML5</title>
+  <meta name="description" content="Aprende qué es HTML y para qué sirve. Curso HTML5 desde cero explicado por Freimel Jerez.">
+
+  <!-- ================= ADSENSE ================= -->
+  <meta name="google-adsense-account" content="ca-pub-4933331274738462">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+    crossorigin="anonymous"></script>
+
+  <!-- ================= CSS ================= -->
+  <link rel="stylesheet" href="/blog/cursohtml5/css/curso-html5.css">
+  <link rel="icon" href="/imagen/favicon.svg">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="container header-flex">
+
+    <a class="brand" href="/index.html">
+      💻 Freimel Jerez WebApp
+    </a>
+
+    <!-- HAMBURGUESA -->
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- NAV -->
+    <nav class="nav">
+      <a href="/index.html">Inicio</a>
+      <a href="/blog/">Blog</a>
+      <a href="/blog/cursohtml5/index.html">Curso HTML5</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= CONTENIDO ================= -->
+<main class="container">
+
+  <a href="/blog/cursohtml5/index.html" class="back">← Volver al curso</a>
+
+  <article class="post">
+
+    <h1>03. ¿Qué es HTML?</h1>
+    <p class="muted">Curso HTML5 desde cero — Freimel Jerez</p>
+
+    <img src="/blog/cursohtml5/img/descarga.svg"
+         class="post-img"
+         alt="Qué es HTML">
+
+    <p>
+      <strong>HTML</strong> significa <em>HyperText Markup Language</em>
+      (Lenguaje de Marcado de Hipertexto).
+      Es el lenguaje principal que se utiliza para
+      <strong>crear la estructura de una página web</strong>.
+    </p>
+
+    <h2>📌 ¿Para qué sirve HTML?</h2>
+
+    <p>
+      HTML se utiliza para definir los elementos básicos de una página web, como:
+    </p>
+
+    <ul>
+      <li>Títulos y textos</li>
+      <li>Imágenes</li>
+      <li>Enlaces</li>
+      <li>Formularios</li>
+      <li>Listas y tablas</li>
+    </ul>
+
+    <h2>🏗️ HTML no es programación</h2>
+
+    <p>
+      HTML <strong>NO es un lenguaje de programación</strong>.
+      Es un lenguaje de marcado, lo que significa que usa
+      <strong>etiquetas</strong> para indicar al navegador
+      cómo debe mostrar el contenido.
+    </p>
+
+    <h2>🏷️ ¿Qué son las etiquetas?</h2>
+
+    <p>
+      Las etiquetas HTML indican el tipo de contenido.
+      Normalmente tienen una etiqueta de apertura y una de cierre.
+    </p>
+
+<pre><code>&lt;p&gt;Esto es un párrafo&lt;/p&gt;
+&lt;h1&gt;Este es un título&lt;/h1&gt;
+</code></pre>
+
+    <h2>🧱 Estructura básica de una página HTML</h2>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Mi primera web&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hola Mundo&lt;/h1&gt;
+    &lt;p&gt;Esta es mi primera página web&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    <p>
+      Esta estructura es la base de cualquier sitio web en internet.
+    </p>
+
+    <h2>🎥 Video de la lección</h2>
+
+    <p>
+      Mira el video completo para desbloquear la siguiente lección.
+    </p>
+
+    <div class="video-wrapper">
+      <iframe
+        id="player"
+        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
+        title="Qué es HTML - Curso HTML5"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- BOTÓN DESBLOQUEO -->
+    <nav class="course-nav">
+      <button id="nextBtn" class="locked" disabled>
+        🔒 Completa el video para continuar
+      </button>
+    </nav>
+
+    <!-- ================= ANUNCIO ================= -->
+    <ins class="adsbygoogle"
+         style="display:block; margin:24px 0"
+         data-ad-client="ca-pub-4933331274738462"
+         data-ad-slot="4606183476"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    <h2>✅ Resumen</h2>
+    <ul>
+      <li>HTML define la estructura de una web</li>
+      <li>Usa etiquetas para organizar el contenido</li>
+      <li>Es la base de CSS y JavaScript</li>
+    </ul>
+
+    <p class="muted">
+      En la siguiente lección aprenderás las etiquetas HTML más importantes.
+    </p>
+
+  </article>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<!-- ================= JS ================= -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="/blog/cursohtml5/js/curso-html5.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

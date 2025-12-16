@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>14 – Media para la Web | Curso HTML5</title>
+  <meta name="description" content="Aprende a usar imágenes, audio y video en la web con HTML5. Buenas prácticas de rendimiento y formatos. Curso HTML5 por Freimel Jerez.">
+
+  <!-- AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-4933331274738462">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+          crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/blog/cursohtml5/css/curso-html5.css">
+  <link rel="icon" href="/imagen/favicon.svg">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="container header-flex">
+
+    <a class="brand" href="/index.html">💻 Freimel Jerez WebApp</a>
+
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="/index.html">Inicio</a>
+      <a href="/blog/">Blog</a>
+      <a href="/blog/cursohtml5/index.html">Curso HTML5</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= CONTENIDO ================= -->
+<main class="container">
+
+  <a href="/blog/cursohtml5/index.html" class="back">← Volver al curso</a>
+
+  <article class="post">
+
+    <h1>14. Media para la Web</h1>
+    <p class="muted">Curso HTML5 desde cero — Freimel Jerez</p>
+
+    <p>
+      En esta lección aprenderás a trabajar con <strong>contenido multimedia</strong> en la web:
+      imágenes, audio y video, usando HTML5 y buenas prácticas de rendimiento.
+    </p>
+
+    <h2>🖼️ Imágenes en la Web</h2>
+    <p>
+      Las imágenes se insertan con la etiqueta <code>&lt;img&gt;</code>.
+      Es importante usar formatos optimizados y siempre el atributo <code>alt</code>.
+    </p>
+
+<pre><code>&lt;img src="imagen.jpg" alt="Descripción de la imagen"&gt;
+</code></pre>
+
+    <h3>Formatos recomendados</h3>
+    <ul>
+      <li><strong>JPG:</strong> fotografías</li>
+      <li><strong>PNG:</strong> transparencias</li>
+      <li><strong>SVG:</strong> iconos y gráficos vectoriales</li>
+      <li><strong>WebP:</strong> imágenes modernas y livianas</li>
+    </ul>
+
+    <h2>🎧 Audio en HTML5</h2>
+    <p>
+      HTML5 permite reproducir audio sin plugins usando la etiqueta <code>&lt;audio&gt;</code>.
+    </p>
+
+<pre><code>&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+  Tu navegador no soporta audio.
+&lt;/audio&gt;
+</code></pre>
+
+    <h2>🎬 Video en HTML5</h2>
+    <p>
+      Para videos propios se usa la etiqueta <code>&lt;video&gt;</code>.
+      Para plataformas externas como YouTube se recomienda <code>&lt;iframe&gt;</code>.
+    </p>
+
+<pre><code>&lt;video controls width="100%"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  Tu navegador no soporta video.
+&lt;/video&gt;
+</code></pre>
+
+    <h2>⚡ Buenas prácticas</h2>
+    <ul>
+      <li>Optimiza el peso de las imágenes</li>
+      <li>Usa formatos modernos</li>
+      <li>No cargues videos pesados sin necesidad</li>
+      <li>Usa <code>loading="lazy"</code> cuando sea posible</li>
+    </ul>
+
+    <h2>🎥 Video de la lección</h2>
+    <p>
+      Debes ver el video completo para desbloquear la siguiente lección.
+    </p>
+
+    <div class="video-wrapper">
+      <iframe
+        id="player"
+        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
+        title="Media para la Web - Curso HTML5"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <nav class="course-nav">
+      <button id="nextBtn" class="locked" disabled>
+        🔒 Completa el video para continuar
+      </button>
+    </nav>
+
+    <!-- ================= ADSENSE ================= -->
+    <section class="container" style="margin:2rem auto;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4933331274738462"
+           data-ad-slot="4606183476"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </section>
+
+    <h2>✅ Resumen</h2>
+    <ul>
+      <li>HTML5 permite trabajar con imágenes, audio y video</li>
+      <li>Usar formatos correctos mejora el rendimiento</li>
+      <li>La media bien optimizada mejora la experiencia del usuario</li>
+    </ul>
+
+    <p class="muted">
+      En la siguiente lección aprenderás a trabajar con audio y video en profundidad.
+    </p>
+
+  </article>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="/blog/cursohtml5/js/curso-html5.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

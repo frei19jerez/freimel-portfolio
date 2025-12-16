@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>13 – Etiquetas Semánticas HTML5 | Curso HTML5</title>
+  <meta name="description" content="Aprende a usar etiquetas semánticas HTML5 como header, nav, main, section, article, aside y footer. Curso HTML5 por Freimel Jerez.">
+
+  <!-- AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-4933331274738462">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+          crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/blog/cursohtml5/css/curso-html5.css">
+  <link rel="icon" href="/imagen/favicon.svg">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="container header-flex">
+
+    <a class="brand" href="/index.html">💻 Freimel Jerez WebApp</a>
+
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="/index.html">Inicio</a>
+      <a href="/blog/">Blog</a>
+      <a href="/blog/cursohtml5/index.html">Curso HTML5</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= CONTENIDO ================= -->
+<main class="container">
+
+  <a href="/blog/cursohtml5/index.html" class="back">← Volver al curso</a>
+
+  <article class="post">
+
+    <h1>13. Etiquetas Semánticas HTML5</h1>
+    <p class="muted">Curso HTML5 desde cero — Freimel Jerez</p>
+
+    <p>
+      Las <strong>etiquetas semánticas</strong> describen el significado del contenido.
+      Ayudan a los navegadores, buscadores (SEO) y lectores de pantalla a entender mejor tu sitio.
+    </p>
+
+    <h2>🧠 ¿Por qué usar semántica?</h2>
+    <ul>
+      <li>Mejora el SEO</li>
+      <li>Facilita la accesibilidad</li>
+      <li>Ordena el código</li>
+      <li>Hace tu web más profesional</li>
+    </ul>
+
+    <h2>🏗️ Estructura semántica básica</h2>
+
+<pre><code>&lt;header&gt;
+  &lt;nav&gt;Menú&lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;article&gt;Contenido&lt;/article&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;Pie de página&lt;/footer&gt;
+</code></pre>
+
+    <h2>🔹 Principales etiquetas</h2>
+
+    <h3>&lt;header&gt;</h3>
+    <p>Encabezado del sitio o de una sección.</p>
+
+    <h3>&lt;nav&gt;</h3>
+    <p>Contiene enlaces de navegación.</p>
+
+    <h3>&lt;main&gt;</h3>
+    <p>Contenido principal del documento (solo uno por página).</p>
+
+    <h3>&lt;section&gt;</h3>
+    <p>Agrupa contenido relacionado.</p>
+
+    <h3>&lt;article&gt;</h3>
+    <p>Contenido independiente (post, noticia, tarjeta).</p>
+
+    <h3>&lt;aside&gt;</h3>
+    <p>Contenido secundario o complementario.</p>
+
+    <h3>&lt;footer&gt;</h3>
+    <p>Pie de página del sitio o sección.</p>
+
+    <h2>❌ No semántico vs ✅ Semántico</h2>
+
+<pre><code>&lt;!-- ❌ NO recomendado --&gt;
+&lt;div id="header"&gt;...&lt;/div&gt;
+
+&lt;!-- ✅ Recomendado --&gt;
+&lt;header&gt;...&lt;/header&gt;
+</code></pre>
+
+    <h2>🎥 Video de la lección</h2>
+    <p>
+      Debes ver el video completo para desbloquear la siguiente lección.
+    </p>
+
+    <div class="video-wrapper">
+      <iframe
+        id="player"
+        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
+        title="Etiquetas Semánticas HTML5 - Curso HTML5"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <nav class="course-nav">
+      <button id="nextBtn" class="locked" disabled>
+        🔒 Completa el video para continuar
+      </button>
+    </nav>
+
+    <!-- ================= ADSENSE ================= -->
+    <section class="container" style="margin:2rem auto;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4933331274738462"
+           data-ad-slot="4606183476"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </section>
+
+    <h2>✅ Resumen</h2>
+    <ul>
+      <li>Las etiquetas semánticas dan significado al contenido</li>
+      <li>Mejoran SEO y accesibilidad</li>
+      <li>Son estándar en HTML5</li>
+    </ul>
+
+    <p class="muted">
+      En la siguiente lección aprenderás a trabajar con media para la web.
+    </p>
+
+  </article>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="/blog/cursohtml5/js/curso-html5.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

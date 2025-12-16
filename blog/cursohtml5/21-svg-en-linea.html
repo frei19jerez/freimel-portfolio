@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>21 – SVG en línea | Curso HTML5</title>
+  <meta name="description" content="Aprende a usar SVG en línea en HTML5. Gráficos vectoriales escalables y optimizados. Curso HTML5 por Freimel Jerez.">
+
+  <!-- AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-4933331274738462">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+          crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/blog/cursohtml5/css/curso-html5.css">
+  <link rel="icon" href="/imagen/favicon.svg">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="container header-flex">
+
+    <a class="brand" href="/index.html">💻 Freimel Jerez WebApp</a>
+
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="/index.html">Inicio</a>
+      <a href="/blog/">Blog</a>
+      <a href="/blog/cursohtml5/index.html">Curso HTML5</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= CONTENIDO ================= -->
+<main class="container">
+
+  <a href="/blog/cursohtml5/index.html" class="back">← Volver al curso</a>
+
+  <article class="post">
+
+    <h1>21. SVG en línea</h1>
+    <p class="muted">Curso HTML5 desde cero — Freimel Jerez</p>
+
+    <p>
+      En esta lección aprenderás a usar <strong>SVG en línea</strong> dentro de HTML.
+      SVG (Scalable Vector Graphics) permite crear gráficos vectoriales que no pierden
+      calidad y pueden ser animados y estilizados con CSS.
+    </p>
+
+    <h2>🎯 ¿Qué es SVG?</h2>
+    <p>
+      SVG es un formato gráfico basado en XML. A diferencia de las imágenes tradicionales,
+      los SVG se pueden escalar infinitamente sin perder calidad.
+    </p>
+
+    <h2>🧩 SVG incrustado en HTML</h2>
+    <p>
+      Cuando colocas un SVG directamente dentro del HTML, puedes modificarlo con CSS y JavaScript.
+    </p>
+
+<pre><code>&lt;svg width="120" height="120" viewBox="0 0 120 120"&gt;
+  &lt;circle cx="60" cy="60" r="50" fill="#22c55e" /&gt;
+&lt;/svg&gt;
+</code></pre>
+
+    <h2>🟢 Ejemplo visual</h2>
+
+    <svg width="120" height="120" viewBox="0 0 120 120" style="margin:1rem 0;">
+      <circle cx="60" cy="60" r="50" fill="#22c55e"></circle>
+    </svg>
+
+    <h2>🎨 Estilizar SVG con CSS</h2>
+    <p>
+      Puedes aplicar clases y estilos como cualquier otro elemento HTML.
+    </p>
+
+<pre><code>&lt;svg class="icon"&gt;
+  &lt;rect x="10" y="10" width="100" height="100" /&gt;
+&lt;/svg&gt;
+</code></pre>
+
+    <h2>📌 Ventajas del SVG en línea</h2>
+    <ul>
+      <li>No pierde calidad al escalar</li>
+      <li>Pesa menos que imágenes PNG o JPG</li>
+      <li>Editable con CSS y JavaScript</li>
+      <li>Ideal para iconos y logotipos</li>
+    </ul>
+
+    <h2>🚫 Errores comunes</h2>
+    <ul>
+      <li>Usar SVG como imagen cuando se necesita animar</li>
+      <li>No definir el <code>viewBox</code></li>
+      <li>Insertar SVG sin accesibilidad</li>
+    </ul>
+
+    <h2>🎥 Video de la lección</h2>
+    <p>
+      Debes ver el video completo para desbloquear la siguiente lección.
+    </p>
+
+    <div class="video-wrapper">
+      <iframe
+        id="player"
+        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
+        title="SVG en línea - Curso HTML5"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <nav class="course-nav">
+      <button id="nextBtn" class="locked" disabled>
+        🔒 Completa el video para continuar
+      </button>
+    </nav>
+
+    <!-- ================= ADSENSE ================= -->
+    <section class="container" style="margin:2rem auto;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4933331274738462"
+           data-ad-slot="4606183476"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </section>
+
+    <h2>📌 Resumen</h2>
+    <ul>
+      <li>SVG es gráfico vectorial escalable</li>
+      <li>SVG en línea permite animación y estilos</li>
+      <li>Ideal para iconos y branding</li>
+    </ul>
+
+    <p class="muted">
+      En la siguiente lección aprenderás
+      <strong>SVG con herramientas</strong>.
+    </p>
+
+  </article>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="/blog/cursohtml5/js/curso-html5.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

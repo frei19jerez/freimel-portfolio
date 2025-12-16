@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>20 – Etiquetas complementarias | Curso HTML5</title>
+  <meta name="description" content="Aprende las etiquetas complementarias en HTML5 como span, div, br, hr, details y summary. Curso HTML5 por Freimel Jerez.">
+
+  <!-- AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-4933331274738462">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+          crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/blog/cursohtml5/css/curso-html5.css">
+  <link rel="icon" href="/imagen/favicon.svg">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="container header-flex">
+
+    <a class="brand" href="/index.html">💻 Freimel Jerez WebApp</a>
+
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="/index.html">Inicio</a>
+      <a href="/blog/">Blog</a>
+      <a href="/blog/cursohtml5/index.html">Curso HTML5</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= CONTENIDO ================= -->
+<main class="container">
+
+  <a href="/blog/cursohtml5/index.html" class="back">← Volver al curso</a>
+
+  <article class="post">
+
+    <h1>20. Etiquetas complementarias en HTML5</h1>
+    <p class="muted">Curso HTML5 desde cero — Freimel Jerez</p>
+
+    <p>
+      En esta lección aprenderás las <strong>etiquetas complementarias</strong> de HTML5.
+      Son etiquetas que no estructuran toda la página, pero son esenciales para
+      dar formato, separar contenido y mejorar la experiencia del usuario.
+    </p>
+
+    <h2>🔹 La etiqueta &lt;span&gt;</h2>
+    <p>
+      <code>&lt;span&gt;</code> es una etiqueta en línea que se usa para aplicar estilos
+      o lógica a una parte específica del texto.
+    </p>
+
+<pre><code>&lt;p&gt;Este texto tiene un &lt;span&gt;detalle importante&lt;/span&gt;.&lt;/p&gt;
+</code></pre>
+
+    <h2>🔹 La etiqueta &lt;div&gt;</h2>
+    <p>
+      <code>&lt;div&gt;</code> es una etiqueta de bloque usada para agrupar contenido.
+      Es muy común en layouts y contenedores.
+    </p>
+
+<pre><code>&lt;div class="card"&gt;
+  &lt;h3&gt;Título&lt;/h3&gt;
+  &lt;p&gt;Contenido&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+    <h2>🔹 &lt;br&gt; y &lt;hr&gt;</h2>
+    <ul>
+      <li><code>&lt;br&gt;</code> → salto de línea</li>
+      <li><code>&lt;hr&gt;</code> → separación temática</li>
+    </ul>
+
+<pre><code>&lt;p&gt;Línea uno&lt;br&gt;Línea dos&lt;/p&gt;
+&lt;hr&gt;
+</code></pre>
+
+    <h2>🔹 &lt;details&gt; y &lt;summary&gt;</h2>
+    <p>
+      Permiten mostrar y ocultar contenido sin JavaScript.
+    </p>
+
+<pre><code>&lt;details&gt;
+  &lt;summary&gt;Ver más información&lt;/summary&gt;
+  &lt;p&gt;Este contenido se puede ocultar.&lt;/p&gt;
+&lt;/details&gt;
+</code></pre>
+
+    <h2>📌 Buenas prácticas</h2>
+    <ul>
+      <li>Usa <code>span</code> solo para texto en línea</li>
+      <li>No abuses de <code>div</code> si existe una etiqueta semántica</li>
+      <li>Usa <code>hr</code> para separar secciones, no solo por diseño</li>
+      <li>Aprovecha <code>details</code> para FAQs</li>
+    </ul>
+
+    <h2>🎥 Video de la lección</h2>
+    <p>
+      Debes ver el video completo para desbloquear la siguiente lección.
+    </p>
+
+    <div class="video-wrapper">
+      <iframe
+        id="player"
+        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
+        title="Etiquetas complementarias HTML5 - Curso HTML5"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <nav class="course-nav">
+      <button id="nextBtn" class="locked" disabled>
+        🔒 Completa el video para continuar
+      </button>
+    </nav>
+
+    <!-- ================= ADSENSE ================= -->
+    <section class="container" style="margin:2rem auto;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4933331274738462"
+           data-ad-slot="4606183476"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </section>
+
+    <h2>📌 Resumen</h2>
+    <ul>
+      <li><code>span</code> y <code>div</code> agrupan contenido</li>
+      <li><code>br</code> y <code>hr</code> separan visualmente</li>
+      <li><code>details</code> y <code>summary</code> mejoran la UX</li>
+    </ul>
+
+    <p class="muted">
+      En la siguiente lección aprenderás sobre
+      <strong>SVG en línea</strong>.
+    </p>
+
+  </article>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="/blog/cursohtml5/js/curso-html5.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

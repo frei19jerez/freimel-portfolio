@@ -1,0 +1,316 @@
+/* ===============================
+   CURSO HTML5 – ESTILOS GENERALES (PRO)
+   Autor: Freimel Jerez WebApp
+================================ */
+
+:root {
+  --bg: #0f172a;
+  --card: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --primary: #22c55e;
+  --border: #1f2933;
+  --code-bg: #020617;
+}
+
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* ================= CONTENEDOR ================= */
+.container {
+  max-width: 1000px; /* un poco más ancho para el index */
+  margin: auto;
+  padding: 24px;
+}
+
+/* ================= HEADER ================= */
+.topbar {
+  background: #020617;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* ================= ARTÍCULO ================= */
+.post {
+  background: var(--card);
+  padding: 32px;
+  border-radius: 14px;
+  margin-top: 24px;
+}
+
+.post h1,
+.post h2,
+.post h3 {
+  color: #fff;
+  margin-top: 28px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.post-img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 24px 0;
+}
+
+/* ================= CÓDIGO ================= */
+pre {
+  background: var(--code-bg);
+  padding: 16px;
+  border-radius: 12px;
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+code {
+  color: #22d3ee;
+  font-family: Consolas, monospace;
+  font-size: 14px;
+}
+
+/* ================= VIDEO ================= */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  margin: 24px 0;
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ================= BOTÓN VOLVER ================= */
+.back {
+  display: inline-block;
+  margin: 12px 0 18px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+/* ================= NAVEGACIÓN DE LECCIÓN ================= */
+.course-nav {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.course-nav button {
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  cursor: not-allowed;
+  background: #374151;
+  color: #9ca3af;
+  transition: all 0.3s ease;
+}
+
+.course-nav button.enabled {
+  background: var(--primary);
+  color: #020617;
+  cursor: pointer;
+}
+
+.course-nav button.enabled:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
+/* ================= LISTA DEL CURSO (GRID) ================= */
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+
+/* ================= TARJETA DE LECCIÓN ================= */
+.lesson {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 14px;
+  align-items: center;
+
+  background: #020617;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+
+  color: var(--text);
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Número */
+.lesson .num {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* Texto */
+.lesson strong {
+  display: block;
+  font-size: 15px;
+}
+
+.lesson small {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+/* Estado */
+.lesson .status {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* DESBLOQUEADA */
+.lesson.unlocked {
+  border-color: #22c55e55;
+}
+
+.lesson.unlocked:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(0,0,0,.45);
+}
+
+/* BLOQUEADA */
+.lesson.locked {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ================= PROYECTO FINAL ================= */
+.lesson.final {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #022c22, #020617);
+  border-color: #22c55e;
+}
+
+.lesson.final .num {
+  color: #34d399;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  text-align: center;
+  margin-top: 48px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ================= ADSENSE ================= */
+.adsbygoogle {
+  margin: 32px auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 600px) {
+  .post {
+    padding: 20px;
+  }
+
+  .lesson {
+    grid-template-columns: auto 1fr;
+  }
+
+  .lesson .status {
+    grid-column: 1 / -1;
+    text-align: right;
+    margin-top: 8px;
+  }
+
+  .course-nav button {
+    width: 100%;
+  }
+}
+
+/* ================= MENÚ HAMBURGUESA ================= */
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  gap: 18px;
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav a:hover {
+  color: var(--primary);
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: #020617;
+    flex-direction: column;
+    padding: 20px;
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>17 – Iframe | Curso HTML5</title>
+  <meta name="description" content="Aprende a usar la etiqueta iframe en HTML5 para incrustar videos, mapas y sitios web. Curso HTML5 por Freimel Jerez.">
+
+  <!-- AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-4933331274738462">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+          crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/blog/cursohtml5/css/curso-html5.css">
+  <link rel="icon" href="/imagen/favicon.svg">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="container header-flex">
+
+    <a class="brand" href="/index.html">💻 Freimel Jerez WebApp</a>
+
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="/index.html">Inicio</a>
+      <a href="/blog/">Blog</a>
+      <a href="/blog/cursohtml5/index.html">Curso HTML5</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= CONTENIDO ================= -->
+<main class="container">
+
+  <a href="/blog/cursohtml5/index.html" class="back">← Volver al curso</a>
+
+  <article class="post">
+
+    <h1>17. La etiqueta &lt;iframe&gt;</h1>
+    <p class="muted">Curso HTML5 desde cero — Freimel Jerez</p>
+
+    <p>
+      La etiqueta <strong>&lt;iframe&gt;</strong> permite incrustar
+      <strong>contenido externo</strong> dentro de una página web,
+      como videos, mapas, documentos o incluso otros sitios web.
+    </p>
+
+    <h2>🎯 ¿Para qué sirve un iframe?</h2>
+    <ul>
+      <li>Insertar videos de YouTube</li>
+      <li>Mostrar mapas de Google Maps</li>
+      <li>Integrar formularios externos</li>
+      <li>Incrustar dashboards o vistas externas</li>
+    </ul>
+
+    <h2>📌 Sintaxis básica</h2>
+
+<pre><code>&lt;iframe 
+  src="https://example.com"
+  width="100%"
+  height="400"
+  loading="lazy"&gt;
+&lt;/iframe&gt;
+</code></pre>
+
+    <h2>🎥 Ejemplo con YouTube</h2>
+
+<pre><code>&lt;iframe
+  src="https://www.youtube.com/embed/ID_DEL_VIDEO"
+  title="Video incrustado"
+  allowfullscreen&gt;
+&lt;/iframe&gt;
+</code></pre>
+
+    <h2>🗺️ Ejemplo con Google Maps</h2>
+
+<pre><code>&lt;iframe
+  src="https://www.google.com/maps/embed?...">
+&lt;/iframe&gt;
+</code></pre>
+
+    <h2>⚠️ Buenas prácticas</h2>
+    <ul>
+      <li>Usa <code>loading="lazy"</code> para mejorar rendimiento</li>
+      <li>Define siempre <code>title</code> (accesibilidad)</li>
+      <li>No incrustes sitios no confiables</li>
+      <li>Evita iframes innecesarios</li>
+    </ul>
+
+    <h2>🚫 Limitaciones</h2>
+    <ul>
+      <li>Algunos sitios bloquean iframes por seguridad</li>
+      <li>No tienes control total del contenido externo</li>
+    </ul>
+
+    <h2>🎥 Video de la lección</h2>
+    <p>
+      Debes ver el video completo para desbloquear la siguiente lección.
+    </p>
+
+    <div class="video-wrapper">
+      <iframe
+        id="player"
+        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
+        title="Etiqueta iframe en HTML5 - Curso HTML5"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <nav class="course-nav">
+      <button id="nextBtn" class="locked" disabled>
+        🔒 Completa el video para continuar
+      </button>
+    </nav>
+
+    <!-- ================= ADSENSE ================= -->
+    <section class="container" style="margin:2rem auto;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4933331274738462"
+           data-ad-slot="4606183476"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </section>
+
+    <h2>✅ Resumen</h2>
+    <ul>
+      <li>&lt;iframe&gt; incrusta contenido externo</li>
+      <li>Ideal para videos y mapas</li>
+      <li>Usar con responsabilidad y buenas prácticas</li>
+    </ul>
+
+    <p class="muted">
+      En la siguiente lección aprenderás sobre el <strong>espacio de trabajo del desarrollador</strong>.
+    </p>
+
+  </article>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="/blog/cursohtml5/js/curso-html5.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

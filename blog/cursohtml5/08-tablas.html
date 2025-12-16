@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>08 – Tablas en HTML | Curso HTML5</title>
+  <meta name="description" content="Aprende a crear y usar tablas en HTML. Conoce los atributos y buenas prácticas para una correcta presentación.">
+
+  <!-- ADSENSE -->
+  <meta name="google-adsense-account" content="ca-pub-4933331274738462">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+          crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/blog/cursohtml5/css/curso-html5.css">
+  <link rel="icon" href="/imagen/favicon.svg">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="container header-flex">
+
+    <a class="brand" href="/index.html">💻 Freimel Jerez WebApp</a>
+
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="/index.html">Inicio</a>
+      <a href="/blog/">Blog</a>
+      <a href="/blog/cursohtml5/index.html">Curso HTML5</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= CONTENIDO ================= -->
+<main class="container">
+
+  <a href="/blog/cursohtml5/index.html" class="back">← Volver al curso</a>
+
+  <article class="post">
+
+    <h1>08. Tablas en HTML</h1>
+    <p class="muted">Curso HTML5 desde cero — Freimel Jerez</p>
+
+    <p>
+      Las <strong>tablas</strong> permiten organizar la información de manera estructurada en filas y columnas. Son ideales para mostrar datos tabulados, como hojas de cálculo o listas detalladas.
+    </p>
+
+    <h2>📌 Sintaxis básica</h2>
+
+<pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Encabezado 1&lt;/th&gt;
+    &lt;th&gt;Encabezado 2&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Fila 1, Columna 1&lt;/td&gt;
+    &lt;td&gt;Fila 1, Columna 2&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Fila 2, Columna 1&lt;/td&gt;
+    &lt;td&gt;Fila 2, Columna 2&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+
+    <ul>
+      <li><strong>&lt;table&gt;</strong>: Define la tabla.</li>
+      <li><strong>&lt;tr&gt;</strong>: Define una fila de la tabla.</li>
+      <li><strong>&lt;th&gt;</strong>: Define un encabezado de columna (texto en negrita y centrado).</li>
+      <li><strong>&lt;td&gt;</strong>: Define una celda de la tabla.</li>
+    </ul>
+
+    <h2>📏 Atributos comunes de tablas</h2>
+    <ul>
+      <li><strong>border:</strong> Añadir borde a la tabla (aunque es más recomendable usar CSS).</li>
+      <li><strong>colspan:</strong> Especifica cuántas columnas debe ocupar una celda.</li>
+      <li><strong>rowspan:</strong> Especifica cuántas filas debe ocupar una celda.</li>
+    </ul>
+
+    <h2>🎨 Mejorando el estilo de las tablas con CSS</h2>
+    <p>
+      Es recomendable no usar los atributos de estilo de la tabla en HTML, sino usar CSS para mejorar su presentación.
+    </p>
+
+<pre><code>table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+</code></pre>
+
+    <h2>📄 Ejemplo práctico</h2>
+
+    <table>
+      <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Ciudad</th>
+      </tr>
+      <tr>
+        <td>Juan</td>
+        <td>28</td>
+        <td>Madrid</td>
+      </tr>
+      <tr>
+        <td>Ana</td>
+        <td>35</td>
+        <td>Barcelona</td>
+      </tr>
+    </table>
+
+    <h2>🎥 Video de la lección</h2>
+    <p>Debes ver el video completo para desbloquear la siguiente lección.</p>
+
+    <div class="video-wrapper">
+      <iframe
+        id="player"
+        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
+        title="Tablas en HTML - Curso HTML5"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <nav class="course-nav">
+      <button id="nextBtn" class="locked" disabled>
+        🔒 Completa el video para continuar
+      </button>
+    </nav>
+
+    <!-- ================= ADSENSE ================= -->
+    <section class="container" style="margin:2rem auto;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4933331274738462"
+           data-ad-slot="4606183476"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </section>
+
+    <h2>✅ Resumen</h2>
+    <ul>
+      <li>Las tablas se definen con &lt;table&gt; y se organizan con &lt;tr&gt;, &lt;th&gt; y &lt;td&gt;.</li>
+      <li>Usa CSS para mejorar el estilo de las tablas.</li>
+      <li>Evita usar tablas para diseño, solo para datos.</li>
+    </ul>
+
+  </article>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="/blog/cursohtml5/js/curso-html5.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

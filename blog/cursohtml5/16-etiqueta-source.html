@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>16 – Etiqueta source | Curso HTML5</title>
+  <meta name="description" content="Aprende a usar la etiqueta source en HTML5 para audio, video e imágenes responsivas. Curso HTML5 por Freimel Jerez.">
+
+  <!-- AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-4933331274738462">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+          crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/blog/cursohtml5/css/curso-html5.css">
+  <link rel="icon" href="/imagen/favicon.svg">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="container header-flex">
+
+    <a class="brand" href="/index.html">💻 Freimel Jerez WebApp</a>
+
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="/index.html">Inicio</a>
+      <a href="/blog/">Blog</a>
+      <a href="/blog/cursohtml5/index.html">Curso HTML5</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= CONTENIDO ================= -->
+<main class="container">
+
+  <a href="/blog/cursohtml5/index.html" class="back">← Volver al curso</a>
+
+  <article class="post">
+
+    <h1>16. La etiqueta &lt;source&gt;</h1>
+    <p class="muted">Curso HTML5 desde cero — Freimel Jerez</p>
+
+    <p>
+      La etiqueta <strong>&lt;source&gt;</strong> se utiliza para definir
+      <strong>múltiples archivos multimedia</strong> dentro de elementos como
+      <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code> y <code>&lt;picture&gt;</code>.
+    </p>
+
+    <h2>🎯 ¿Para qué sirve &lt;source&gt;?</h2>
+    <p>
+      Permite que el navegador elija automáticamente el archivo compatible
+      según el formato, tamaño o dispositivo.
+    </p>
+
+    <h2>🎧 Uso con audio</h2>
+
+<pre><code>&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+  &lt;source src="audio.ogg" type="audio/ogg"&gt;
+  Tu navegador no soporta audio.
+&lt;/audio&gt;
+</code></pre>
+
+    <h2>🎬 Uso con video</h2>
+
+<pre><code>&lt;video controls width="100%"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  &lt;source src="video.webm" type="video/webm"&gt;
+  Tu navegador no soporta video.
+&lt;/video&gt;
+</code></pre>
+
+    <h2>🖼️ Uso con imágenes responsivas</h2>
+    <p>
+      Con <code>&lt;picture&gt;</code> y <code>&lt;source&gt;</code>
+      puedes mostrar imágenes diferentes según el tamaño de pantalla.
+    </p>
+
+<pre><code>&lt;picture&gt;
+  &lt;source srcset="imagen-movil.jpg" media="(max-width: 600px)"&gt;
+  &lt;source srcset="imagen-desktop.jpg" media="(min-width: 601px)"&gt;
+  &lt;img src="imagen-desktop.jpg" alt="Imagen adaptable"&gt;
+&lt;/picture&gt;
+</code></pre>
+
+    <h2>⚠️ Buenas prácticas</h2>
+    <ul>
+      <li>Ordena los formatos del más compatible al menos compatible</li>
+      <li>Siempre incluye un contenido alternativo</li>
+      <li>Optimiza archivos multimedia</li>
+      <li>Usa <code>type</code> para mejorar compatibilidad</li>
+    </ul>
+
+    <h2>🎥 Video de la lección</h2>
+    <p>
+      Debes ver el video completo para desbloquear la siguiente lección.
+    </p>
+
+    <div class="video-wrapper">
+      <iframe
+        id="player"
+        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
+        title="Etiqueta source en HTML5 - Curso HTML5"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <nav class="course-nav">
+      <button id="nextBtn" class="locked" disabled>
+        🔒 Completa el video para continuar
+      </button>
+    </nav>
+
+    <!-- ================= ADSENSE ================= -->
+    <section class="container" style="margin:2rem auto;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4933331274738462"
+           data-ad-slot="4606183476"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </section>
+
+    <h2>✅ Resumen</h2>
+    <ul>
+      <li>&lt;source&gt; permite múltiples formatos</li>
+      <li>Mejora compatibilidad y rendimiento</li>
+      <li>Funciona con audio, video e imágenes</li>
+    </ul>
+
+    <p class="muted">
+      En la siguiente lección aprenderás a usar <strong>&lt;iframe&gt;</strong>.
+    </p>
+
+  </article>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="/blog/cursohtml5/js/curso-html5.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

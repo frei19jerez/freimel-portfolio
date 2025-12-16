@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>23 — Proyecto Final HTML5 | Curso Completo</title>
+  <meta name="description" content="Proyecto Final del Curso HTML5 desde Cero. Demuestra todo lo aprendido creando un sitio web completo.">
+
+  <!-- AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-4933331274738462">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+          crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/curso-html5.css">
+  <link rel="icon" href="../imagen/favicon.svg">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="container header-flex">
+
+    <a class="brand" href="../../index.html">
+      💻 Freimel Jerez WebApp
+    </a>
+
+    <!-- HAMBURGUESA -->
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- NAV -->
+    <nav class="nav">
+      <a href="../../index.html">Inicio</a>
+      <a href="../">Blog</a>
+      <a href="./index.html">Curso HTML5</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= CONTENIDO ================= -->
+<main class="container">
+
+  <a href="./index.html" class="back">← Volver al curso</a>
+
+  <article class="post">
+
+    <h1>🏁 Proyecto Final HTML5</h1>
+    <p class="muted">
+      Curso HTML5 desde Cero — Freimel Jerez WebApp<br>
+      Este proyecto demuestra que dominas HTML5 a nivel práctico y real.
+    </p>
+
+    <h2>🎯 Objetivo del proyecto</h2>
+    <p>
+      Crear un <strong>sitio web completo en HTML5</strong>, bien estructurado,
+      semántico y listo para producción básica.
+    </p>
+
+    <h2>📂 Estructura mínima requerida</h2>
+
+<pre><code>proyecto-final/
+├── index.html
+├── css/
+│   └── styles.css
+├── img/
+│   └── logo.svg
+└── README.txt
+</code></pre>
+
+    <h2>📋 Requisitos obligatorios</h2>
+    <ul>
+      <li>Uso correcto de <strong>HTML semántico</strong></li>
+      <li>Encabezado, navegación, contenido principal y footer</li>
+      <li>Listas, enlaces, imágenes y tablas</li>
+      <li>Formulario con validaciones HTML5</li>
+      <li>Uso de audio o video</li>
+      <li>Al menos un SVG (inline o externo)</li>
+      <li>Estructura limpia y ordenada</li>
+    </ul>
+
+    <h2>⭐ Requisitos opcionales (bonus)</h2>
+    <ul>
+      <li>Diseño responsive básico</li>
+      <li>Uso de iframe (mapa o video)</li>
+      <li>Comentarios claros en el código</li>
+      <li>Buenas prácticas SEO (title, meta description)</li>
+    </ul>
+
+    <h2>🧠 Recomendaciones</h2>
+    <ul>
+      <li>Piensa en un proyecto real: negocio, portafolio, blog</li>
+      <li>Usa nombres claros para archivos y carpetas</li>
+      <li>No copies: construye y entiende cada línea</li>
+    </ul>
+
+    <h2>🎥 Video final del curso</h2>
+    <p>
+      Mira el video completo para cerrar oficialmente el curso.
+    </p>
+
+    <div class="video-wrapper">
+      <iframe
+        id="player"
+        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
+        title="Proyecto Final HTML5"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <nav class="course-nav">
+      <button id="nextBtn" disabled class="locked">
+        🔒 Completa el video para finalizar el curso
+      </button>
+    </nav>
+
+    <!-- ================= ANUNCIO ================= -->
+    <ins class="adsbygoogle"
+         style="display:block; margin-top:2rem"
+         data-ad-client="ca-pub-4933331274738462"
+         data-ad-slot="4606183476"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    <h2>🏆 Felicitaciones</h2>
+    <p>
+      Si llegaste hasta aquí, <strong>ya no eres principiante</strong>.
+      Ahora sabes cómo funciona HTML5 de verdad.
+    </p>
+
+    <p class="muted">
+      Sigue practicando, crea proyectos reales y continúa aprendiendo.
+      Este es solo el comienzo 🚀
+    </p>
+
+  </article>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="js/curso-html5.js"></script>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

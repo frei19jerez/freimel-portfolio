@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>04 – Etiquetas básicas | Curso HTML5</title>
+  <meta name="description" content="Aprende las etiquetas HTML básicas. Curso HTML5 desde cero por Freimel Jerez.">
+
+  <!-- ADSENSE -->
+  <meta name="google-adsense-account" content="ca-pub-4933331274738462">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/blog/cursohtml5/css/curso-html5.css">
+  <link rel="icon" href="/imagen/favicon.svg">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container header-flex">
+    <a class="brand" href="/index.html">💻 Freimel Jerez WebApp</a>
+
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="/index.html">Inicio</a>
+      <a href="/blog/">Blog</a>
+      <a href="/blog/cursohtml5/index.html">Curso HTML5</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <a href="/blog/cursohtml5/index.html" class="back">← Volver al curso</a>
+
+  <article class="post">
+
+    <h1>04. Etiquetas básicas en HTML</h1>
+    <p class="muted">Curso HTML5 desde cero — Freimel Jerez</p>
+
+    <p>
+      Las <strong>etiquetas HTML</strong> son las que le dicen al navegador
+      qué tipo de contenido está mostrando.
+    </p>
+
+    <h2>📌 Etiquetas más importantes</h2>
+
+    <ul>
+      <li><code>&lt;h1&gt; a &lt;h6&gt;</code> → Títulos</li>
+      <li><code>&lt;p&gt;</code> → Párrafos</li>
+      <li><code>&lt;strong&gt;</code> → Texto importante</li>
+      <li><code>&lt;em&gt;</code> → Texto en énfasis</li>
+      <li><code>&lt;br&gt;</code> → Salto de línea</li>
+    </ul>
+
+    <h2>📄 Ejemplo práctico</h2>
+
+<pre><code>&lt;h1&gt;Mi primera web&lt;/h1&gt;
+&lt;p&gt;Estoy aprendiendo HTML&lt;/p&gt;
+&lt;strong&gt;Este texto es importante&lt;/strong&gt;
+</code></pre>
+
+    <h2>🎥 Video de la lección</h2>
+
+    <div class="video-wrapper">
+      <iframe
+        id="player"
+        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
+        title="Etiquetas básicas HTML"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <nav class="course-nav">
+      <button id="nextBtn" class="locked" disabled>
+        🔒 Completa el video para continuar
+      </button>
+    </nav>
+
+    <!-- ANUNCIO -->
+    <ins class="adsbygoogle"
+         style="display:block;margin:24px 0"
+         data-ad-client="ca-pub-4933331274738462"
+         data-ad-slot="4606183476"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <h2>✅ Resumen</h2>
+    <ul>
+      <li>Las etiquetas estructuran el contenido</li>
+      <li>HTML usa marcado, no programación</li>
+      <li>Todo sitio web empieza con etiquetas</li>
+    </ul>
+
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="/blog/cursohtml5/js/curso-html5.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

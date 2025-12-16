@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>06 – Listas en HTML | Curso HTML5</title>
+  <meta name="description" content="Aprende a usar listas ordenadas, desordenadas y de definición en HTML5. Curso desde cero por Freimel Jerez.">
+
+  <!-- ADSENSE -->
+  <meta name="google-adsense-account" content="ca-pub-4933331274738462">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/blog/cursohtml5/css/curso-html5.css">
+  <link rel="icon" href="/imagen/favicon.svg">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="container header-flex">
+
+    <a class="brand" href="/index.html">💻 Freimel Jerez WebApp</a>
+
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="/index.html">Inicio</a>
+      <a href="/blog/">Blog</a>
+      <a href="/blog/cursohtml5/index.html">Curso HTML5</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= CONTENIDO ================= -->
+<main class="container">
+
+  <a href="/blog/cursohtml5/index.html" class="back">← Volver al curso</a>
+
+  <article class="post">
+
+    <h1>06. Listas en HTML</h1>
+    <p class="muted">Curso HTML5 desde cero — Freimel Jerez</p>
+
+    <p>
+      Las <strong>listas</strong> en HTML sirven para organizar información
+      de forma clara y estructurada. Existen tres tipos principales.
+    </p>
+
+    <h2>📌 Tipos de listas</h2>
+
+    <h3>1️⃣ Lista desordenada</h3>
+    <p>Se usa cuando el orden no es importante.</p>
+
+<pre><code>&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+
+    <h3>2️⃣ Lista ordenada</h3>
+    <p>Se usa cuando el orden sí importa.</p>
+
+<pre><code>&lt;ol&gt;
+  &lt;li&gt;Aprender HTML&lt;/li&gt;
+  &lt;li&gt;Aprender CSS&lt;/li&gt;
+  &lt;li&gt;Aprender JavaScript&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+
+    <ol>
+      <li>Aprender HTML</li>
+      <li>Aprender CSS</li>
+      <li>Aprender JavaScript</li>
+    </ol>
+
+    <h3>3️⃣ Lista de definición</h3>
+    <p>Sirve para explicar conceptos.</p>
+
+<pre><code>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Lenguaje de marcado&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+
+    <dl>
+      <dt><strong>HTML</strong></dt>
+      <dd>Lenguaje de marcado para la web</dd>
+    </dl>
+
+    <h2>🎥 Video de la lección</h2>
+    <p>Debes ver el video completo para desbloquear la siguiente lección.</p>
+
+    <div class="video-wrapper">
+      <iframe
+        id="player"
+        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
+        title="Listas en HTML - Curso HTML5"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <nav class="course-nav">
+      <button id="nextBtn" class="locked" disabled>
+        🔒 Completa el video para continuar
+      </button>
+    </nav>
+
+    <!-- ================= ADS ================= -->
+    <ins class="adsbygoogle"
+      style="display:block;margin:24px 0"
+      data-ad-client="ca-pub-4933331274738462"
+      data-ad-slot="4606183476"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <h2>✅ Resumen</h2>
+    <ul>
+      <li>Las listas organizan información</li>
+      <li>UL = desordenada</li>
+      <li>OL = ordenada</li>
+      <li>DL = definición</li>
+    </ul>
+
+  </article>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="/blog/cursohtml5/js/curso-html5.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

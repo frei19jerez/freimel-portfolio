@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>12 – Enlaces HTML | Curso HTML5</title>
+  <meta name="description" content="Aprende a usar enlaces HTML: a, href, target, mailto, tel, download y rel. Curso HTML5 por Freimel Jerez.">
+
+  <!-- AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-4933331274738462">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+          crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/blog/cursohtml5/css/curso-html5.css">
+  <link rel="icon" href="/imagen/favicon.svg">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="container header-flex">
+
+    <a class="brand" href="/index.html">💻 Freimel Jerez WebApp</a>
+
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="/index.html">Inicio</a>
+      <a href="/blog/">Blog</a>
+      <a href="/blog/cursohtml5/index.html">Curso HTML5</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= CONTENIDO ================= -->
+<main class="container">
+
+  <a href="/blog/cursohtml5/index.html" class="back">← Volver al curso</a>
+
+  <article class="post">
+
+    <h1>12. Enlaces HTML</h1>
+    <p class="muted">Curso HTML5 desde cero — Freimel Jerez</p>
+
+    <p>
+      Los <strong>enlaces</strong> permiten conectar páginas, archivos,
+      secciones y recursos dentro y fuera de un sitio web.
+    </p>
+
+    <h2>🔗 Etiqueta <code>&lt;a&gt;</code></h2>
+
+    <p>
+      La etiqueta <code>&lt;a&gt;</code> se usa para crear enlaces.
+      El atributo principal es <code>href</code>.
+    </p>
+
+<pre><code>&lt;a href="https://www.google.com"&gt;Ir a Google&lt;/a&gt;
+</code></pre>
+
+    <h2>🧭 Enlaces internos</h2>
+
+<pre><code>&lt;a href="contacto.html"&gt;Contacto&lt;/a&gt;
+</code></pre>
+
+    <h2>🌐 Enlaces externos</h2>
+
+<pre><code>&lt;a href="https://freimeljerezwebapps.com"&gt;
+  Mi sitio web
+&lt;/a&gt;
+</code></pre>
+
+    <h2>🆕 Abrir enlace en otra pestaña</h2>
+
+<pre><code>&lt;a href="https://google.com" target="_blank" rel="noopener"&gt;
+  Abrir Google
+&lt;/a&gt;
+</code></pre>
+
+    <p class="muted">
+      👉 <code>rel="noopener"</code> mejora la seguridad.
+    </p>
+
+    <h2>📧 Enlace de correo (mailto)</h2>
+
+<pre><code>&lt;a href="mailto:correo@ejemplo.com"&gt;
+  Enviar correo
+&lt;/a&gt;
+</code></pre>
+
+    <h2>📞 Enlace telefónico (tel)</h2>
+
+<pre><code>&lt;a href="tel:+573001234567"&gt;
+  Llamar ahora
+&lt;/a&gt;
+</code></pre>
+
+    <h2>⬇️ Enlace de descarga</h2>
+
+<pre><code>&lt;a href="archivo.pdf" download&gt;
+  Descargar PDF
+&lt;/a&gt;
+</code></pre>
+
+    <h2>📍 Enlaces ancla (secciones)</h2>
+
+<pre><code>&lt;a href="#contacto"&gt;Ir a contacto&lt;/a&gt;
+
+&lt;section id="contacto"&gt;
+  Contenido aquí
+&lt;/section&gt;
+</code></pre>
+
+    <h2>🎥 Video de la lección</h2>
+    <p>
+      Debes ver el video completo para desbloquear la siguiente lección.
+    </p>
+
+    <div class="video-wrapper">
+      <iframe
+        id="player"
+        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
+        title="Enlaces HTML - Curso HTML5"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <nav class="course-nav">
+      <button id="nextBtn" class="locked" disabled>
+        🔒 Completa el video para continuar
+      </button>
+    </nav>
+
+    <!-- ================= ADSENSE ================= -->
+    <section class="container" style="margin:2rem auto;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4933331274738462"
+           data-ad-slot="4606183476"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </section>
+
+    <h2>✅ Resumen</h2>
+    <ul>
+      <li>Los enlaces conectan todo en la web</li>
+      <li><code>&lt;a&gt;</code> es la etiqueta principal</li>
+      <li>Puedes enlazar páginas, correos, teléfonos y archivos</li>
+    </ul>
+
+    <p class="muted">
+      En la siguiente lección aprenderás etiquetas semánticas HTML5.
+    </p>
+
+  </article>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="/blog/cursohtml5/js/curso-html5.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

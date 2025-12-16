@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>11 – Validaciones HTML5 | Curso HTML5</title>
+  <meta name="description" content="Aprende validaciones HTML5: required, pattern, minlength, maxlength, email y más. Curso por Freimel Jerez.">
+
+  <!-- AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-4933331274738462">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+          crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/blog/cursohtml5/css/curso-html5.css">
+  <link rel="icon" href="/imagen/favicon.svg">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="container header-flex">
+
+    <a class="brand" href="/index.html">💻 Freimel Jerez WebApp</a>
+
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="/index.html">Inicio</a>
+      <a href="/blog/">Blog</a>
+      <a href="/blog/cursohtml5/index.html">Curso HTML5</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= CONTENIDO ================= -->
+<main class="container">
+
+  <a href="/blog/cursohtml5/index.html" class="back">← Volver al curso</a>
+
+  <article class="post">
+
+    <h1>11. Validaciones HTML5</h1>
+    <p class="muted">Curso HTML5 desde cero — Freimel Jerez</p>
+
+    <p>
+      HTML5 incluye <strong>validaciones automáticas</strong> que permiten
+      verificar los datos del usuario <strong>sin usar JavaScript</strong>.
+    </p>
+
+    <h2>✅ ¿Qué son las validaciones?</h2>
+
+    <p>
+      Son reglas que impiden enviar un formulario si los datos
+      no cumplen ciertas condiciones.
+    </p>
+
+    <h2>📌 Atributos de validación más usados</h2>
+
+    <ul>
+      <li><strong>required</strong> → Campo obligatorio</li>
+      <li><strong>type</strong> → Valida formato (email, number, url)</li>
+      <li><strong>minlength</strong> / <strong>maxlength</strong></li>
+      <li><strong>pattern</strong> → Expresiones regulares</li>
+      <li><strong>min</strong> / <strong>max</strong></li>
+    </ul>
+
+    <h2>📄 Ejemplo con <code>required</code></h2>
+
+<pre><code>&lt;input type="text" required&gt;
+</code></pre>
+
+    <h2>📧 Validación de correo</h2>
+
+<pre><code>&lt;input type="email" required&gt;
+</code></pre>
+
+    <h2>🔢 Longitud mínima y máxima</h2>
+
+<pre><code>&lt;input type="password" minlength="6" maxlength="12"&gt;
+</code></pre>
+
+    <h2>🔐 Validación con <code>pattern</code></h2>
+
+<pre><code>&lt;input
+  type="text"
+  pattern="[0-9]{10}"
+  placeholder="Solo números (10 dígitos)"&gt;
+</code></pre>
+
+    <h2>🧪 Formulario completo con validaciones</h2>
+
+<pre><code>&lt;form&gt;
+
+  &lt;label&gt;Nombre&lt;/label&gt;
+  &lt;input type="text" required&gt;
+
+  &lt;label&gt;Correo&lt;/label&gt;
+  &lt;input type="email" required&gt;
+
+  &lt;label&gt;Contraseña&lt;/label&gt;
+  &lt;input type="password" minlength="6" required&gt;
+
+  &lt;button&gt;Enviar&lt;/button&gt;
+
+&lt;/form&gt;
+</code></pre>
+
+    <h2>⚠️ Mensajes del navegador</h2>
+
+    <p>
+      El navegador muestra mensajes automáticos cuando los datos no son válidos.
+      Esto mejora la experiencia del usuario.
+    </p>
+
+    <h2>🎥 Video de la lección</h2>
+    <p>
+      Debes ver el video completo para desbloquear la siguiente lección.
+    </p>
+
+    <div class="video-wrapper">
+      <iframe
+        id="player"
+        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
+        title="Validaciones HTML5 - Curso HTML5"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <nav class="course-nav">
+      <button id="nextBtn" class="locked" disabled>
+        🔒 Completa el video para continuar
+      </button>
+    </nav>
+
+    <!-- ================= ADSENSE ================= -->
+    <section class="container" style="margin:2rem auto;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4933331274738462"
+           data-ad-slot="4606183476"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </section>
+
+    <h2>✅ Resumen</h2>
+    <ul>
+      <li>HTML5 valida datos sin JavaScript</li>
+      <li>Mejora la seguridad y UX</li>
+      <li>Siempre valida también en el backend</li>
+    </ul>
+
+    <p class="muted">
+      En la siguiente lección aprenderás a trabajar con enlaces HTML.
+    </p>
+
+  </article>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="/blog/cursohtml5/js/curso-html5.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>07 – Imágenes en HTML | Curso HTML5</title>
+  <meta name="description" content="Aprende a usar imágenes en HTML5, atributos src, alt, tamaños y buenas prácticas. Curso por Freimel Jerez.">
+
+  <!-- ADSENSE -->
+  <meta name="google-adsense-account" content="ca-pub-4933331274738462">
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/blog/cursohtml5/css/curso-html5.css">
+  <link rel="icon" href="/imagen/favicon.svg">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="container header-flex">
+
+    <a class="brand" href="/index.html">💻 Freimel Jerez WebApp</a>
+
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="/index.html">Inicio</a>
+      <a href="/blog/">Blog</a>
+      <a href="/blog/cursohtml5/index.html">Curso HTML5</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= CONTENIDO ================= -->
+<main class="container">
+
+  <a href="/blog/cursohtml5/index.html" class="back">← Volver al curso</a>
+
+  <article class="post">
+
+    <h1>07. Imágenes en HTML</h1>
+    <p class="muted">Curso HTML5 desde cero — Freimel Jerez</p>
+
+    <p>
+      Las <strong>imágenes</strong> permiten mostrar contenido visual en una página web.
+      En HTML se utilizan con la etiqueta <code>&lt;img&gt;</code>.
+    </p>
+
+    <h2>📌 Sintaxis básica</h2>
+
+<pre><code>&lt;img src="imagen.jpg" alt="Descripción de la imagen"&gt;
+</code></pre>
+
+    <ul>
+      <li><strong>src:</strong> ruta de la imagen</li>
+      <li><strong>alt:</strong> texto alternativo (SEO y accesibilidad)</li>
+    </ul>
+
+    <h2>📏 Tamaño de imágenes</h2>
+
+<pre><code>&lt;img src="foto.png" alt="Ejemplo" width="300"&gt;
+</code></pre>
+
+    <p>
+      👉 Recomendación: controla tamaños con <strong>CSS</strong>, no con atributos.
+    </p>
+
+    <h2>🖼️ Ejemplo real</h2>
+
+    <img src="img/descarga.svg" alt="Ejemplo de imagen HTML" class="post-img">
+
+    <h2>⚠️ Buenas prácticas</h2>
+    <ul>
+      <li>Siempre usar <code>alt</code></li>
+      <li>Optimizar imágenes (peso bajo)</li>
+      <li>Usar formatos modernos (SVG, WebP)</li>
+    </ul>
+
+    <h2>🎥 Video de la lección</h2>
+    <p>Debes ver el video completo para desbloquear la siguiente lección.</p>
+
+    <div class="video-wrapper">
+      <iframe
+        id="player"
+        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
+        title="Imágenes en HTML - Curso HTML5"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <nav class="course-nav">
+      <button id="nextBtn" class="locked" disabled>
+        🔒 Completa el video para continuar
+      </button>
+    </nav>
+
+    <!-- ================= ADS ================= -->
+    <ins class="adsbygoogle"
+      style="display:block;margin:24px 0"
+      data-ad-client="ca-pub-4933331274738462"
+      data-ad-slot="4606183476"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <h2>✅ Resumen</h2>
+    <ul>
+      <li>Las imágenes se insertan con &lt;img&gt;</li>
+      <li>alt es obligatorio</li>
+      <li>Optimizar mejora SEO y velocidad</li>
+    </ul>
+
+  </article>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="/blog/cursohtml5/js/curso-html5.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

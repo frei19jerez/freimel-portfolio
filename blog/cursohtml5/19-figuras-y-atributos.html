@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>19 – Figuras y atributos | Curso HTML5</title>
+  <meta name="description" content="Aprende a usar figuras y atributos en HTML5 de forma correcta y semántica. Curso HTML5 por Freimel Jerez.">
+
+  <!-- AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-4933331274738462">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+          crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/blog/cursohtml5/css/curso-html5.css">
+  <link rel="icon" href="/imagen/favicon.svg">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="container header-flex">
+
+    <a class="brand" href="/index.html">💻 Freimel Jerez WebApp</a>
+
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="/index.html">Inicio</a>
+      <a href="/blog/">Blog</a>
+      <a href="/blog/cursohtml5/index.html">Curso HTML5</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= CONTENIDO ================= -->
+<main class="container">
+
+  <a href="/blog/cursohtml5/index.html" class="back">← Volver al curso</a>
+
+  <article class="post">
+
+    <h1>19. Figuras y atributos en HTML5</h1>
+    <p class="muted">Curso HTML5 desde cero — Freimel Jerez</p>
+
+    <p>
+      En HTML5, las <strong>figuras</strong> y los <strong>atributos</strong>
+      permiten describir mejor el contenido y darle significado semántico.
+      Esto mejora la accesibilidad, el SEO y la estructura del sitio.
+    </p>
+
+    <h2>🖼️ La etiqueta &lt;figure&gt;</h2>
+    <p>
+      La etiqueta <code>&lt;figure&gt;</code> se utiliza para agrupar contenido visual,
+      como imágenes, diagramas o ilustraciones.
+    </p>
+
+<pre><code>&lt;figure&gt;
+  &lt;img src="imagen.jpg" alt="Ejemplo de imagen"&gt;
+&lt;/figure&gt;
+</code></pre>
+
+    <h2>📝 La etiqueta &lt;figcaption&gt;</h2>
+    <p>
+      Se usa junto con <code>&lt;figure&gt;</code> para agregar una descripción al contenido.
+    </p>
+
+<pre><code>&lt;figure&gt;
+  &lt;img src="logo.png" alt="Logo de la empresa"&gt;
+  &lt;figcaption&gt;Logo oficial de la empresa&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
+
+    <h2>🏷️ ¿Qué son los atributos?</h2>
+    <p>
+      Los atributos proporcionan información adicional sobre un elemento HTML.
+      Siempre van dentro de la etiqueta de apertura.
+    </p>
+
+    <h3>Atributos comunes</h3>
+    <ul>
+      <li><code>src</code> → ruta del archivo</li>
+      <li><code>alt</code> → texto alternativo (accesibilidad)</li>
+      <li><code>title</code> → información adicional</li>
+      <li><code>id</code> → identificador único</li>
+      <li><code>class</code> → clases CSS</li>
+    </ul>
+
+<pre><code>&lt;img src="foto.jpg" alt="Foto del producto" title="Producto en oferta"&gt;
+</code></pre>
+
+    <h2>♿ Importancia del atributo <code>alt</code></h2>
+    <p>
+      El atributo <code>alt</code> es fundamental para:
+    </p>
+
+    <ul>
+      <li>Usuarios con lectores de pantalla</li>
+      <li>SEO (posicionamiento en buscadores)</li>
+      <li>Casos donde la imagen no carga</li>
+    </ul>
+
+    <h2>✅ Buenas prácticas</h2>
+    <ul>
+      <li>Usar <code>&lt;figure&gt;</code> solo cuando el contenido lo requiera</li>
+      <li>Siempre incluir <code>alt</code> en imágenes</li>
+      <li>Evitar atributos innecesarios</li>
+      <li>Escribir descripciones claras y cortas</li>
+    </ul>
+
+    <h2>🎥 Video de la lección</h2>
+    <p>
+      Debes ver el video completo para desbloquear la siguiente lección.
+    </p>
+
+    <div class="video-wrapper">
+      <iframe
+        id="player"
+        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
+        title="Figuras y atributos en HTML5 - Curso HTML5"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <nav class="course-nav">
+      <button id="nextBtn" class="locked" disabled>
+        🔒 Completa el video para continuar
+      </button>
+    </nav>
+
+    <!-- ================= ADSENSE ================= -->
+    <section class="container" style="margin:2rem auto;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4933331274738462"
+           data-ad-slot="4606183476"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </section>
+
+    <h2>📌 Resumen</h2>
+    <ul>
+      <li><code>&lt;figure&gt;</code> agrupa contenido visual</li>
+      <li><code>&lt;figcaption&gt;</code> describe la figura</li>
+      <li>Los atributos aportan información clave</li>
+      <li>El atributo <code>alt</code> es obligatorio y esencial</li>
+    </ul>
+
+    <p class="muted">
+      En la siguiente lección aprenderás sobre
+      <strong>etiquetas complementarias en HTML5</strong>.
+    </p>
+
+  </article>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="/blog/cursohtml5/js/curso-html5.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

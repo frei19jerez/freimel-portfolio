@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>02 – Cómo funciona el navegador | Curso HTML5</title>
+  <meta name="description" content="Aprende cómo funciona un navegador web internamente. Curso HTML5 desde cero por Freimel Jerez.">
+
+  <!-- ================= ADSENSE ================= -->
+  <meta name="google-adsense-account" content="ca-pub-4933331274738462">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+    crossorigin="anonymous"></script>
+
+  <!-- ================= CSS ================= -->
+  <link rel="stylesheet" href="/blog/cursohtml5/css/curso-html5.css">
+  <link rel="icon" href="/imagen/favicon.svg">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="topbar">
+  <div class="container header-flex">
+
+    <a class="brand" href="/index.html">💻 Freimel Jerez WebApp</a>
+
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="/index.html">Inicio</a>
+      <a href="/blog/">Blog</a>
+      <a href="/blog/cursohtml5/index.html">Curso HTML5</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= CONTENIDO ================= -->
+<main class="container">
+
+  <a href="/blog/cursohtml5/index.html" class="back">← Volver al curso</a>
+
+  <article class="post">
+
+    <h1>02. ¿Cómo funciona el navegador?</h1>
+    <p class="muted">Curso HTML5 desde cero — Freimel Jerez</p>
+
+    <p>
+      El navegador es una de las piezas más importantes de la web.
+      Es el programa encargado de <strong>interpretar el código HTML, CSS y JavaScript</strong>
+      y mostrarlo correctamente en pantalla.
+    </p>
+
+    <h2>🌐 ¿Qué es un navegador web?</h2>
+    <p>
+      Un navegador web es una aplicación que permite acceder a páginas web.
+      Algunos ejemplos son:
+    </p>
+
+    <ul>
+      <li>Google Chrome</li>
+      <li>Mozilla Firefox</li>
+      <li>Microsoft Edge</li>
+      <li>Safari</li>
+    </ul>
+
+    <h2>⚙️ ¿Qué hace un navegador cuando visitas una página?</h2>
+
+    <ol>
+      <li>Recibe archivos HTML desde un servidor.</li>
+      <li>Lee y construye la estructura del documento (DOM).</li>
+      <li>Aplica los estilos CSS.</li>
+      <li>Ejecuta el JavaScript.</li>
+      <li>Muestra la página al usuario.</li>
+    </ol>
+
+    <h2>🧠 Partes internas de un navegador</h2>
+
+    <h3>1. Motor de renderizado</h3>
+    <p>
+      Es el encargado de convertir el código HTML y CSS en elementos visibles.
+      Ejemplo: Blink (Chrome), Gecko (Firefox).
+    </p>
+
+    <h3>2. Motor JavaScript</h3>
+    <p>
+      Ejecuta el código JavaScript.  
+      Ejemplo: V8 (Chrome y Edge).
+    </p>
+
+    <h3>3. Sistema de seguridad</h3>
+    <p>
+      Evita accesos no autorizados, protege datos y controla permisos.
+    </p>
+
+    <h2>📄 Ejemplo simple</h2>
+
+<pre><code>&lt;h1&gt;Hola navegador&lt;/h1&gt;
+&lt;p&gt;El navegador interpreta este código&lt;/p&gt;
+</code></pre>
+
+    <p>
+      El navegador convierte ese código en texto visible para el usuario.
+    </p>
+
+    <!-- ================= ANUNCIO ================= -->
+    <ins class="adsbygoogle"
+         style="display:block; margin:24px 0"
+         data-ad-client="ca-pub-4933331274738462"
+         data-ad-slot="4606183476"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    <h2>🎥 Video de esta lección</h2>
+
+    <p>
+      Debes ver el video completo para desbloquear la siguiente lección.
+    </p>
+
+    <div class="video-wrapper">
+      <iframe
+        id="player"
+        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
+        title="Cómo funciona el navegador"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <nav class="course-nav">
+      <button id="nextBtn" disabled class="locked">
+        🔒 Completa el video para continuar
+      </button>
+    </nav>
+
+    <h2>✅ Resumen</h2>
+    <ul>
+      <li>El navegador interpreta HTML, CSS y JavaScript.</li>
+      <li>Convierte código en contenido visual.</li>
+      <li>Es el puente entre el usuario y la web.</li>
+    </ul>
+
+    <p class="muted">
+      En la siguiente lección aprenderás qué es HTML.
+    </p>
+
+  </article>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<!-- ================= JS ================= -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="/blog/cursohtml5/js/curso-html5.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
