@@ -24,19 +24,12 @@
 <header class="topbar">
   <div class="container header-flex">
 
-    <!-- MARCA -->
-    <a class="brand" href="/index.html">
-      💻 Freimel Jerez WebApp
-    </a>
+    <a class="brand" href="/index.html">💻 Freimel Jerez WebApp</a>
 
-    <!-- HAMBURGUESA -->
     <button class="hamburger" aria-label="Abrir menú">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
 
-    <!-- NAV -->
     <nav class="nav">
       <a href="/index.html">Inicio</a>
       <a href="/blog/">Blog</a>
@@ -61,43 +54,70 @@
          alt="Cómo funciona la web">
 
     <p>
-      Antes de aprender HTML, es fundamental entender
+      Antes de aprender a crear páginas web, es importante entender
       <strong>cómo funciona la web</strong>.
-      Cada vez que escribes una dirección en el navegador y presionas Enter,
-      ocurre un proceso automático que conecta tu computador con servidores
-      en todo el mundo.
+      Todo comienza cuando una persona utiliza un computador o un celular
+      conectado a Internet.
     </p>
 
-    <h2>🌐 ¿Qué sucede cuando visitas una página web?</h2>
+    <h2>👤 El usuario</h2>
+    <p>
+      El usuario es la persona que navega por Internet usando un dispositivo
+      como un computador, un celular o una tablet.
+    </p>
 
-    <ol>
-      <li>Escribes una URL en el navegador.</li>
-      <li>El navegador envía una solicitud al servidor.</li>
-      <li>El servidor responde con HTML, CSS y JavaScript.</li>
-      <li>El navegador interpreta y muestra la página.</li>
-    </ol>
+    <h2>🌐 El navegador</h2>
+    <p>
+      El navegador es el programa que el usuario utiliza para acceder a Internet,
+      como Chrome, Edge o Firefox.
+    </p>
 
-    <h2>🖥️ Componentes principales</h2>
+    <h2>🔗 La dirección web (URL)</h2>
+    <p>
+      El usuario escribe una dirección web en el navegador.
+      Esa dirección indica a qué sitio quiere acceder.
+    </p>
 
-    <ul>
-      <li><strong>Navegador:</strong> interpreta el código</li>
-      <li><strong>Servidor:</strong> almacena y envía archivos</li>
-      <li><strong>Lenguajes:</strong> HTML, CSS y JavaScript</li>
-    </ul>
+    <h2>🌍 Internet</h2>
+    <p>
+      Internet es una red mundial que conecta millones de computadores
+      en diferentes partes del mundo.
+    </p>
 
-    <h2>📄 Ejemplo básico</h2>
+    <h2>📡 DNS</h2>
+    <p>
+      El sistema DNS se encarga de traducir el nombre del sitio web
+      a una dirección que los computadores puedan entender.
+    </p>
 
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Mi primera web&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h1&gt;Hola Mundo&lt;/h1&gt;
-    &lt;p&gt;Mi primera página web&lt;/p&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+    <h2>🖥️ El servidor</h2>
+    <p>
+      El servidor es un computador que almacena la información del sitio web
+      y está siempre conectado a Internet.
+    </p>
+
+    <h2>📤 Petición</h2>
+    <p>
+      El navegador envía una petición al servidor solicitando la información
+      del sitio web.
+    </p>
+
+    <h2>📥 Respuesta</h2>
+    <p>
+      El servidor responde enviando la información solicitada al navegador.
+    </p>
+
+    <h2>🧠 Interpretación</h2>
+    <p>
+      El navegador recibe la información y la procesa para poder mostrarla
+      correctamente.
+    </p>
+
+    <h2>🖼️ Página web</h2>
+    <p>
+      Finalmente, el usuario ve la página web en pantalla.
+      Todo este proceso ocurre en cuestión de segundos.
+    </p>
 
     <h2>🎥 Video de la lección</h2>
     <p>
@@ -105,15 +125,20 @@
     </p>
 
     <div class="video-wrapper">
-      <iframe
-        id="player"
-        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
-        title="Cómo funciona la Web - Curso HTML5"
-        allowfullscreen>
-      </iframe>
-    </div>
+  <iframe
+    id="player"
+    width="100%"
+    height="400"
+    src="https://www.youtube.com/embed/JBVk2j2yVsE?enablejsapi=1"
+    title="Cómo funciona la Web - Curso HTML5"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
 
-    <!-- BOTÓN CONTROLADO POR JS -->
+
+
     <nav class="course-nav">
       <button id="nextBtn" class="locked" disabled>
         🔒 Completa el video para continuar
@@ -133,9 +158,10 @@
 
     <h2>✅ Resumen</h2>
     <ul>
-      <li>La web funciona por solicitudes y respuestas</li>
-      <li>El navegador interpreta el código</li>
-      <li>HTML es la base de todo</li>
+      <li>El usuario utiliza un navegador</li>
+      <li>El navegador se conecta a Internet</li>
+      <li>El servidor responde a las peticiones</li>
+      <li>La página web se muestra en pantalla</li>
     </ul>
 
   </article>

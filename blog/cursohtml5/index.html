@@ -23,17 +23,12 @@
 <header class="topbar">
   <div class="container header-flex">
 
-    <!-- MARCA -->
     <a class="brand" href="/index.html">💻 Freimel Jerez WebApp</a>
 
-    <!-- HAMBURGUESA -->
-    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
     </button>
 
-    <!-- MENÚ -->
     <nav class="nav">
       <a href="/index.html">Inicio</a>
       <a href="/blog/">Blog</a>
@@ -45,18 +40,17 @@
 
 <!-- ================= CONTENIDO ================= -->
 <main class="container">
-
   <article class="post">
 
     <h1>📘 Curso HTML5 desde Cero</h1>
 
     <p class="muted">
-      Curso completo creado por Freimel Jerez.<br>
+      Curso completo creado por <strong>Freimel Jerez</strong>.<br>
       Cada lección incluye explicación + video.<br>
       🔒 Las lecciones se desbloquean al completar el video.
     </p>
 
-    <!-- ================= ANUNCIO 1 ================= -->
+    <!-- ================= ANUNCIO ================= -->
     <ins class="adsbygoogle"
          style="display:block; margin:24px 0"
          data-ad-client="ca-pub-4933331274738462"
@@ -70,8 +64,10 @@
     <!-- ================= LISTA DEL CURSO ================= -->
     <div class="course-list">
 
-      <!-- LECCIÓN 1 -->
-      <a class="lesson unlocked" href="/blog/cursohtml5/01-como-funciona-la-web.html.html">
+      <!-- LECCIÓN 01 -->
+      <a class="lesson unlocked"
+         href="/blog/cursohtml5/01-como-funciona-la-web.html.html"
+         data-lesson="1">
         <span class="num">01</span>
         <div>
           <strong>Cómo funciona la Web</strong>
@@ -80,80 +76,58 @@
         <span class="status">▶ Disponible</span>
       </a>
 
-      <!-- LECCIÓN 2 -->
-      <div class="lesson locked">
+      <!-- LECCIÓN 02 -->
+      <a class="lesson locked" href="/blog/cursohtml5/02-como-funciona-el-navegador.html" data-lesson="2">
         <span class="num">02</span>
         <div>
           <strong>Cómo funciona el navegador</strong>
           <small>Chrome, Edge, Firefox</small>
         </div>
         <span class="status">🔒</span>
-      </div>
+      </a>
 
-      <!-- LECCIÓN 3 -->
-      <div class="lesson locked">
+      <!-- LECCIÓN 03 -->
+      <a class="lesson locked" href="/blog/cursohtml5/03-que-es-html.html" data-lesson="3">
         <span class="num">03</span>
         <div>
           <strong>¿Qué es HTML?</strong>
           <small>Lenguaje de marcado</small>
         </div>
         <span class="status">🔒</span>
-      </div>
+      </a>
 
-      <div class="lesson locked"><span class="num">04</span><div><strong>Etiquetas básicas</strong></div><span class="status">🔒</span></div>
-      <div class="lesson locked"><span class="num">05</span><div><strong>Texto y párrafos</strong></div><span class="status">🔒</span></div>
-      <div class="lesson locked"><span class="num">06</span><div><strong>Listas</strong></div><span class="status">🔒</span></div>
-      <div class="lesson locked"><span class="num">07</span><div><strong>Imágenes</strong></div><span class="status">🔒</span></div>
-
-      <!-- ================= ANUNCIO 2 ================= -->
-      <ins class="adsbygoogle"
-           style="display:block; margin:32px 0"
-           data-ad-client="ca-pub-4933331274738462"
-           data-ad-slot="4606183476"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-
-      <div class="lesson locked"><span class="num">08</span><div><strong>Tablas</strong></div><span class="status">🔒</span></div>
-      <div class="lesson locked"><span class="num">09</span><div><strong>Formularios</strong></div><span class="status">🔒</span></div>
-      <div class="lesson locked"><span class="num">10</span><div><strong>Captura de datos</strong></div><span class="status">🔒</span></div>
-      <div class="lesson locked"><span class="num">11</span><div><strong>Validaciones HTML</strong></div><span class="status">🔒</span></div>
-      <div class="lesson locked"><span class="num">12</span><div><strong>Enlaces</strong></div><span class="status">🔒</span></div>
-      <div class="lesson locked"><span class="num">13</span><div><strong>Etiquetas semánticas</strong></div><span class="status">🔒</span></div>
-      <div class="lesson locked"><span class="num">14</span><div><strong>Media para la web</strong></div><span class="status">🔒</span></div>
-      <div class="lesson locked"><span class="num">15</span><div><strong>Audio y video</strong></div><span class="status">🔒</span></div>
-      <div class="lesson locked"><span class="num">16</span><div><strong>Etiqueta source</strong></div><span class="status">🔒</span></div>
-      <div class="lesson locked"><span class="num">17</span><div><strong>Iframe</strong></div><span class="status">🔒</span></div>
-      <div class="lesson locked"><span class="num">18</span><div><strong>Espacio de trabajo</strong></div><span class="status">🔒</span></div>
-      <div class="lesson locked"><span class="num">19</span><div><strong>Figuras y atributos</strong></div><span class="status">🔒</span></div>
-      <div class="lesson locked"><span class="num">20</span><div><strong>Etiquetas complementarias</strong></div><span class="status">🔒</span></div>
-      <div class="lesson locked"><span class="num">21</span><div><strong>SVG en línea</strong></div><span class="status">🔒</span></div>
-      <div class="lesson locked"><span class="num">22</span><div><strong>SVG con herramientas</strong></div><span class="status">🔒</span></div>
+      <!-- LECCIONES 04–22 (ajusta nombres de archivo si varían) -->
+      <a class="lesson locked" href="/blog/cursohtml5/04-etiquetas-basicas.html" data-lesson="4"><span class="num">04</span><div><strong>Etiquetas básicas</strong></div><span class="status">🔒</span></a>
+      <a class="lesson locked" href="/blog/cursohtml5/05-texto-y-parrafos.html" data-lesson="5"><span class="num">05</span><div><strong>Texto y párrafos</strong></div><span class="status">🔒</span></a>
+      <a class="lesson locked" href="/blog/cursohtml5/06-listas.html" data-lesson="6"><span class="num">06</span><div><strong>Listas</strong></div><span class="status">🔒</span></a>
+      <a class="lesson locked" href="/blog/cursohtml5/07-imagenes.html" data-lesson="7"><span class="num">07</span><div><strong>Imágenes</strong></div><span class="status">🔒</span></a>
+      <a class="lesson locked" href="/blog/cursohtml5/08-tablas.html" data-lesson="8"><span class="num">08</span><div><strong>Tablas</strong></div><span class="status">🔒</span></a>
+      <a class="lesson locked" href="/blog/cursohtml5/09-formularios.html" data-lesson="9"><span class="num">09</span><div><strong>Formularios</strong></div><span class="status">🔒</span></a>
+      <a class="lesson locked" href="/blog/cursohtml5/10-captura-de-datos.html" data-lesson="10"><span class="num">10</span><div><strong>Captura de datos</strong></div><span class="status">🔒</span></a>
+      <a class="lesson locked" href="/blog/cursohtml5/11-validaciones-html.html" data-lesson="11"><span class="num">11</span><div><strong>Validaciones HTML</strong></div><span class="status">🔒</span></a>
+      <a class="lesson locked" href="/blog/cursohtml5/12-enlaces.html" data-lesson="12"><span class="num">12</span><div><strong>Enlaces</strong></div><span class="status">🔒</span></a>
+      <a class="lesson locked" href="/blog/cursohtml5/13-etiquetas-semanticas.html" data-lesson="13"><span class="num">13</span><div><strong>Etiquetas semánticas</strong></div><span class="status">🔒</span></a>
+      <a class="lesson locked" href="/blog/cursohtml5/14-media-para-la-web.html" data-lesson="14"><span class="num">14</span><div><strong>Media para la web</strong></div><span class="status">🔒</span></a>
+      <a class="lesson locked" href="/blog/cursohtml5/15-audio-y-video.html" data-lesson="15"><span class="num">15</span><div><strong>Audio y video</strong></div><span class="status">🔒</span></a>
+      <a class="lesson locked" href="/blog/cursohtml5/16-etiqueta-source.html" data-lesson="16"><span class="num">16</span><div><strong>Etiqueta source</strong></div><span class="status">🔒</span></a>
+      <a class="lesson locked" href="/blog/cursohtml5/17-iframe.html" data-lesson="17"><span class="num">17</span><div><strong>Iframe</strong></div><span class="status">🔒</span></a>
+      <a class="lesson locked" href="/blog/cursohtml5/18-espacio-de-trabajo.html" data-lesson="18"><span class="num">18</span><div><strong>Espacio de trabajo</strong></div><span class="status">🔒</span></a>
+      <a class="lesson locked" href="/blog/cursohtml5/19-figuras-y-atributos.html" data-lesson="19"><span class="num">19</span><div><strong>Figuras y atributos</strong></div><span class="status">🔒</span></a>
+      <a class="lesson locked" href="/blog/cursohtml5/20-etiquetas-complementarias.html" data-lesson="20"><span class="num">20</span><div><strong>Etiquetas complementarias</strong></div><span class="status">🔒</span></a>
+      <a class="lesson locked" href="/blog/cursohtml5/21-svg-en-linea.html" data-lesson="21"><span class="num">21</span><div><strong>SVG en línea</strong></div><span class="status">🔒</span></a>
+      <a class="lesson locked" href="/blog/cursohtml5/22-svg-con-herramientas.html" data-lesson="22"><span class="num">22</span><div><strong>SVG con herramientas</strong></div><span class="status">🔒</span></a>
 
       <!-- PROYECTO FINAL -->
-      <div class="lesson locked final">
+      <a class="lesson locked final" href="/blog/cursohtml5/23-proyecto-final-html5.html" data-lesson="23">
         <span class="num">23</span>
         <div>
           <strong>Proyecto Final HTML5</strong>
           <small>Pon en práctica todo lo aprendido</small>
         </div>
         <span class="status">🏁</span>
-      </div>
+      </a>
 
     </div>
-
-    <!-- ================= ANUNCIO 3 ================= -->
-    <ins class="adsbygoogle"
-         style="display:block; margin:40px auto"
-         data-ad-client="ca-pub-4933331274738462"
-         data-ad-slot="4606183476"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
 
   </article>
 </main>
@@ -166,9 +140,25 @@
 </footer>
 
 <!-- ================= JS ================= -->
-<script src="/blog/cursohtml5/js/curso-html5.js"></script>
 <script>
+  // Actualiza el año del footer
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Desbloquea lecciones según el progreso guardado
+  document.addEventListener("DOMContentLoaded", () => {
+    const lessons = document.querySelectorAll('.course-list .lesson');
+    lessons.forEach(lesson => {
+      const num = parseInt(lesson.dataset.lesson, 10);
+      if (num === 1 || localStorage.getItem(`cursoHTML5_leccion_${num - 1}`) === 'completada') {
+        lesson.classList.remove('locked');
+        lesson.classList.add('unlocked');
+        const statusEl = lesson.querySelector('.status');
+        if (statusEl) {
+          statusEl.textContent = (num === 23) ? '🏁' : '▶ Disponible';
+        }
+      }
+    });
+  });
 </script>
 
 </body>
