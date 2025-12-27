@@ -9,7 +9,8 @@
 
   <!-- ================= ADSENSE ================= -->
   <meta name="google-adsense-account" content="ca-pub-4933331274738462">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4933331274738462"
     crossorigin="anonymous"></script>
 
   <!-- ================= CSS ================= -->
@@ -22,21 +23,15 @@
 <!-- ================= HEADER ================= -->
 <header class="topbar">
   <div class="container header-flex">
-
     <a class="brand" href="/index.html">💻 Freimel Jerez WebApp</a>
-
     <button class="hamburger" aria-label="Abrir menú">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
-
     <nav class="nav">
       <a href="/index.html">Inicio</a>
       <a href="/blog/">Blog</a>
       <a href="/blog/cursohtml5/index.html">Curso HTML5</a>
     </nav>
-
   </div>
 </header>
 
@@ -51,17 +46,14 @@
     <p class="muted">Curso HTML5 desde cero — Freimel Jerez</p>
 
     <p>
-      El navegador es una de las piezas más importantes de la web.
-      Es el programa encargado de <strong>interpretar el código HTML, CSS y JavaScript</strong>
-      y mostrarlo correctamente en pantalla.
+      El navegador es una de las piezas más importantes de la web. Es el programa encargado de 
+      <strong>interpretar el código HTML, CSS y JavaScript</strong> y mostrarlo correctamente en pantalla.
     </p>
 
     <h2>🌐 ¿Qué es un navegador web?</h2>
     <p>
-      Un navegador web es una aplicación que permite acceder a páginas web.
-      Algunos ejemplos son:
+      Un navegador web es una aplicación que permite acceder a páginas web. Algunos ejemplos son:
     </p>
-
     <ul>
       <li>Google Chrome</li>
       <li>Mozilla Firefox</li>
@@ -70,42 +62,56 @@
     </ul>
 
     <h2>⚙️ ¿Qué hace un navegador cuando visitas una página?</h2>
-
+    <p>
+      Desde que escribes una dirección en la barra hasta que ves la página cargada, el navegador realiza varios pasos que pueden resumirse así:
+    </p>
     <ol>
-      <li>Recibe archivos HTML desde un servidor.</li>
-      <li>Lee y construye la estructura del documento (DOM).</li>
-      <li>Aplica los estilos CSS.</li>
-      <li>Ejecuta el JavaScript.</li>
-      <li>Muestra la página al usuario.</li>
+      <li><strong>Petición al servidor:</strong> El navegador actúa como cliente, envía una solicitud (petición HTTP/HTTPS) al servidor para obtener los archivos de la página.</li>
+      <li><strong>Recepción de archivos:</strong> El servidor responde con los archivos HTML, CSS y JavaScript.</li>
+      <li><strong>Análisis de HTML:</strong> El navegador lee el HTML y construye la estructura del documento o árbol DOM (Document Object Model).</li>
+      <li><strong>Aplicación de estilos CSS:</strong> Se procesan los estilos declarados para darle formato y diseño a los elementos del DOM.</li>
+      <li><strong>Descarga de recursos adicionales:</strong> El navegador realiza solicitudes adicionales para obtener imágenes, fuentes, scripts, etc.</li>
+      <li><strong>Ejecuta el JavaScript:</strong> Se ejecutan los scripts de la página para dotarla de interactividad y dinamismo.</li>
+      <li><strong>Renderizado final:</strong> Con todos los elementos y estilos listos, el navegador pinta la página en pantalla (renderiza) y la muestra al usuario.</li>
     </ol>
 
     <h2>🧠 Partes internas de un navegador</h2>
-
-    <h3>1. Motor de renderizado</h3>
     <p>
-      Es el encargado de convertir el código HTML y CSS en elementos visibles.
-      Ejemplo: Blink (Chrome), Gecko (Firefox).
+      Internamente, un navegador moderno se compone de varios subsistemas que trabajan coordinadamente:
     </p>
 
-    <h3>2. Motor JavaScript</h3>
+    <h3>1. Interfaz de usuario (User Interface)</h3>
     <p>
-      Ejecuta el código JavaScript.  
-      Ejemplo: V8 (Chrome y Edge).
+      Es la parte que ve el usuario: barra de direcciones, botones de navegación, pestañas, menús… Permite interactuar con el programa y con las páginas abiertas.
     </p>
 
-    <h3>3. Sistema de seguridad</h3>
+    <h3>2. Motor del navegador (Browser Engine)</h3>
     <p>
-      Evita accesos no autorizados, protege datos y controla permisos.
+      Actúa como el intermediario entre la interfaz de usuario y el motor de renderizado. Coordina acciones y gestiona peticiones para transformar el código en elementos visuales.
     </p>
+
+    <h3>3. Motor de renderizado (Rendering Engine)</h3>
+    <p>
+      Convierte el código HTML y CSS en elementos gráficos visibles en la pantalla. Ejemplos de motores de renderizado son <em>Blink</em> (utilizado por Chrome y Edge) y <em>Gecko</em> (utilizado por Firefox).
+    </p>
+
+    <h3>4. Subsistemas adicionales</h3>
+    <ul>
+      <li><strong>Motor JavaScript:</strong> Ejecuta el código JavaScript de cada página. Chrome y Edge usan el motor <em>V8</em>; Firefox usa <em>SpiderMonkey</em>.</li>
+      <li><strong>Sistema de red:</strong> Gestiona las conexiones y solicitudes a Internet para descargar los recursos (HTML, imágenes, scripts) de los servidores.</li>
+      <li><strong>UI Backend:</strong> Se encarga de dibujar botones, cuadros de diálogo y otros widgets básicos en la interfaz.</li>
+      <li><strong>Persistencia de datos:</strong> Maneja el almacenamiento local (cookies, localStorage, sessionStorage y caché) para recordar preferencias y mejorar el rendimiento.</li>
+    </ul>
 
     <h2>📄 Ejemplo simple</h2>
-
+    <p>
+      Si escribes el siguiente código en un archivo HTML:
+    </p>
 <pre><code>&lt;h1&gt;Hola navegador&lt;/h1&gt;
 &lt;p&gt;El navegador interpreta este código&lt;/p&gt;
 </code></pre>
-
     <p>
-      El navegador convierte ese código en texto visible para el usuario.
+      El navegador recibe el archivo HTML, construye el DOM, aplica estilos predeterminados y finalmente muestra “Hola navegador” y un párrafo en pantalla.
     </p>
 
     <!-- ================= ANUNCIO ================= -->
@@ -120,7 +126,6 @@
     </script>
 
     <h2>🎥 Video de esta lección</h2>
-
     <p>
       Debes ver el video completo para desbloquear la siguiente lección.
     </p>
@@ -128,8 +133,10 @@
     <div class="video-wrapper">
       <iframe
         id="player"
-        src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
+        src="https://www.youtube.com/embed/W_dQTjKkS_c?enablejsapi=1"
         title="Cómo funciona el navegador"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
       </iframe>
     </div>
@@ -142,9 +149,9 @@
 
     <h2>✅ Resumen</h2>
     <ul>
-      <li>El navegador interpreta HTML, CSS y JavaScript.</li>
-      <li>Convierte código en contenido visual.</li>
-      <li>Es el puente entre el usuario y la web.</li>
+      <li>El navegador interpreta HTML, CSS y JavaScript para mostrar páginas web.</li>
+      <li>Sigue un proceso de petición al servidor, análisis del código y renderizado.</li>
+      <li>Está formado por diferentes componentes: interfaz de usuario, motores de navegador y de renderizado, motor JavaScript, sistema de red, backend de UI y almacenamiento.</li>
     </ul>
 
     <p class="muted">
@@ -163,8 +170,18 @@
 
 <!-- ================= JS ================= -->
 <script src="https://www.youtube.com/iframe_api"></script>
-<script src="/blog/cursohtml5/js/curso-html5.js"></script>
+
+<!-- Configuración de la lección para el script global -->
 <script>
+  // Número de la lección actual y archivo de la siguiente
+  const CURRENT_LESSON = 2;
+  const NEXT_LESSON_URL = "03-que-es-html.html";
+</script>
+
+<script src="/blog/cursohtml5/js/curso-html5.js"></script>
+
+<script>
+  // Actualiza el año en el footer
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
