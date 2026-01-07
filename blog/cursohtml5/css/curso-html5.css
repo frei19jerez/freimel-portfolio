@@ -314,3 +314,16 @@ code {
     display: flex;
   }
 }
+
+.btn-download{
+  display:inline-block;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid rgba(32,211,122,.35);
+  background: rgba(32,211,122,.10);
+  font-weight:800;
+}
+.btn-download:hover{
+  background: rgba(32,211,122,.16);
+}
+

@@ -28,14 +28,10 @@
       💻 Freimel Jerez WebApp
     </a>
 
-    <!-- HAMBURGUESA -->
     <button class="hamburger" aria-label="Abrir menú">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
 
-    <!-- NAV -->
     <nav class="nav">
       <a href="/index.html">Inicio</a>
       <a href="/blog/">Blog</a>
@@ -50,7 +46,12 @@
 
   <a href="/blog/cursohtml5/index.html" class="back">← Volver al curso</a>
 
-  <article class="post">
+  <!-- data-lesson-page activa el desbloqueo en tu JS -->
+  <article class="post"
+           data-lesson-page
+           data-lesson-id="03"
+           data-video-id="TU_ID_DE_VIDEO"
+           data-next-url="/blog/cursohtml5/04-etiquetas-basicas.html">
 
     <h1>03. ¿Qué es HTML?</h1>
     <p class="muted">Curso HTML5 desde cero — Freimel Jerez</p>
@@ -59,53 +60,81 @@
          class="post-img"
          alt="Qué es HTML">
 
+    <h2>✅ Definición (lo que viste en el video)</h2>
     <p>
-      <strong>HTML</strong> significa <em>HyperText Markup Language</em>
-      (Lenguaje de Marcado de Hipertexto).
-      Es el lenguaje principal que se utiliza para
-      <strong>crear la estructura de una página web</strong>.
+      <strong>HTML</strong> significa <em>HyperText Markup Language</em>:
+      <strong>Lenguaje de Marcas de Hipertexto</strong>.
+      Es el lenguaje principal para <strong>crear la estructura</strong> de una página web.
     </p>
 
-    <h2>📌 ¿Para qué sirve HTML?</h2>
-
+    <h2>🔤 ¿Qué significa HyperText Markup Language?</h2>
     <p>
-      HTML se utiliza para definir los elementos básicos de una página web, como:
+      En tus fotos aparece así (HTM + L):
     </p>
 
     <ul>
-      <li>Títulos y textos</li>
-      <li>Imágenes</li>
-      <li>Enlaces</li>
-      <li>Formularios</li>
-      <li>Listas y tablas</li>
+      <li><strong>HyperText</strong> = Hipertexto (enlaces que conectan páginas)</li>
+      <li><strong>Markup</strong> = Marcado (etiquetas que describen el contenido)</li>
+      <li><strong>Language</strong> = Lenguaje (reglas para escribir documentos)</li>
     </ul>
 
-    <h2>🏗️ HTML no es programación</h2>
-
+    <h2>🏷️ ¿Qué es “Lenguaje de Marcas”?</h2>
     <p>
-      HTML <strong>NO es un lenguaje de programación</strong>.
-      Es un lenguaje de marcado, lo que significa que usa
-      <strong>etiquetas</strong> para indicar al navegador
-      cómo debe mostrar el contenido.
+      “Marcas” significa <strong>etiquetas</strong>. Las etiquetas le dicen al navegador qué es cada cosa:
+      si es un título, un párrafo, una imagen, un enlace, etc.
     </p>
 
-    <h2>🏷️ ¿Qué son las etiquetas?</h2>
-
-    <p>
-      Las etiquetas HTML indican el tipo de contenido.
-      Normalmente tienen una etiqueta de apertura y una de cierre.
-    </p>
-
-<pre><code>&lt;p&gt;Esto es un párrafo&lt;/p&gt;
-&lt;h1&gt;Este es un título&lt;/h1&gt;
+<pre><code>&lt;h1&gt;Este es un título&lt;/h1&gt;
+&lt;p&gt;Hola, esto es un párrafo&lt;/p&gt;
 </code></pre>
 
-    <h2>🧱 Estructura básica de una página HTML</h2>
+    <h2>🔗 ¿Qué es “Hipertexto”?</h2>
+    <p>
+      Es texto con <strong>enlaces</strong> que te llevan a otra página o sección.
+      Ejemplo (lo más típico de internet):
+    </p>
+
+<pre><code>&lt;a href="https://freimeljerezwebapps.com"&gt;Ir a mi web&lt;/a&gt;
+</code></pre>
+
+    <h2>🧱 Ejemplo súper básico (igual al de tus fotos)</h2>
+    <p>En tu imagen se veía un ejemplo así:</p>
+
+<pre><code>&lt;html&gt;
+  &lt;p&gt;Hola, esto es un Párrafo&lt;/p&gt;
+&lt;/html&gt;
+</code></pre>
+
+    <p class="muted">
+      Nota: En la vida real siempre usamos la estructura completa con <code>&lt;!DOCTYPE html&gt;</code>,
+      <code>&lt;head&gt;</code> y <code>&lt;body&gt;</code>. Ya la verás abajo.
+    </p>
+
+    <h2>🖼️ HTML también puede mostrar multimedia (igual a tus fotos)</h2>
+    <p>
+      HTML no solo es texto, también soporta etiquetas como:
+      <code>&lt;img&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>.
+    </p>
+
+<pre><code>&lt;img src="foto.jpg" alt="Descripción de la imagen"&gt;
+
+&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+
+&lt;video controls width="420"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+</code></pre>
+
+    <h2>🧱 Estructura real básica de un documento HTML</h2>
+    <p>Esto es lo mínimo recomendado para una página web:</p>
 
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
   &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
     &lt;title&gt;Mi primera web&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
@@ -115,21 +144,91 @@
 &lt;/html&gt;
 </code></pre>
 
+    <h2>🏗️ Semántica HTML5 (la parte grande de tus fotos)</h2>
     <p>
-      Esta estructura es la base de cualquier sitio web en internet.
+      En tus capturas salían los bloques:
+      <strong>&lt;header&gt;</strong>, <strong>&lt;nav&gt;</strong>, <strong>&lt;section&gt;</strong>,
+      <strong>&lt;article&gt;</strong>, <strong>&lt;aside&gt;</strong>, <strong>&lt;footer&gt;</strong>.
+      Eso se llama <strong>HTML semántico</strong>.
     </p>
+
+    <ul>
+      <li><strong>&lt;header&gt;</strong>: cabecera (logo, título, intro)</li>
+      <li><strong>&lt;nav&gt;</strong>: menú de navegación</li>
+      <li><strong>&lt;main&gt;</strong>: contenido principal</li>
+      <li><strong>&lt;section&gt;</strong>: sección de contenido (bloque temático)</li>
+      <li><strong>&lt;article&gt;</strong>: contenido independiente (post, noticia, tarjeta)</li>
+      <li><strong>&lt;aside&gt;</strong>: contenido secundario (barra lateral, formulario, ads)</li>
+      <li><strong>&lt;footer&gt;</strong>: pie de página (copyright, links, contacto)</li>
+    </ul>
+
+    <h2>🆚 Antes: todo con DIV (no semántico)</h2>
+    <p>Así se hacía mucho antes (funciona, pero no describe qué es cada bloque):</p>
+
+<pre><code>&lt;div class="header"&gt;...&lt;/div&gt;
+&lt;div class="nav"&gt;...&lt;/div&gt;
+&lt;div class="content"&gt;
+  &lt;div class="post"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sidebar"&gt;...&lt;/div&gt;
+&lt;div class="footer"&gt;...&lt;/div&gt;
+</code></pre>
+
+    <h2>✅ Ahora: HTML5 semántico (como en tus imágenes)</h2>
+    <p>Esto es más claro para el navegador, Google (SEO) y accesibilidad:</p>
+
+<pre><code>&lt;header&gt;
+  &lt;h1&gt;Título de la página&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+  &lt;a href="#inicio"&gt;Inicio&lt;/a&gt;
+  &lt;a href="#blog"&gt;Blog&lt;/a&gt;
+  &lt;a href="#contacto"&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Sección principal&lt;/h2&gt;
+
+    &lt;article&gt;
+      &lt;h3&gt;Título del artículo&lt;/h3&gt;
+      &lt;p&gt;Descripción del artículo...&lt;/p&gt;
+    &lt;/article&gt;
+
+    &lt;article&gt;
+      &lt;h3&gt;Otro artículo&lt;/h3&gt;
+      &lt;p&gt;Descripción...&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+
+  &lt;aside&gt;
+    &lt;h3&gt;Barra lateral&lt;/h3&gt;
+    &lt;p&gt;Formulario / anuncios / info extra&lt;/p&gt;
+  &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;© 2026 Freimel Jerez WebApp&lt;/p&gt;
+&lt;/footer&gt;
+</code></pre>
+
+    <h2>🎯 ¿Por qué usar semántica?</h2>
+    <ul>
+      <li><strong>SEO:</strong> Google entiende mejor tu contenido.</li>
+      <li><strong>Accesibilidad:</strong> lectores de pantalla navegan más fácil.</li>
+      <li><strong>Orden:</strong> tu código se vuelve más claro y profesional.</li>
+    </ul>
 
     <h2>🎥 Video de la lección</h2>
-
-    <p>
-      Mira el video completo para desbloquear la siguiente lección.
-    </p>
+    <p>Mira el video completo para desbloquear la siguiente lección.</p>
 
     <div class="video-wrapper">
       <iframe
         id="player"
         src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?enablejsapi=1"
         title="Qué es HTML - Curso HTML5"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen>
       </iframe>
     </div>
@@ -152,12 +251,20 @@
       (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 
-    <h2>✅ Resumen</h2>
+    <h2>✅ Resumen (tal cual tu curso)</h2>
     <ul>
       <li>HTML define la estructura de una web</li>
       <li>Usa etiquetas para organizar el contenido</li>
-      <li>Es la base de CSS y JavaScript</li>
+      <li>Soporta multimedia: img, audio, video</li>
+      <li>HTML5 incluye etiquetas semánticas: header, nav, section, article, aside, footer</li>
     </ul>
+
+    <h2>🧪 Mini práctica (para tus estudiantes)</h2>
+    <ol>
+      <li>Crea un HTML con <code>&lt;header&gt;</code> + <code>&lt;nav&gt;</code> + <code>&lt;main&gt;</code> + <code>&lt;footer&gt;</code>.</li>
+      <li>Dentro del <code>&lt;main&gt;</code> crea una <code>&lt;section&gt;</code> y 2 <code>&lt;article&gt;</code>.</li>
+      <li>Agrega un <code>&lt;aside&gt;</code> con un texto corto o un mini formulario.</li>
+    </ol>
 
     <p class="muted">
       En la siguiente lección aprenderás las etiquetas HTML más importantes.
@@ -176,9 +283,6 @@
 <!-- ================= JS ================= -->
 <script src="https://www.youtube.com/iframe_api"></script>
 <script src="/blog/cursohtml5/js/curso-html5.js"></script>
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 
 </body>
 </html>

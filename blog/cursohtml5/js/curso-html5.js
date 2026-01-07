@@ -3,30 +3,15 @@
 // Autor: Freimel Jerez WebApp
 // ==================================
 
-/*
-  ✔ Funciona para 23 lecciones
-  ✔ Controla el desbloqueo al terminar cada vídeo
-  ✔ Guarda progreso en localStorage
-  ✔ Incluye menú hamburguesa
-  ✔ Permite (opcionalmente) liberar lecciones por fecha:
-    - Activa o desactiva el control por fecha declarando ENABLE_DATE_GATING en el HTML
-    - Define el día mínimo con RELEASE_DAY
-
-  Este archivo detecta automáticamente la lección actual y la siguiente en función del nombre
-  del fichero HTML en el que se inserta. Para funcionar, cada página del curso debe tener
-  un nombre que siga el patrón utilizado en el array `lessonsList`.
-*/
-
 (function () {
   'use strict';
 
   // ---------------------------------------------------------------------------
-  // Configuración automática de lecciones
+  // 1) CONFIGURACIÓN DE LECCIONES (00 a 23)
   // ---------------------------------------------------------------------------
-  // Lista de archivos de lecciones en orden. Ajusta los nombres para que coincidan
-  // exactamente con los archivos de tu curso. El script determina la lección
-  // actual comparando el nombre del archivo que se está cargando con este array.
+  // IMPORTANTÍSIMO: estos nombres deben coincidir EXACTO con tus archivos.
   var lessonsList = [
+    '00-instalacion-vscode.html',
     '01-como-funciona-la-web.html',
     '02-como-funciona-el-navegador.html',
     '03-que-es-html.html',
@@ -52,70 +37,80 @@
     '23-proyecto-final-html5.html'
   ];
 
-  // Obtén el nombre del archivo HTML actual (sin parámetros de consulta)
+  // ---------------------------------------------------------------------------
+  // 2) DETECTAR ARCHIVO ACTUAL
+  // ---------------------------------------------------------------------------
   var fileName = (function () {
     var path = window.location.pathname;
-    // Toma sólo la última parte del path (después de la última barra)
     var name = path.substring(path.lastIndexOf('/') + 1);
-    // Elimina cualquier parámetro de consulta (?foo=bar) si existe
     var qIndex = name.indexOf('?');
-    if (qIndex !== -1) {
-      name = name.substring(0, qIndex);
-    }
+    if (qIndex !== -1) name = name.substring(0, qIndex);
     return name;
   })();
 
-  // Determina el índice de la lección actual en el array
+  // Índice de la lección actual en el array
   var currentLessonIndex = lessonsList.indexOf(fileName);
-  // Si no se encuentra el archivo, asumimos la primera lección
-  if (currentLessonIndex === -1) currentLessonIndex = 0;
 
-  // Número de lección (1-based)
-  var currentLesson = currentLessonIndex + 1;
-  // URL de la siguiente lección o null si ésta es la última
-  var nextLessonUrl = currentLessonIndex < lessonsList.length - 1 ? lessonsList[currentLessonIndex + 1] : null;
+  // Si estamos en index.html (lista del curso) u otro archivo no listado,
+  // no rompemos nada; solo marcamos como -1.
+  var isLessonPage = currentLessonIndex !== -1;
+
+  // currentLessonNumber será 0..23 (según el nombre), y currentLessonPos 1..N
+  var currentLessonPos = isLessonPage ? (currentLessonIndex + 1) : -1; // 1..24
+  var currentLessonNumber = isLessonPage ? currentLessonIndex : -1;     // 0..23
+
+  // URL de la siguiente lección (solo si estamos en una lección válida)
+  var nextLessonUrl = (function () {
+    if (!isLessonPage) return null;
+    if (currentLessonIndex < lessonsList.length - 1) return lessonsList[currentLessonIndex + 1];
+    return null;
+  })();
 
   // ---------------------------------------------------------------------------
-  // Configuración opcional por fecha
+  // 3) OPCIONAL: CONTROL POR FECHA
   // ---------------------------------------------------------------------------
-  // Estas opciones se pueden definir como variables globales en el HTML antes de
-  // cargar este script. Por ejemplo:
-  //   <script>var ENABLE_DATE_GATING = true; var RELEASE_DAY = 15;</script>
-  // Si no se definen, se usan estos valores por defecto.
+  // Puedes declarar en el HTML antes de cargar este JS:
+  // <script>var ENABLE_DATE_GATING=true; var RELEASE_DAY=15;</script>
   var enableDateGating = typeof ENABLE_DATE_GATING !== 'undefined' ? ENABLE_DATE_GATING : false;
-  var releaseDay = typeof RELEASE_DAY !== 'undefined' ? RELEASE_DAY : 23;
+  var releaseDay = typeof RELEASE_DAY !== 'undefined' ? RELEASE_DAY : 1;
+
+  function isReleasedByDate() {
+    if (!enableDateGating) return true;
+    var today = new Date();
+    return today.getDate() >= releaseDay;
+  }
 
   // ---------------------------------------------------------------------------
-  // DOM READY – Configuración general
+  // 4) HELPERS DE PROGRESO (localStorage)
+  // ---------------------------------------------------------------------------
+  function storageKey(lessonNumber) {
+    // lessonNumber: 0..23
+    return 'cursoHTML5_leccion_' + lessonNumber;
+  }
+
+  function isCompleted(lessonNumber) {
+    try {
+      return localStorage.getItem(storageKey(lessonNumber)) === 'completada';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function setCompleted(lessonNumber) {
+    try {
+      localStorage.setItem(storageKey(lessonNumber), 'completada');
+    } catch (e) {
+      console.warn('No se pudo guardar el progreso.', e);
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // 5) DOM READY: UI GENERAL + INDEX (LISTA DEL CURSO)
   // ---------------------------------------------------------------------------
   document.addEventListener('DOMContentLoaded', function () {
-    // Año automático en el footer
+    // Año automático en footer
     var yearElement = document.getElementById('year');
-    if (yearElement) {
-      yearElement.textContent = new Date().getFullYear().toString();
-    }
-
-    // Scroll suave para enlaces internos
-    var internalLinks = document.querySelectorAll('a[href^="#"]');
-    internalLinks.forEach(function (link) {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        var target = document.querySelector(link.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-
-    // Configurar el botón de la siguiente lección
-    var nextBtn = document.getElementById('nextBtn');
-    if (nextBtn) {
-      nextBtn.title = 'Debes ver el video completo para continuar';
-      // Comprueba si la lección ya está completada en localStorage
-      if (localStorage.getItem('cursoHTML5_leccion_' + currentLesson)) {
-        enableNextButton();
-      }
-    }
+    if (yearElement) yearElement.textContent = String(new Date().getFullYear());
 
     // Menú hamburguesa
     var burger = document.querySelector('.hamburger');
@@ -125,64 +120,132 @@
         nav.classList.toggle('open');
       });
     }
+
+    // --- Si estamos en el INDEX del curso (lista con candados) ---
+    // Detecta si existe .course-list .lesson
+    var courseLinks = document.querySelectorAll('.course-list .lesson');
+    if (courseLinks && courseLinks.length) {
+      paintCourseIndex(courseLinks);
+    }
+
+    // --- Si estamos en una LECCIÓN con botón nextBtn ---
+    var nextBtn = document.getElementById('nextBtn');
+    if (nextBtn && isLessonPage) {
+      // Si ya está completada, habilita el botón inmediatamente
+      if (isCompleted(currentLessonNumber)) {
+        enableNextButton();
+      } else {
+        // si no está completada, deja el botón bloqueado si tu HTML lo trae bloqueado
+        nextBtn.title = 'Debes ver el video completo para continuar';
+      }
+    }
+
+    // Scroll suave para enlaces internos
+    var internalLinks = document.querySelectorAll('a[href^="#"]');
+    internalLinks.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        var href = link.getAttribute('href');
+        if (!href || href === '#') return;
+        e.preventDefault();
+        var target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
   });
 
   // ---------------------------------------------------------------------------
-  // YOUTUBE IFRAME API
+  // 6) PINTAR INDEX DEL CURSO (DESBLOQUEAR LINKS)
+  // ---------------------------------------------------------------------------
+  function paintCourseIndex(courseLinks) {
+    courseLinks.forEach(function (lessonEl) {
+      var numAttr = lessonEl.getAttribute('data-lesson'); // "0", "1", ...
+      var num = parseInt(numAttr, 10);
+
+      if (isNaN(num)) return;
+
+      // Regla: lección 00 siempre disponible
+      // Regla: lección 01 siempre disponible (puedes cambiar si quieres)
+      // Regla: desde 02 en adelante: se desbloquea si la anterior está completada
+      var unlocked =
+        (num === 0) ||
+        (num === 1) ||
+        isCompleted(num - 1);
+
+      var statusEl = lessonEl.querySelector('.status');
+
+      if (unlocked) {
+        lessonEl.classList.remove('locked');
+        lessonEl.classList.add('unlocked');
+        if (statusEl) statusEl.textContent = (num === 23) ? '🏁' : '▶ Disponible';
+        // habilitar click
+        lessonEl.style.pointerEvents = 'auto';
+        lessonEl.style.opacity = '1';
+      } else {
+        lessonEl.classList.add('locked');
+        lessonEl.classList.remove('unlocked');
+        if (statusEl) statusEl.textContent = '🔒';
+        // bloquear click
+        lessonEl.style.pointerEvents = 'none';
+        lessonEl.style.opacity = '0.6';
+      }
+    });
+  }
+
+  // ---------------------------------------------------------------------------
+  // 7) YOUTUBE IFRAME API: DETECTAR FIN DE VIDEO
   // ---------------------------------------------------------------------------
   var player;
 
-  // La API de YouTube llama a esta función cuando está lista
+  // YouTube llama a esta función cuando la API está lista
   window.onYouTubeIframeAPIReady = function () {
+    // Solo crea el player si existe el iframe con id="player"
     var iframe = document.getElementById('player');
     if (!iframe) return;
+
+    // Si NO estamos en una lección listada, no hacemos nada
+    if (!isLessonPage) return;
+
     player = new YT.Player('player', {
       events: {
-        onStateChange: window.onPlayerStateChange
+        onStateChange: onPlayerStateChange
       }
     });
   };
 
-  // Esta función detecta cuando termina el video (estado "ENDED")
-  window.onPlayerStateChange = function (event) {
+  function onPlayerStateChange(event) {
+    // Cuando termina el video
     if (event.data === YT.PlayerState.ENDED && isReleasedByDate()) {
-      unlockNextLesson();
+      unlockCurrentLessonAndEnableNext();
     }
-  };
+  }
 
   // ---------------------------------------------------------------------------
-  // DESBLOQUEO DE LECCIÓN
+  // 8) DESBLOQUEAR LECCIÓN + HABILITAR BOTÓN SIGUIENTE
   // ---------------------------------------------------------------------------
-  function unlockNextLesson() {
-    try {
-      localStorage.setItem('cursoHTML5_leccion_' + currentLesson, 'completada');
-    } catch (err) {
-      console.warn('No se pudo guardar el progreso localmente.', err);
-    }
+  function unlockCurrentLessonAndEnableNext() {
+    if (!isLessonPage) return;
+    setCompleted(currentLessonNumber);
     enableNextButton();
   }
 
-  // Activa el botón de la siguiente lección y asigna la acción de navegación
   function enableNextButton() {
     var btn = document.getElementById('nextBtn');
     if (!btn) return;
+
     btn.disabled = false;
     btn.classList.remove('locked');
     btn.classList.add('enabled');
-    btn.textContent = nextLessonUrl ? '➡️ Ir a la siguiente lección' : '✅ Lección completada';
+
     if (nextLessonUrl) {
-      btn.addEventListener('click', function () {
+      btn.textContent = '➡️ Ir a la siguiente lección';
+      // Evitar duplicar listeners
+      btn.onclick = function () {
         window.location.href = nextLessonUrl;
-      });
+      };
+    } else {
+      btn.textContent = '✅ Lección completada';
+      btn.onclick = null;
     }
   }
 
-  // ---------------------------------------------------------------------------
-  // CONTROL POR FECHA DE LIBERACIÓN
-  // ---------------------------------------------------------------------------
-  function isReleasedByDate() {
-    if (!enableDateGating) return true;
-    var today = new Date();
-    return today.getDate() >= releaseDay;
-  }
 })();
