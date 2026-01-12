@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curso Bootstrap 5 | Freimel Jerez WebApp</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Curso Bootstrap 5 desde cero: grid, componentes, responsive, utilidades, formularios, navbar, modales y más. Aprende paso a paso con Freimel Jerez WebApp." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Curso Bootstrap 5 | Freimel Jerez WebApp" />
+  <meta property="og:description" content="Aprende Bootstrap 5 desde cero con clases prácticas y proyectos reales." />
+  <meta property="og:image" content="../img/bootstrap.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Tu CSS Global (si lo usas) -->
+  <link rel="stylesheet" href="../css/blog.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../../imagen/favicon.svg" type="image/svg+xml" />
+</head>
+
+<body class="bg-dark text-light">
+
+  <!-- ===== HEADER ===== -->
+  <header class="bg-black py-2 border-bottom border-secondary">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="text-light fw-bold fs-5 text-decoration-none" href="../../index.html">💻 Freimel Jerez WebApp</a>
+
+      <nav class="d-none d-lg-flex gap-3 align-items-center">
+        <a href="../../index.html" class="text-light text-decoration-none">Inicio</a>
+        <a href="../index.html" class="text-light text-decoration-none">Blog</a>
+        <a href="../proyectos.html" class="text-light text-decoration-none">Proyectos</a>
+        <a href="../contacto.html" class="text-light text-decoration-none">Contacto</a>
+        <a href="../index.html#articulos" class="btn btn-info text-dark fw-bold">Ver artículos</a>
+      </nav>
+
+      <!-- Botón menú móvil (si tu blog.js lo maneja) -->
+      <button class="d-lg-none btn btn-outline-light" type="button" aria-label="Abrir menú">
+        &#9776;
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="py-5 border-bottom border-secondary">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <span class="badge text-bg-info text-dark fw-bold mb-2">Curso</span>
+          <h1 class="fw-bold display-6 mb-3">Bootstrap desde cero — Curso completo</h1>
+          <p class="text-secondary mb-4">
+            Aprende <b>Bootstrap 5</b> paso a paso: grid, componentes, responsive, utilidades, formularios,
+            navbar, modales, tooltips, y más.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-info text-dark fw-bold" href="#lecciones">Empezar ahora</a>
+            <a class="btn btn-outline-light" href="../index.html">Volver al Blog</a>
+          </div>
+
+          <div class="mt-4 d-flex flex-wrap gap-2">
+            <span class="badge bg-secondary">Grid</span>
+            <span class="badge bg-secondary">Responsive</span>
+            <span class="badge bg-secondary">Forms</span>
+            <span class="badge bg-secondary">Navbar</span>
+            <span class="badge bg-secondary">Components</span>
+            <span class="badge bg-secondary">Utilities</span>
+          </div>
+        </div>
+
+        <div class="col-lg-5 text-center">
+          <!-- Imagen del curso (pon tu archivo aquí) -->
+          <img src="../img/bootstrap.png" class="img-fluid rounded border border-secondary" alt="Curso Bootstrap 5" />
+          <p class="text-secondary mt-2 mb-0" style="font-size: 0.95rem;">
+            Imagen: <code>/blog/img/bootstrap.png</code>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTENIDO ===== -->
+  <main class="container py-5">
+
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+      <h2 class="fw-bold mb-0" id="lecciones">Lecciones del curso</h2>
+      <a class="btn btn-outline-light btn-sm" href="#recursos">Ir a recursos</a>
+    </div>
+
+    <p class="text-secondary mb-4">
+      Aquí tienes el orden recomendado (según tus videos). Cada botón te lleva a la lección.
+      <br />
+      <small class="text-secondary">
+        (Puedes crear cada lección como un HTML: <code>01-introduccion.html</code>, <code>02-instalacion.html</code>, etc.)
+      </small>
+    </p>
+
+    <div class="row g-4">
+
+      <!-- 01 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 01</span>
+          <h3 class="h5 mt-1">Introducción</h3>
+          <p class="text-secondary">Qué es Bootstrap, cómo funciona y cómo lo usarás en proyectos.</p>
+          <a class="btn btn-info text-dark fw-bold" href="01-introduccion.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 02 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 02</span>
+          <h3 class="h5 mt-1">Instalación y uso</h3>
+          <p class="text-secondary">CDN, estructura base, contenedores y primeros componentes.</p>
+          <a class="btn btn-info text-dark fw-bold" href="02-instalacion-y-uso.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 03 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 03</span>
+          <h3 class="h5 mt-1">Rejilla y diagramación</h3>
+          <p class="text-secondary">Grid system: rows, cols, breakpoints y layouts.</p>
+          <a class="btn btn-info text-dark fw-bold" href="03-rejilla-y-diagramacion.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 04 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 04</span>
+          <h3 class="h5 mt-1">Utilidades para diagramación</h3>
+          <p class="text-secondary">Display, flex, align, spacing y helpers para maquetar rápido.</p>
+          <a class="btn btn-info text-dark fw-bold" href="04-utilidades-diagramacion.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 05 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 05</span>
+          <h3 class="h5 mt-1">Rejillas complejas</h3>
+          <p class="text-secondary">Combinaciones avanzadas del grid para diseños profesionales.</p>
+          <a class="btn btn-info text-dark fw-bold" href="05-rejillas-complejas.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 06 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 06</span>
+          <h3 class="h5 mt-1">Rejillas responsive</h3>
+          <p class="text-secondary">Diseño adaptable por dispositivos (sm, md, lg, xl, xxl).</p>
+          <a class="btn btn-info text-dark fw-bold" href="06-rejillas-responsive.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 07 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 07</span>
+          <h3 class="h5 mt-1">Tipografía y tablas</h3>
+          <p class="text-secondary">Textos, títulos, clases, tablas y estilos listos.</p>
+          <a class="btn btn-info text-dark fw-bold" href="07-tipografia-y-tablas.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 08 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 08</span>
+          <h3 class="h5 mt-1">Imágenes y figuras</h3>
+          <p class="text-secondary">Imagen responsive, thumbnails, figuras y helpers.</p>
+          <a class="btn btn-info text-dark fw-bold" href="08-imagenes-y-figuras.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 09 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 09</span>
+          <h3 class="h5 mt-1">Avisos e insignias</h3>
+          <p class="text-secondary">Alerts, badges y mensajes llamativos para UI.</p>
+          <a class="btn btn-info text-dark fw-bold" href="09-avisos-e-insignias.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 10 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 10</span>
+          <h3 class="h5 mt-1">Migajas de pan y botones</h3>
+          <p class="text-secondary">Breadcrumbs, botones, grupos y estilos.</p>
+          <a class="btn btn-info text-dark fw-bold" href="10-migajas-y-botones.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 11 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 11</span>
+          <h3 class="h5 mt-1">Formularios</h3>
+          <p class="text-secondary">Inputs, selects, validation, layout de forms.</p>
+          <a class="btn btn-info text-dark fw-bold" href="11-formularios.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 12 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 12</span>
+          <h3 class="h5 mt-1">Entradas complejas</h3>
+          <p class="text-secondary">Input groups, addons, combinaciones y casos reales.</p>
+          <a class="btn btn-info text-dark fw-bold" href="12-entradas-complejas.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 13 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 13</span>
+          <h3 class="h5 mt-1">Barra de navegación</h3>
+          <p class="text-secondary">Navbar responsive, menús, collapse y links.</p>
+          <a class="btn btn-info text-dark fw-bold" href="13-barra-navegacion.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 14 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 14</span>
+          <h3 class="h5 mt-1">Paginación y progreso</h3>
+          <p class="text-secondary">Pagination, progress bars y estados.</p>
+          <a class="btn btn-info text-dark fw-bold" href="14-paginacion-y-progreso.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 15 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 15</span>
+          <h3 class="h5 mt-1">Modales</h3>
+          <p class="text-secondary">Modal básico, tamaños, eventos y buenas prácticas.</p>
+          <a class="btn btn-info text-dark fw-bold" href="15-modales.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 16 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 16</span>
+          <h3 class="h5 mt-1">Tooltips</h3>
+          <p class="text-secondary">Tooltips, popovers e interacción con JS.</p>
+          <a class="btn btn-info text-dark fw-bold" href="16-tooltips.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 17 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 17</span>
+          <h3 class="h5 mt-1">Bordes y sombras</h3>
+          <p class="text-secondary">Borders, shadows, rounded y detalles pro.</p>
+          <a class="btn btn-info text-dark fw-bold" href="17-bordes-y-sombras.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 18 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 18</span>
+          <h3 class="h5 mt-1">Espaciado</h3>
+          <p class="text-secondary">Margin, padding, gap y control de espacios.</p>
+          <a class="btn btn-info text-dark fw-bold" href="18-espaciado.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 19 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 19</span>
+          <h3 class="h5 mt-1">Extendiendo Bootstrap</h3>
+          <p class="text-secondary">Cómo personalizar y hacer tu estilo con Bootstrap.</p>
+          <a class="btn btn-info text-dark fw-bold" href="19-extendiendo-bootstrap.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 20 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 20</span>
+          <h3 class="h5 mt-1">Filosofía de clases</h3>
+          <p class="text-secondary">Cómo pensar Bootstrap: utilidades + componentes.</p>
+          <a class="btn btn-info text-dark fw-bold" href="20-filosofia-clases.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 21 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 21</span>
+          <h3 class="h5 mt-1">Pantalla de inicio</h3>
+          <p class="text-secondary">Arma una landing completa con estructura profesional.</p>
+          <a class="btn btn-info text-dark fw-bold" href="21-pantalla-inicio.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 22 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 22</span>
+          <h3 class="h5 mt-1">Calculador</h3>
+          <p class="text-secondary">Mini proyecto práctico usando componentes de Bootstrap.</p>
+          <a class="btn btn-info text-dark fw-bold" href="22-calculador.html">Ver lección</a>
+        </article>
+      </div>
+
+      <!-- 23 -->
+      <div class="col-md-4">
+        <article class="bg-black p-3 rounded border border-secondary h-100">
+          <span class="badge bg-secondary mb-2">Lección 23</span>
+          <h3 class="h5 mt-1">Promociones</h3>
+          <p class="text-secondary">Sección de promociones/cards, CTA y bloques comerciales.</p>
+          <a class="btn btn-info text-dark fw-bold" href="23-promociones.html">Ver lección</a>
+        </article>
+      </div>
+
+    </div>
+
+    <!-- ===== RECURSOS ===== -->
+    <section class="mt-5 pt-4 border-top border-secondary" id="recursos">
+      <h2 class="fw-bold mb-3">Recursos</h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="bg-black p-3 rounded border border-secondary h-100">
+            <h3 class="h6 fw-bold">Código inicial</h3>
+            <p class="text-secondary mb-2">Archivos base para iniciar las prácticas.</p>
+            <a class="btn btn-outline-light btn-sm" href="#" onclick="alert('Pon aquí tu enlace o carpeta de código inicial'); return false;">Abrir</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="bg-black p-3 rounded border border-secondary h-100">
+            <h3 class="h6 fw-bold">Código final</h3>
+            <p class="text-secondary mb-2">Solución terminada para comparar resultados.</p>
+            <a class="btn btn-outline-light btn-sm" href="#" onclick="alert('Pon aquí tu enlace o carpeta de código final'); return false;">Abrir</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="bg-black p-3 rounded border border-secondary h-100">
+            <h3 class="h6 fw-bold">Documentación oficial</h3>
+            <p class="text-secondary mb-2">Referencia rápida de Bootstrap 5.</p>
+            <a class="btn btn-outline-light btn-sm" href="https://getbootstrap.com/" target="_blank" rel="noopener">Abrir</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-black text-secondary py-4 mt-5 border-top border-secondary">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+      <div>
+        <div class="text-light fw-bold">💼 Freimel Jerez WebApp</div>
+        <small>Curso Bootstrap 5 — Frontend</small>
+      </div>
+
+      <div class="text-md-end">
+        <small>© <span id="year"></span> Freimel Jerez WebApp</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Tu JS del blog (si lo necesitas) -->
+  <script src="../js/blog.js" defer></script>
+</body>
+</html>

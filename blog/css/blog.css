@@ -154,3 +154,95 @@ h1, h2, h3 {
     font-size: 1.1rem;
   }
 }
+
+
+/* ===== Credencial (ID Card) ===== */
+.credencial {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.92), rgba(10, 18, 30, 0.92));
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+.credencial-header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.credencial-avatar {
+  width: 86px;
+  height: 86px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.03);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.credencial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.credencial-title {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.credencial-subtitle {
+  margin: 0;
+  color: rgba(255,255,255,.70);
+}
+
+.credencial-meta {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: rgba(255,255,255,.70);
+  font-size: .92rem;
+}
+
+.badge-skill {
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.85);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: .85rem;
+}
+
+.credencial-actions {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn-cred {
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 700;
+}
+
+.credencial-footer {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  color: rgba(255,255,255,.55);
+  font-size: .85rem;
+}
+
+.credencial-id {
+  border: 1px dashed rgba(255,255,255,.20);
+  padding: 6px 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.03);
+}
