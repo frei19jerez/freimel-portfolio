@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>02 - Selectores Básicos | Curso CSS Profesional</title>
+  <meta name="description" content="Clase 02 del Curso CSS Profesional de Freimel Jerez. Aprende los selectores básicos en CSS.">
+
+  <link rel="stylesheet" href="/blog/curso-css/css/curso-css.css">
+  <link rel="icon" href="/imagen/favicon.svg">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container header-flex">
+    <a class="brand" href="/index.html">💻 Freimel Jerez WebApp</a>
+    <nav class="nav">
+      <a href="/index.html">Inicio</a>
+      <a href="/blog/">Blog</a>
+      <a href="/blog/curso-css/curso-css.html">Curso CSS</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <article class="post">
+
+    <a href="/blog/curso-css/curso-css.html" class="back">← Volver al curso</a>
+
+    <h1>02 - Selectores Básicos</h1>
+
+    <p class="muted">
+      En esta clase aprenderás cómo seleccionar elementos HTML usando CSS.
+    </p>
+
+    <h2>📌 ¿Qué es un selector?</h2>
+    <p>
+      Un selector en CSS permite indicar qué elemento HTML queremos modificar con estilos.
+    </p>
+
+    <h2>🔹 Selector por etiqueta</h2>
+
+<pre><code>p {
+  color: blue;
+}</code></pre>
+
+    <p>
+      Este selector aplica el estilo a todos los elementos &lt;p&gt; del documento.
+    </p>
+
+    <h2>🔹 Selector por clase</h2>
+
+<pre><code>.destacado {
+  color: red;
+}</code></pre>
+
+<pre><code>&lt;p class="destacado"&gt;Texto importante&lt;/p&gt;</code></pre>
+
+    <h2>🔹 Selector por ID</h2>
+
+<pre><code>#titulo {
+  font-size: 30px;
+}</code></pre>
+
+<pre><code>&lt;h1 id="titulo"&gt;Hola Mundo&lt;/h1&gt;</code></pre>
+
+    <h2>🎥 Video de la lección</h2>
+    <p>
+      Mira el video completo para reforzar el aprendizaje.
+    </p>
+
+    <!-- VIDEO RESPONSIVO -->
+    <div class="video-wrapper">
+      <iframe
+        id="player"
+        src="https://www.youtube.com/embed/TU_ID_DEL_VIDEO?enablejsapi=1"
+        title="Selectores Básicos - Curso CSS"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <hr style="margin:40px 0; opacity:.2;">
+
+    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+
+      <a class="btn" href="/blog/curso-css/01-que-es-css.html">
+        ← Clase Anterior
+      </a>
+
+      <a class="btn" href="/blog/curso-css/03-herencia.html">
+        Siguiente Clase →
+      </a>
+
+    </div>
+
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").innerText = new Date().getFullYear();
+</script>
+
+</body>
+</html>

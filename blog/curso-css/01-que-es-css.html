@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Clase 01 - ¿Qué es CSS? | Curso CSS Profesional</title>
+<meta name="description" content="Clase 01 del Curso CSS Profesional creado por Freimel Jerez.">
+
+<link rel="stylesheet" href="/blog/curso-css/css/curso-css.css">
+<link rel="icon" href="/imagen/favicon.svg">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container header-flex">
+    <a class="brand" href="curso-css.html">⬅ Volver al Curso</a>
+  </div>
+</header>
+
+<main class="container">
+  <article class="post">
+
+    <h1>Clase 01 — ¿Qué es CSS?</h1>
+
+    <p class="muted">
+      En esta clase aprenderás qué es CSS, para qué sirve y cómo funciona dentro del desarrollo web moderno.
+    </p>
+
+    <div class="video-container" style="margin:2rem 0;">
+      <iframe 
+        width="100%" 
+        height="400"
+        src="https://www.youtube.com/embed/VIDEO_ID_AQUI"
+        title="Clase 01 - ¿Qué es CSS?"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <a href="curso-css.html" class="btn">Volver al curso</a>
+
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> Freimel Jerez WebApp
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").innerText = new Date().getFullYear();
+</script>
+
+</body>
+</html>
