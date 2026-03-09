@@ -1,248 +1,313 @@
 /* ============================================
-   BLOG CSS – Freimel Jerez WebApp
-   Optimizado para Bootstrap (modo oscuro)
-   ============================================ */
+BLOG CSS – Freimel Jerez WebApp
+Optimizado para Bootstrap (modo oscuro)
+============================================ */
 
-/* Fondo general del blog */
-body {
-  background: #0d0d0d;
-  color: #eaeaea;
+/* ===== Fondo general ===== */
+
+body{
+background:#0d0d0d;
+color:#eaeaea;
 }
 
-/* TITULOS */
-h1, h2, h3 {
-  color: #fff;
+/* ===== TITULOS ===== */
+
+h1,h2,h3{
+color:#fff;
 }
 
 /* Texto suave */
-.muted {
-  color: #b9b9b9;
+
+.muted{
+color:#b9b9b9;
 }
 
-/* ------------ POST LIST (index.html) ------------ */
 
-.post-card {
-  background: #131313;
-  border: 1px solid #222;
-  border-radius: 14px;
-  transition: 0.25s ease;
-  overflow: hidden;
+/* ============================================
+NAVBAR / MENU HAMBURGER
+============================================ */
+
+.topbar{
+position:relative;
+z-index:1000;
 }
 
-.post-card img {
-  border-radius: 10px;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+.nav{
+display:flex;
+align-items:center;
+gap:18px;
 }
 
-.post-card:hover {
-  transform: translateY(-6px);
-  border-color: #4ecbff;
-  box-shadow: 0 0 18px rgba(0, 204, 255, 0.25);
+/* ===== MENU MOVIL ===== */
+
+@media (max-width:991px){
+
+.nav{
+display:none;
+flex-direction:column;
+position:absolute;
+top:60px;
+right:15px;
+background:#000;
+width:220px;
+padding:20px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
 }
 
-.post-card h3 {
-  color: #fff;
-  font-size: 1.25rem;
-  margin-top: 12px;
+.nav a{
+display:block;
+padding:8px 0;
 }
 
-.post-card p {
-  color: #cfcfcf;
-  margin-bottom: 12px;
+.nav.show{
+display:flex;
 }
 
-/* ------------ POST (artículo individual) ------------ */
-
-.post-container {
-  max-width: 900px;
-  margin: auto;
-  background: #131313;
-  border: 1px solid #222;
-  padding: 28px;
-  border-radius: 16px;
-  box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
 }
 
-.post-img {
-  width: 100%;
-  border-radius: 14px;
-  margin: 20px 0;
+
+/* ============================================
+POST LIST (index.html)
+============================================ */
+
+.post-card{
+background:#131313;
+border:1px solid #222;
+border-radius:14px;
+transition:0.25s ease;
+overflow:hidden;
 }
 
-.post-container p {
-  line-height: 1.7;
-  margin-bottom: 16px;
-  color: #dcdcdc;
+.post-card img{
+border-radius:10px;
+width:100%;
+height:auto;
+object-fit:cover;
+}
+
+.post-card:hover{
+transform:translateY(-6px);
+border-color:#4ecbff;
+box-shadow:0 0 18px rgba(0,204,255,0.25);
+}
+
+.post-card h3{
+color:#fff;
+font-size:1.25rem;
+margin-top:12px;
+}
+
+.post-card p{
+color:#cfcfcf;
+margin-bottom:12px;
+}
+
+
+/* ============================================
+POST (ARTICULO INDIVIDUAL)
+============================================ */
+
+.post-container{
+max-width:900px;
+margin:auto;
+background:#131313;
+border:1px solid #222;
+padding:28px;
+border-radius:16px;
+box-shadow:0 0 14px rgba(0,0,0,0.3);
+}
+
+.post-img{
+width:100%;
+border-radius:14px;
+margin:20px 0;
+}
+
+.post-container p{
+line-height:1.7;
+margin-bottom:16px;
+color:#dcdcdc;
 }
 
 .post-container ul,
-.post-container ol {
-  padding-left: 22px;
-  margin-bottom: 16px;
+.post-container ol{
+padding-left:22px;
+margin-bottom:16px;
 }
 
-.post-container li {
-  margin-bottom: 8px;
+.post-container li{
+margin-bottom:8px;
 }
 
-/* Enlaces dentro del artículo */
-.post-container a {
-  color: #4ecbff;
-  font-weight: bold;
+.post-container a{
+color:#4ecbff;
+font-weight:bold;
 }
 
-.post-container a:hover {
-  color: #87e8ff;
-}
-
-/* ------------ BOTONES ------------ */
-
-.btn-info {
-  background: #4ecbff !important;
-  border: none !important;
-  color: #000 !important;
-  font-weight: bold;
-  transition: 0.25s ease;
-}
-
-.btn-info:hover {
-  background: #81ddff !important;
-  transform: scale(1.05);
-}
-
-/* Link "Volver" */
-.back-btn {
-  display: inline-block;
-  margin-bottom: 18px;
-  color: #4ecbff;
-  font-weight: bold;
-}
-
-/* ------------ NAVEGACIÓN ENTRE ARTÍCULOS ------------ */
-
-.post-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
-}
-
-.post-nav a {
-  color: #4ecbff;
-  font-weight: bold;
-  transition: 0.2s;
-}
-
-.post-nav a:hover {
-  color: #9ceaff;
-  text-decoration: underline;
-}
-
-/* ------------ RESPONSIVE ------------ */
-
-@media (max-width: 768px) {
-  .post-container {
-    padding: 18px;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  .post-card h3 {
-    font-size: 1.1rem;
-  }
+.post-container a:hover{
+color:#87e8ff;
 }
 
 
-/* ===== Credencial (ID Card) ===== */
-.credencial {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.92), rgba(10, 18, 30, 0.92));
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 18px;
-  padding: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+/* ============================================
+BOTONES
+============================================ */
+
+.btn-info{
+background:#4ecbff !important;
+border:none !important;
+color:#000 !important;
+font-weight:bold;
+transition:0.25s ease;
 }
 
-.credencial-header {
-  display: flex;
-  gap: 16px;
-  align-items: center;
+.btn-info:hover{
+background:#81ddff !important;
+transform:scale(1.05);
 }
 
-.credencial-avatar {
-  width: 86px;
-  height: 86px;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.03);
-  display: grid;
-  place-items: center;
-  overflow: hidden;
+.back-btn{
+display:inline-block;
+margin-bottom:18px;
+color:#4ecbff;
+font-weight:bold;
 }
 
-.credencial-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+
+/* ============================================
+NAVEGACIÓN ENTRE ARTÍCULOS
+============================================ */
+
+.post-nav{
+display:flex;
+justify-content:space-between;
+margin-top:30px;
 }
 
-.credencial-title {
-  margin: 0;
-  font-weight: 800;
-  letter-spacing: .2px;
+.post-nav a{
+color:#4ecbff;
+font-weight:bold;
+transition:0.2s;
 }
 
-.credencial-subtitle {
-  margin: 0;
-  color: rgba(255,255,255,.70);
+.post-nav a:hover{
+color:#9ceaff;
+text-decoration:underline;
 }
 
-.credencial-meta {
-  margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  color: rgba(255,255,255,.70);
-  font-size: .92rem;
+
+/* ============================================
+RESPONSIVE
+============================================ */
+
+@media (max-width:768px){
+
+.post-container{
+padding:18px;
 }
 
-.badge-skill {
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.04);
-  color: rgba(255,255,255,.85);
-  border-radius: 999px;
-  padding: 6px 10px;
-  font-size: .85rem;
+h1{
+font-size:1.8rem;
 }
 
-.credencial-actions {
-  margin-top: 14px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.post-card h3{
+font-size:1.1rem;
 }
 
-.btn-cred {
-  border-radius: 12px;
-  padding: 10px 14px;
-  font-weight: 700;
 }
 
-.credencial-footer {
-  margin-top: 14px;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  align-items: center;
-  color: rgba(255,255,255,.55);
-  font-size: .85rem;
+
+/* ============================================
+CREDENCIAL TECH
+============================================ */
+
+.credencial{
+background:linear-gradient(180deg,rgba(0,0,0,0.92),rgba(10,18,30,0.92));
+border:1px solid rgba(255,255,255,.12);
+border-radius:18px;
+padding:18px;
+box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
 
-.credencial-id {
-  border: 1px dashed rgba(255,255,255,.20);
-  padding: 6px 10px;
-  border-radius: 12px;
-  background: rgba(255,255,255,.03);
+.credencial-header{
+display:flex;
+gap:16px;
+align-items:center;
+}
+
+.credencial-avatar{
+width:86px;
+height:86px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,.14);
+background:rgba(255,255,255,.03);
+display:grid;
+place-items:center;
+overflow:hidden;
+}
+
+.credencial-avatar img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.credencial-title{
+margin:0;
+font-weight:800;
+letter-spacing:.2px;
+}
+
+.credencial-subtitle{
+margin:0;
+color:rgba(255,255,255,.70);
+}
+
+.credencial-meta{
+margin-top:10px;
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+color:rgba(255,255,255,.70);
+font-size:.92rem;
+}
+
+.badge-skill{
+border:1px solid rgba(255,255,255,.14);
+background:rgba(255,255,255,.04);
+color:rgba(255,255,255,.85);
+border-radius:999px;
+padding:6px 10px;
+font-size:.85rem;
+}
+
+.credencial-actions{
+margin-top:14px;
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.btn-cred{
+border-radius:12px;
+padding:10px 14px;
+font-weight:700;
+}
+
+.credencial-footer{
+margin-top:14px;
+display:flex;
+justify-content:space-between;
+gap:10px;
+align-items:center;
+color:rgba(255,255,255,.55);
+font-size:.85rem;
+}
+
+.credencial-id{
+border:1px dashed rgba(255,255,255,.20);
+padding:6px 10px;
+border-radius:12px;
+background:rgba(255,255,255,.03);
 }

@@ -1,5 +1,9 @@
 // ====== NAVEGACIÓN AUTOMÁTICA ENTRE ARTÍCULOS ======
 (function () {
+
+  const post = document.querySelector(".post");
+  if (!post) return;
+
   const url = window.location.pathname;
   const match = url.match(/articulo-(\d+)\.html/);
 
@@ -29,5 +33,22 @@
     <div>${nextLink}</div>
   `;
 
-  document.querySelector(".post").appendChild(nav);
+  post.appendChild(nav);
+
 })();
+
+
+// ====== MENU HAMBURGER ======
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  const hamburger = document.querySelector(".hamburger");
+  const nav = document.querySelector(".nav");
+
+  if(!hamburger || !nav) return;
+
+  hamburger.addEventListener("click", function(){
+    nav.classList.toggle("show");
+  });
+
+});
